@@ -1,0 +1,76 @@
+/* ── Preloader ── */
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #cecece;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Phase: enter → logo not yet visible */
+.preloader--enter .preloader__logo { opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+
+/* Phase: show → logo centered big */
+.preloader--show .preloader__logo {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Phase: shrink → logo flies to top-left, background fades away */
+.preloader--shrink {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+/* Phase: fade → completely hide the preloader container */
+.preloader--fade {
+  opacity: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+/* Maintain shrink position during fade phase so it doesn't snap back */
+.preloader--shrink .preloader__logo,
+.preloader--fade .preloader__logo {
+  opacity: 1;
+  /* Exactly overlay the navbar logo position (nav padding 40px, nav height 72px -> (72-54)/2 = 9px) */
+  left: 40px;
+  top: 9px;
+  transform: translate(0, 0) scale(1);
+  width: 54px;
+  height: 54px;
+}
+
+/* ── Logo circle ── */
+.preloader__logo {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  /* Smooth transition, sped up */
+  transition:
+    opacity 0.4s ease,
+    transform 0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    left 0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    top 0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    width 0.6s cubic-bezier(0.2, 1, 0.3, 1),
+    height 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.preloader__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

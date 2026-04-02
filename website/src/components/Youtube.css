@@ -1,0 +1,578 @@
+/* ==========================================================
+   YOUTUBE CONTENT HUB - BRUTALIST DARK MODE MASTERPIECE
+   ========================================================== */
+
+  .youtube-hub {
+    background-color: #f7f4ef;
+    color: #000000;
+    width: 100vw;
+    /* Use 'clip' instead of 'hidden' so it doesn't force overflow-y: auto and create a scroll hitch */
+    overflow-x: clip; 
+    padding-bottom: 0px; 
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* --- 0: Identifier / Separator --- */
+  .yt-identifier {
+    padding: 60px 5vw 0; /* Padding offsets it from the section above natively */
+    position: relative;
+    z-index: 10;
+  }
+  
+  .yt-id-line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
+  
+  .yt-id-content {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    text-transform: uppercase;
+  }
+  
+  .yt-id-num {
+    font-family: var(--font-display, 'Impact', sans-serif);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 0.8;
+  }
+  
+  .yt-id-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    letter-spacing: 1px;
+    color: #000;
+  }
+  
+  .yt-id-desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    color: #777;
+    margin-left: auto; /* Pushes to the far right natively if desired, but wait: Let's remove this so it stays left-aligned. */
+  }
+  
+  .yt-hero {
+    padding: 20px 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 100; /* Force Layer Priority */
+    overflow: hidden; /* Overflow Fix to stop bottom bleeding */
+  }
+  
+  .yt-headline {
+    font-family: var(--font-display, 'Impact', sans-serif);
+    /* Increased scalar and max bounds for massive typographic impact */
+    font-size: clamp(1.5rem, 5vw, 6.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    white-space: nowrap !important; /* Force single line as requested */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+    will-change: transform, opacity; /* Hardware Acceleration */
+  }
+  
+  /* Smoothing / Custom cubic-bezier animation */
+  .yt-headline.reveal {
+    transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1), transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  
+  .yt-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    color: #555;
+    max-width: 800px;
+    line-height: 1.4;
+    font-weight: 300;
+  }
+  
+  /* --- Section 2: Streamer Rows --- */
+  .yt-streamer-section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  .yt-row-container:last-child {
+    margin-bottom: 0;
+  }
+  
+  .yt-row-container {
+    margin-bottom: 60px; /* Generous breathable spacing */
+    padding-left: 5vw;
+    position: relative;
+    /* Do NOT use overflow:hidden here or it kills position: sticky in browsers */
+  }
+  
+  .yt-row-header {
+    display: flex;
+    align-items: center; /* Horizontally level the title with the timeline number */
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-right: 5vw;
+    position: relative; /* Removed 'sticky' to eliminate overlap/clipping bugs natively */
+    z-index: 50; /* Rigidly layer text above anything scrolling below */
+  }
+  
+  .yt-row-num {
+    font-family: var(--font-display, 'Impact', sans-serif);
+    font-size: clamp(3rem, 4.5vw, 4.5rem);
+    color: rgba(0, 0, 0, 0.25);
+    line-height: 0.8;
+  }
+  
+  .yt-row-title-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .yt-row-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 1.1;
+  }
+  
+  .yt-row-subtext {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 4px;
+  }
+  
+  /* Momentum Scrolling Track */
+  .yt-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden; /* Container Clipping: prevents thumbnails from bleeding outside vertically */
+    /* Implemented Horizontal Scroll Physics */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px; 
+    padding-right: 5vw; /* Right padding buffer */
+    /* Hide scrollbars */
+    scrollbar-width: none;
+    cursor: grab;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .yt-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .yt-carousel:active {
+    cursor: grabbing;
+  }
+  
+  .yt-card {
+    /* Implemented Horizontal Scroll Physics */
+    scroll-snap-align: start;
+    flex: 0 0 auto; /* Thumbnail Sizing: Prevent shrink */
+    min-width: 350px; /* Thumbnail Sizing: Hard floor to prevent crushing */
+    width: clamp(350px, 25vw, 400px);
+    display: flex;
+    flex-direction: column;
+    /* Replaced global gap with specific typographic margins for tighter binding */
+  }
+  
+  .yt-thumb-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #111;
+    border-radius: 20px; /* Apple curve */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* iOS soft edge */
+    margin-bottom: 12px;
+  }
+  
+  .yt-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1.0), filter 0.6s ease;
+    filter: brightness(0.9);
+    transform-origin: center; /* Hover Transform containment */
+  }
+  
+  .yt-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: rgba(0, 0, 0, 0.2);
+    /* Subtle frosted glass effect on overlay */
+    backdrop-filter: blur(2px);
+  }
+  
+  .yt-play-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  }
+  
+  .yt-play-icon svg {
+    margin-left: 4px;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Hover Physics */
+  .yt-card:hover .yt-thumb-wrapper img {
+    transform: scale(1.1);
+    filter: brightness(1);
+  }
+  
+  .yt-card:hover .yt-play-overlay {
+    opacity: 1;
+  }
+  
+  .yt-card:hover .yt-play-icon {
+    transform: scale(1);
+  }
+  
+  /* Typography beneath thumbnail */
+  .yt-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Linter fix */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 0 4px 0; /* Override default h4 padding completely, apply extremely tight 4px tie to stats */
+  }
+  
+  .yt-vid-stats {
+    font-family: monospace; /* Developer/API brutalist vibe */
+    font-size: 0.8rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin: 0;
+  }
+  
+  /* --- Section 3: Shorts Breakout --- */
+  .yt-shorts-section {
+    padding: 60px 0 60px 5vw; /* Match precisely to yt-row-container left padding */
+    background: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  .yt-shorts-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-right: 5vw;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .yt-shorts-title {
+    font-family: var(--font-display, 'Impact', sans-serif);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 0.95;
+  }
+  
+  .yt-shorts-subtext {
+    font-family: 'Poppins', sans-serif;
+    color: #888;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+  
+  .yt-shorts-carousel {
+    display: flex;
+    gap: 20px;
+    padding-right: 5vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .yt-shorts-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Vertical override for yt-card */
+  .yt-short-card-wrap {
+    min-width: 240px !important;
+    width: clamp(240px, 20vw, 320px) !important;
+    cursor: pointer;
+  }
+  
+  .yt-short-thumb {
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #111;
+    border-radius: 16px; /* slightly curvier for vertical */
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .yt-short-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1.0), filter 0.6s ease;
+    filter: brightness(0.9);
+    transform-origin: center;
+  }
+  
+  .yt-short-card-wrap:hover .yt-short-thumb img {
+    transform: scale(1.08);
+    filter: brightness(1);
+  }
+  
+  /* --- Section 4: Blueprint Value Prop --- */
+  .yt-value-grid-wrap {
+    padding: 60px 5vw;
+  }
+  
+  .yt-value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .yt-value-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.45); /* High transparency glass membrane */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Float effect for light themes */
+    transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  
+  .yt-value-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.65); /* Vibrancy */
+  }
+
+  .yt-value-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  .yt-value-icon {
+    color: #000;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  
+  .yt-value-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5px; /* Thinner */
+    stroke: currentColor;
+    fill: none;
+  }
+  
+  .yt-value-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  
+  .yt-value-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  /* --- Section 5: Conversion Footer CTA --- */
+  .yt-cta-section {
+    padding: 20px 5vw 80px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .yt-cta-box {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    /* Massive layered 3D depth to match the small cards */
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    padding: 60px 5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Geometric brutalist accent mark */
+  .yt-cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #000;
+  }
+  
+  .yt-cta-text {
+    font-family: var(--font-display, 'Impact', sans-serif);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    max-width: 800px;
+    color: #000;
+  }
+  
+  .yt-cta-btn {
+    appearance: none;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 20px 48px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1.0), background 0.2s ease;
+    margin-bottom: 20px;
+  }
+  
+  .yt-cta-btn:hover {
+    transform: scale(1.05);
+    background: #222;
+  }
+  
+  .yt-cta-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* --- Global Responsive Rules --- */
+  @media (max-width: 1024px) {
+    .yt-value-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .yt-row-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px; /* Increased gap to fix tight spacing issue */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .yt-value-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* --- Interactive States & Toasts --- */
+  .yt-card.muted {
+    opacity: 0.6;
+    filter: grayscale(0.6);
+  }
+  
+  .yt-card.muted:hover {
+    opacity: 0.8;
+    filter: grayscale(0.3);
+  }
+
+  .yt-toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    z-index: 9999999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: ytToastSlide 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    pointer-events: none;
+  }
+
+  @keyframes ytToastSlide {
+    to {
+      transform: translateX(-50%) translateY(0);
+    }
+  }

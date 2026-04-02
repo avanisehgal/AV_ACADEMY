@@ -1,0 +1,374 @@
+/* ── Course Section Cinematic Container ── */
+.courses-section {
+  background-color: #f7f4ef;
+  color: #000;
+  min-height: 400vh; /* Reverted to 400vh to map "one manual scroll" to 5 distinct scroll-driven animation phases */
+  width: 100%;
+  position: relative;
+  z-index: 10; /* Fixed layer priority over below sections */
+}
+
+.courses-sticky-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.courses-bg-video-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.courses-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.5) brightness(1.5); /* Match hero filter */
+}
+
+/* Identical overlay gradient from Hero to perfectly blend the black video */
+.courses-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 244, 239, 0.85) 0%,
+    rgba(247, 244, 239, 0.65) 35%,
+    rgba(247, 244, 239, 0.80) 70%,
+    rgba(247, 244, 239, 0.98) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Absolute Overlay Layers for the Sequence (now driven by JS inline styles) ── */
+
+.cinematic-hook {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 100%;
+  z-index: 3; /* text sits above overlay */
+}
+
+.cinematic-hook h2 {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 8rem);
+  text-transform: uppercase;
+  line-height: 1.05; 
+  letter-spacing: normal; 
+  color: #000;
+  font-weight: 900;
+}
+
+.cinematic-morph-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 5;
+  pointer-events: none; 
+}
+
+.morph-line {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 8rem);
+  text-transform: uppercase;
+  line-height: 1.05; 
+  letter-spacing: normal; 
+  color: #000;
+  white-space: nowrap; 
+  font-weight: 900;
+}
+
+.cinematic-subtext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 4;
+}
+
+.cinematic-subtext p {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: #555;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 1.4; 
+}
+
+/* 4. The Responsive Grid */
+.courses-grid {
+  position: absolute;
+  top: 57%; 
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%) scale(0.95);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 40px;
+}
+
+/* 5. The Path Timeline */
+.courses-path {
+  position: absolute;
+  bottom: 50px; /* FIXED: Lifted up exactly one line to increase breathing room */
+  left: 0;
+  width: 100%;
+  padding: 0 48px;
+  transform-origin: bottom center; 
+}
+
+/* ── Inner Element Styles ── */
+
+.course-card {
+  background: rgba(255, 255, 255, 0.45); /* High transparency glass membrane */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 32px; /* iOS standard padding */
+  border-radius: 32px; /* Large squircle-like radius */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Soft floating shadow for light themes */
+  transform: translate(var(--slidex, 0), var(--slidey, 0));
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              background 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+}
+
+.course-card:hover {
+  transform: translate(var(--slidex, 0), calc(var(--slidey, 0) - 10px)) scale(1.02) !important; 
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); /* Massive diffused shadow */
+  background: rgba(255, 255, 255, 0.65); /* Vibrancy boost */
+  z-index: 20;
+}
+
+.course-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.course-card-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.course-card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-card-features li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  width: 14px;
+  height: 14px;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.course-card-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 14px 18px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 60px; /* Apple pill capsule shape */
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.course-card-btn:hover {
+  background: #222;
+}
+
+.course-card-btn:active {
+  transform: scale(0.96); /* iOS haptic shrink */
+  opacity: 0.9;
+}
+
+.course-card.coming-soon {
+  opacity: 0.85;
+  cursor: default;
+  position: relative;
+}
+
+.course-card.coming-soon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 245, 245, 0.4);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.course-card-btn.disabled {
+  background: #f0f0f0;
+  color: #888;
+  cursor: not-allowed;
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.course-card-btn.disabled:hover {
+  background: #f0f0f0;
+  color: #888;
+  transform: none;
+}
+
+.course-card-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coming-soon-badge {
+  background: #f0f0f0;
+  color: #666;
+  font-family: var(--font-body, 'Poppins', sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+/* Squeezed Timeline Styles */
+.path-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.path-steps {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  width: 100%;
+}
+
+.path-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* MACRO Positioning: Place the entire column box on the far left, dead center, and far right */
+.path-step:nth-child(1) { align-items: flex-start; text-align: left; }
+.path-step:nth-child(3) { align-items: center; text-align: center; } 
+.path-step:nth-child(5) { align-items: flex-end; text-align: right; }
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 0.8;
+  color: rgba(0, 0, 0, 0.25); /* Adjusted darkness based on user feedback */
+  margin-bottom: 5px;
+}
+
+.step-content-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px; /* Fixed cramped spacing between number and text */
+}
+
+.step-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.step-desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.path-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+  margin: 0 30px; /* FIXED: Prevent lines from painfully crashing into the text, equal padding */
+  transform: translateY(-5px); /* Offset slightly upward to align with visual center of content */
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .courses-grid { grid-template-columns: repeat(2, 1fr); gap: 20px;}
+  .cinematic-header-small h3 { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+  .courses-section { min-height: auto; padding: 60px 0; }
+  .courses-sticky-container { position: static; height: auto; display: flex; flex-direction: column; align-items: center; gap: 40px;}
+  .cinematic-hook { display: none; }
+  .cinematic-header-large { display: none; }
+  
+  .cinematic-header-small {
+    position: static; transform: none !important; opacity: 1 !important; display: block; max-width: 100%;
+  }
+  .cinematic-header-small h3 { white-space: normal; }
+  .cinematic-header-small p { opacity: 1 !important; }
+  
+  .courses-grid {
+    position: static; transform: none !important; opacity: 1 !important; margin-top: 20px; display: flex; flex-direction: column; gap: 20px;
+  }
+  .course-card { transform: none !important; opacity: 1 !important; }
+  .courses-path { position: static; transform: none !important; opacity: 1 !important; margin-top: 40px; padding-bottom: 20px;}
+  .path-steps { flex-direction: column; align-items: center; gap: 40px;}
+  .path-step { align-items: center; text-align: center; }
+  .path-line { display: none; }
+}

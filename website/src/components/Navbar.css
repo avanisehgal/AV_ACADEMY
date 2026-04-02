@@ -1,0 +1,159 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: var(--nav-height);
+  background: transparent;
+  transition: background var(--transition-base), backdrop-filter var(--transition-base);
+}
+
+.navbar--scrolled {
+  background: rgba(252, 250, 245, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* subtle shadow for glass edge */
+}
+
+/* Logo — circular only, no text */
+.navbar__logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Center nav links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__link {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color var(--transition-base);
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+.navbar__link--active {
+  font-weight: 700;
+}
+
+/* Enroll CTA — Glassmorphism Button */
+.navbar__cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar__cta:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 4px;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+.navbar__hamburger--open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger--open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+@media (max-width: 900px) {
+  .navbar { padding: 0 20px; }
+  .navbar__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    transform: none;
+    background: rgba(252, 250, 245, 0.98);
+    flex-direction: column;
+    gap: 0;
+    padding: 24px 20px;
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .navbar__links--open { transform: translateY(0); opacity: 1; pointer-events: all; }
+  .navbar__links li { padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.07); width: 100%; }
+  .navbar__cta { display: none; }
+  .navbar__hamburger { display: flex; }
+}

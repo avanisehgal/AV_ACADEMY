@@ -1,0 +1,156 @@
+/* ============================================================
+   AV ACADEMY — Global Design System
+   Light Editorial × John Moore Inspired
+   ============================================================ */
+
+:root {
+  /* Light cream palette — matches John Moore template */
+  --color-bg: #f7f4ef;
+  --color-bg-surface: #f0ece5;
+  --color-bg-card: #e8e3d9;
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #3a3530;
+  --color-text-muted: #8a8278;
+  --color-accent: #0a0a0a;
+  --color-accent-bright: #1a1a1a;
+  --color-border: rgba(10, 10, 10, 0.10);
+  --color-border-hover: rgba(10, 10, 10, 0.30);
+
+  /* Typography */
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
+  --nav-height: 72px;
+
+  /* Transitions */
+  --transition-base: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-slow: 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.022em; /* Apple premium tight tracking */
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--color-bg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.cursor-hover { width: 4px; height: 4px; }
+.cursor-ring.cursor-hover { width: 52px; height: 52px; opacity: 0.6; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-text-muted); }
+
+/* Selection */
+::selection { background: var(--color-text-primary); color: var(--color-bg); }
+
+/* ── Clip-Mask Reveal (John Moore style) ── */
+.clip-mask {
+  overflow: hidden;
+}
+
+.clip-reveal {
+  transform: translateY(105%);
+  opacity: 0;
+  will-change: transform;
+  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1.0),
+              opacity 1.2s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.clip-reveal--visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Scroll-reveal for other sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays */
+.stagger > *:nth-child(1) { transition-delay: 0s; }
+.stagger > *:nth-child(2) { transition-delay: 0.08s; }
+.stagger > *:nth-child(3) { transition-delay: 0.16s; }
+.stagger > *:nth-child(4) { transition-delay: 0.24s; }
+.stagger > *:nth-child(5) { transition-delay: 0.32s; }
+.stagger > *:nth-child(6) { transition-delay: 0.40s; }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

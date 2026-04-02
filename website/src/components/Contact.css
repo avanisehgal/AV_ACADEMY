@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ============================================================
+   AV ACADEMY — Central Box Contact & SaaS Footer
+   ============================================================ */
+
+.contact-premium-wrapper {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Custom Scroll Up Reveal for entire Section */
+.contact-premium-wrapper.reveal {
+  transform: translateY(15vh);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+.contact-premium-wrapper.reveal.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------
+   1. VIDEO BACKGROUND
+   ------------------------------------------------------------ */
+.contact-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.contact-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Maximum intensity */
+}
+
+.contact-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.9) 100%);
+}
+
+/* ------------------------------------------------------------
+   2. FLOATING GRAY BOX (Centered)
+   ------------------------------------------------------------ */
+.contact-box-container {
+  position: relative;
+  z-index: 2; /* Sit above the video */
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+}
+
+.contact-gray-box {
+  background: rgba(247, 244, 239, 0.85); /* Lightened by 2 shades to strictly match the #f7f4ef main bg */
+  backdrop-filter: blur(20px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  border-radius: 40px; 
+  padding: 70px 60px; 
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  color: #000000;
+}
+
+.contact-box-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 8.5rem); /* Scaled down to guarantee single line fit */
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: normal; /* Fixed letter spacing */
+  text-align: center; /* Center correctly since it's one forced line */
+  white-space: nowrap; /* Force single line constraint entirely */
+  margin-bottom: 24px;
+  color: #000000;
+}
+
+.contact-box-subtext {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  color: #000000;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.contact-box-buttons {
+  display: flex;
+  flex-direction: row; /* Strict side-by-side placement */
+  justify-content: center;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Expanded Complex Buttons - Oval Hollow Shaped */
+.contact-btn {
+  background: transparent; /* Hollow oval */
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #000000;
+  padding: 12px 24px; /* Unnecessary space totally removed */
+  border-radius: 60px; /* Perfect oval */
+  display: flex;
+  align-items: center; 
+  text-align: left;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1; 
+}
+
+.contact-btn:hover, .contact-btn.is-active {
+  background: #000000; 
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-2px);
+}
+
+.contact-btn-icon {
+  flex-shrink: 0;
+  color: inherit; /* Inherits #ffffff on hover */
+  margin-top: 2px;
+}
+
+.contact-btn-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Super tight gap */
+}
+
+.contact-btn-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.contact-btn-micro {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+/* ------------------------------------------------------------
+   3. SMALL VERTICAL CURVED BOX (Popup Modal)
+   ------------------------------------------------------------ */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.3s forwards;
+}
+
+.contact-modal-content {
+  background: #111111;
+  border-radius: 32px; /* Apple Squircle */
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(20px);
+  animation: modalSlideUp 0.3s forwards;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.contact-modal-close:hover {
+  color: #ffffff;
+}
+
+.contact-modal-form.poppins * {
+  font-family: 'Poppins', sans-serif !important; /* Force Poppins font as requested */
+}
+
+.contact-modal-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact-modal-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 16px; /* Smooth container inset radius */
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.contact-modal-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-modal-input:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+.contact-modal-select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 14px;
+}
+
+.contact-modal-select option {
+  background: #111111;
+  color: #ffffff;
+}
+
+.contact-modal-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-modal-submit {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+.contact-modal-submit:hover {
+  background: #e0e0e0;
+}
+
+.contact-modal-success {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 0;
+}
+
+.contact-modal-success h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact-modal-success p {
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------
+   4. SLEEK HORIZONTAL FOOTER (Squeezed Base)
+   ------------------------------------------------------------ */
+.contact-p__footer-wrapper {
+  background-color: #000000; /* Pure black */
+  color: #ffffff;
+  padding: 15px 40px; /* Squeezed even tighter to bottom */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto; /* Pin to bottom */
+  position: relative;
+  z-index: 2; /* Sit above the video overlay */
+}
+
+.contact-p__footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-f__ribbon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Brand Area */
+.contact-f__brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-f__brand-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1; /* Tighten line height */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #a0a0a0; /* Light gray */
+  margin-bottom: 2px; /* Pull elements closer together */
+}
+
+.contact-f__brand-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1; /* Tighten line height */
+  color: #a0a0a0; /* Light gray */
+  margin-top: 0px; /* Remove gap entirely */
+}
+
+/* Horizontal Link List */
+.contact-f__list-horizontal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.contact-f__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-f__item--static { cursor: default; }
+
+.contact-f__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.contact-f__text {
+  transition: color 0.3s ease;
+}
+
+/* Simple minimal hover */
+.contact-f__item:not(.contact-f__item--static):hover { color: #ffffff; }
+.contact-f__item:not(.contact-f__item--static):hover .contact-f__icon { color: #ffffff; }
+
+/* Right Copy Block */
+.contact-f__copy-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-f__privacy {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+.contact-f__privacy:hover { color: #ffffff; }
+
+
+/* Base Reveal Shorthand Fix */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------------------------------------
+   5. RESPONSIVE
+   ------------------------------------------------------------ */
+@media (max-width: 992px) {
+  .contact-box-buttons { flex-direction: column; max-width: 400px; }
+  .contact-f__ribbon { flex-direction: column; gap: 24px; text-align: center; }
+  .contact-f__list-horizontal { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .contact-gray-box { padding: 50px 30px; margin: 60px auto; }
+  .contact-box-headline { font-size: 3.5rem; }
+  .contact-modal-content { padding: 30px 20px; }
+  .contact-p__footer-wrapper { padding: 30px 24px; }
+  .contact-f__list-horizontal { flex-direction: column; gap: 16px; }
+}
