@@ -16,7 +16,7 @@
 
 /* Custom Scroll Up Reveal for entire Section */
 .contact-premium-wrapper.reveal {
-  transform: translateY(15vh);
+  transform: translateY(-20px);
   opacity: 0;
   transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
 }
@@ -436,15 +436,66 @@
    5. RESPONSIVE
    ------------------------------------------------------------ */
 @media (max-width: 992px) {
-  .contact-box-buttons { flex-direction: column; max-width: 400px; }
+  .contact-box-buttons { flex-direction: column; max-width: 440px; margin: 0 auto; }
   .contact-f__ribbon { flex-direction: column; gap: 24px; text-align: center; }
   .contact-f__list-horizontal { justify-content: center; }
 }
 
 @media (max-width: 768px) {
-  .contact-gray-box { padding: 50px 30px; margin: 60px auto; }
-  .contact-box-headline { font-size: 3.5rem; }
-  .contact-modal-content { padding: 30px 20px; }
-  .contact-p__footer-wrapper { padding: 30px 24px; }
-  .contact-f__list-horizontal { flex-direction: column; gap: 16px; }
+  .contact-box-container { padding: 60px 16px; }
+  .contact-gray-box {
+    padding: 40px 24px;
+    border-radius: 28px;
+    margin: 0;
+  }
+  .contact-box-headline {
+    font-size: calc(clamp(2.2rem, 12vw, 4rem) + 0.35rem);
+    white-space: normal;
+    word-break: break-word;
+    text-align: center;
+  }
+  .contact-box-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+  }
+  .contact-box-buttons {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .contact-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 20px;
+  }
+  .contact-btn-title { font-size: 1.2rem; }
+  .contact-btn-micro { font-size: 0.85rem; }
+  .contact-modal-content { padding: 30px 20px; border-radius: 24px; }
+  .contact-p__footer-wrapper { padding: 24px 20px; }
+  .contact-f__list-horizontal { 
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+  
+  /* Ordering to pair: Email + Location (Row 1), YouTube + LinkedIn (Row 2) */
+  .contact-f__list-horizontal li:nth-child(1) { order: 1; } /* Email */
+  .contact-f__list-horizontal li:nth-child(4) { order: 2; } /* Location */
+  .contact-f__list-horizontal li:nth-child(2) { order: 3; } /* YouTube */
+  .contact-f__list-horizontal li:nth-child(3) { order: 4; } /* LinkedIn */
+
+  .contact-f__item { font-size: 0.9rem; }
+  .contact-f__icon svg { width: 16px; height: 16px; }
+  .contact-f__brand-title { font-size: 1.4rem; }
 }
+
+@media (max-width: 480px) {
+  .contact-gray-box { padding: 32px 18px; border-radius: 20px; }
+  .contact-box-headline { font-size: calc(clamp(1.8rem, 10vw, 3rem) + 0.35rem); }
+  .contact-modal-content { margin: 16px; border-radius: 20px; }
+}
+

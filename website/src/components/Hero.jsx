@@ -59,11 +59,11 @@ export default function Hero({ isLoaded = true }) {
             <div className="hero__desc clip-reveal">
               <div className="hero__desc-body">
                 <p className="hero__desc-main">
-                  Bridging The Gap Between Confusing Concepts<br />
+                  Bridging The Gap Between Confusing Concepts <br />
                   And Crystal-Clear Understanding.
                 </p>
                 <p className="hero__desc-sub">
-                  High-performance maths coaching for the next<br />
+                  High-performance maths coaching for the next <br />
                   generation of toppers at AV Academy.
                 </p>
               </div>

@@ -121,41 +121,41 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 0 40px;
+  z-index: 6;
 }
 
 /* 5. The Path Timeline */
 .courses-path {
   position: absolute;
-  bottom: 50px; /* FIXED: Lifted up exactly one line to increase breathing room */
+  bottom: 50px;
   left: 0;
-  width: 100%;
-  padding: 0 48px;
+  right: 0;
+  margin: 0 auto;
+  width: 85%;
+  padding: 0;
   transform-origin: bottom center; 
+  z-index: 6;
 }
 
 /* ── Inner Element Styles ── */
 
 .course-card {
-  background: rgba(255, 255, 255, 0.45); /* High transparency glass membrane */
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  padding: 32px; /* iOS standard padding */
-  border-radius: 32px; /* Large squircle-like radius */
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 36px;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08); /* Soft floating shadow for light themes */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
   transform: translate(var(--slidex, 0), var(--slidey, 0));
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
-              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              background 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 10;
 }
 
 .course-card:hover {
-  transform: translate(var(--slidex, 0), calc(var(--slidey, 0) - 10px)) scale(1.02) !important; 
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); /* Massive diffused shadow */
-  background: rgba(255, 255, 255, 0.65); /* Vibrancy boost */
+  transform: translate(var(--slidex, 0), calc(var(--slidey, 0) - 8px)) scale(1.02) !important; 
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
   z-index: 20;
 }
 
@@ -283,11 +283,12 @@
 /* Squeezed Timeline Styles */
 .path-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #666;
-  margin-bottom: 10px;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 8px;
   text-align: center;
 }
 
@@ -302,30 +303,27 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
-/* MACRO Positioning: Place the entire column box on the far left, dead center, and far right */
-.path-step:nth-child(1) { align-items: flex-start; text-align: left; }
-.path-step:nth-child(3) { align-items: center; text-align: center; } 
-.path-step:nth-child(5) { align-items: flex-end; text-align: right; }
 
 .step-num {
   font-family: var(--font-display);
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 0.8;
-  color: rgba(0, 0, 0, 0.25); /* Adjusted darkness based on user feedback */
+  color: rgba(0, 0, 0, 0.25);
   margin-bottom: 5px;
 }
 
 .step-content-box {
   display: flex;
   flex-direction: column;
-  margin-top: 5px; /* Fixed cramped spacing between number and text */
+  margin-top: 5px; 
 }
 
 .step-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #000;
   margin-bottom: 2px;
@@ -333,7 +331,7 @@
 
 .step-desc {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   color: #555;
 }
 
@@ -341,8 +339,8 @@
   flex: 1;
   height: 1px;
   background: rgba(0, 0, 0, 0.15);
-  margin: 0 30px; /* FIXED: Prevent lines from painfully crashing into the text, equal padding */
-  transform: translateY(-5px); /* Offset slightly upward to align with visual center of content */
+  margin: 0 40px; 
+  transform: translateY(-9px); 
 }
 
 /* ── Responsive ── */
@@ -351,24 +349,205 @@
   .cinematic-header-small h3 { font-size: 3.5rem; }
 }
 
+/* ── MOBILE: Two-Panel Layout ── */
 @media (max-width: 768px) {
-  .courses-section { min-height: auto; padding: 60px 0; }
-  .courses-sticky-container { position: static; height: auto; display: flex; flex-direction: column; align-items: center; gap: 40px;}
-  .cinematic-hook { display: none; }
-  .cinematic-header-large { display: none; }
-  
-  .cinematic-header-small {
-    position: static; transform: none !important; opacity: 1 !important; display: block; max-width: 100%;
+
+  /* Section: natural height, stacks panels vertically */
+  .courses-section.mobile-two-panel {
+    min-height: auto;
+    display: block;
+    overflow-x: hidden;
   }
-  .cinematic-header-small h3 { white-space: normal; }
-  .cinematic-header-small p { opacity: 1 !important; }
-  
-  .courses-grid {
-    position: static; transform: none !important; opacity: 1 !important; margin-top: 20px; display: flex; flex-direction: column; gap: 20px;
+
+  /* Hide the desktop sticky container on mobile entirely */
+  .courses-sticky-container {
+    display: none !important;
   }
-  .course-card { transform: none !important; opacity: 1 !important; }
-  .courses-path { position: static; transform: none !important; opacity: 1 !important; margin-top: 40px; padding-bottom: 20px;}
-  .path-steps { flex-direction: column; align-items: center; gap: 40px;}
-  .path-step { align-items: center; text-align: center; }
-  .path-line { display: none; }
+
+  /* ── Panel 1: Sticky hook — stays pinned while Panel 2 scrolls over it ── */
+  .mobile-hook-panel {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .mobile-hook-panel .courses-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.5) brightness(1.5);
+    z-index: 0;
+  }
+
+  .mobile-hook-panel .courses-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(247, 244, 239, 0.85) 0%,
+      rgba(247, 244, 239, 0.65) 35%,
+      rgba(247, 244, 239, 0.80) 70%,
+      rgba(247, 244, 239, 0.98) 100%
+    );
+    z-index: 1;
+  }
+
+  .mobile-hook-heading {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-display);
+    font-size: calc(clamp(2rem, 8.5vw, 3rem) + 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    padding: 0 20px;
+  }
+
+  /* Force each line of the quote onto its own row without breaking mid-phrase */
+  .mobile-hook-heading span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  /* ── Panel 2: Normal document flow — slides up over sticky Panel 1 ── */
+  .mobile-content-panel {
+    position: relative;
+    z-index: 2;                  /* sits above sticky panel */
+    background: #f7f4ef;
+    padding: 64px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.08);
+  }
+
+  /* Morph lines block */
+  .mobile-morph-block {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mobile-morph-line {
+    font-family: var(--font-display);
+    font-size: calc(clamp(1.8rem, 7.5vw, 2.8rem) + 0.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: #000;
+    text-align: center;
+  }
+
+  /* Subtext paragraph */
+  .mobile-subtext-para {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.85rem, 2.45vw, 0.97rem);
+    color: #555;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 360px;
+    margin-top: -8px;
+  }
+
+  /* Cards stack — single column, natural flow */
+  .mobile-cards-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-cards-stack .course-card {
+    padding: 22px 18px;
+    border-radius: 18px;
+    max-width: 100%;
+    transform: none !important;
+  }
+
+  .mobile-cards-stack .course-card-title { font-size: 1.05rem; margin-bottom: 10px; }
+  .mobile-cards-stack .course-card-desc  { font-size: 0.8rem; margin-bottom: 14px; }
+  .mobile-cards-stack .course-card-features li { font-size: 0.73rem; }
+  .mobile-cards-stack .course-card-btn { padding: 13px 16px; font-size: 0.76rem; }
+
+  /* Timeline — natural flow below cards */
+  .mobile-timeline-wrap {
+    width: 100%;
+  }
+
+  .mobile-timeline-wrap .courses-path {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    padding: 20px 16px 0;
+    opacity: 1 !important;
+  }
+
+  .mobile-timeline-wrap .path-title {
+    font-size: 0.72rem;
+    margin-bottom: 12px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  .mobile-timeline-wrap .path-steps {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .mobile-timeline-wrap .path-step {
+    flex: 1;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  /* Fixed width so steps get enough room; translateY = half of step-num rendered height (font-size × line-height / 2 = font × 0.4) */
+  .mobile-timeline-wrap .path-line {
+    display: block;
+    width: 16px;
+    flex: none;
+    flex-shrink: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 0 2px;
+    align-self: flex-start;
+    transform: translateY(calc(clamp(1.6rem, 6vw, 2.2rem) * 0.4));
+  }
+
+  .mobile-timeline-wrap .step-num {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    margin-bottom: 2px;
+  }
+  .mobile-timeline-wrap .step-name { font-size: 0.8rem; font-weight: 600; }
+  .mobile-timeline-wrap .step-desc { font-size: 0.66rem; color: #666; word-break: break-word; }
 }
+
+@media (max-width: 480px) {
+  .mobile-hook-heading { font-size: calc(clamp(1.8rem, 7.5vw, 2.4rem) + 2rem); }
+  .mobile-morph-line   { font-size: calc(clamp(1.5rem, 7.5vw, 2.2rem) + 0.75rem); }
+  .mobile-subtext-para { font-size: clamp(0.8rem, 2.25vw, 0.93rem); margin-top: -8px; }
+  .mobile-content-panel { gap: 20px; }
+  .mobile-cards-stack  { gap: 10px; }
+  .mobile-cards-stack .course-card { padding: 18px 14px; }
+}
+

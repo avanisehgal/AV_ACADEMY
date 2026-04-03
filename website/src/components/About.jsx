@@ -9,6 +9,7 @@ const About = () => {
 
   useEffect(() => {
     let ticking = false
+    const isMobile = window.innerWidth <= 768
 
     const updateParallax = () => {
       if (!containerRef.current || !overlayRef.current || !headlineRef.current || !boxWrapRef.current) return
@@ -41,9 +42,10 @@ const About = () => {
       headlineRef.current.style.color = `rgb(${rText}, ${gText}, ${bText})`
       
       // Phase 2 (0.25 - 0.70): Text scales out exponentially
+      // Mobile: cap at 8x to prevent GPU tearing on small screens
       const p2 = Math.max(0, Math.min(1, (p - 0.25) / 0.45))
-      // Capped scale at 25x. Anything larger causes browser GPU texture tile dropping (the cutout glitch).
-      const textScale = 1 + Math.pow(p2, 3) * 25 
+      const maxScale = isMobile ? 8 : 25
+      const textScale = 1 + Math.pow(p2, 3) * maxScale
       const textOpacity = 1 - Math.pow(p2, 2)
       
       // translate3d(0,0,0) forces a distinct rendering layer prior to the mathematical scaling, preventing tile fragmentation
@@ -81,8 +83,10 @@ const About = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
+
   return (
-    <section id="about" className="about-scroll" ref={containerRef} style={{ height: '600vh' }}>
+    <section id="about" className="about-scroll" ref={containerRef} style={{ height: isMobile ? '400vh' : '600vh' }}>
       <div className="about-sticky">
         
         {/* Layer 1: Underlay Video */}
@@ -95,7 +99,8 @@ const About = () => {
         {/* Layer 2: Typographic Blend Mask */}
         <div className="about-overlay" ref={overlayRef}>
           <h2 className="about-headline" ref={headlineRef}>
-            TURNING CONFUSION<br/>INTO CONFIDENCE
+            <span className="desktop-text">TURNING CONFUSION<br/>INTO CONFIDENCE</span>
+            <span className="mobile-text">TURNING<br/>CONFUSION<br/>INTO<br/>CONFIDENCE</span>
           </h2>
         </div>
 

@@ -251,11 +251,11 @@
 .resource-card {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: flex-start;
+  padding: 14px 16px;
+  gap: 12px;
   background: #fafafa;
   border: 1px solid #f0f0f0;
-  padding: 14px;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
@@ -263,10 +263,26 @@
   color: #333;
 }
 
+.resource-icon-wrap {
+  width: 32px;
+  height: 32px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .resource-card span {
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
+  text-align: left;
+  line-height: 1.2;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .resource-card:hover {
@@ -283,18 +299,48 @@
 /* Responsive */
 @media (max-width: 768px) {
   .modal-overlay {
-    padding: 20px 16px;
+    padding: 12px 12px;
+    align-items: flex-start;
   }
   .modal-container {
     width: 100%;
-    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 24px);
+    border-radius: 16px;
   }
-  .modal-title { font-size: 1.5rem; }
-  .modal-header, .modal-content { padding: 20px; }
-  .chapter-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .chapter-num { margin-bottom: 4px; }
-  .chapter-meta { width: 100%; justify-content: space-between; }
+  .modal-title { font-size: 1.3rem; text-align: center; width: 100%; }
+  .modal-header { padding: 20px 20px; flex-direction: column; align-items: center; gap: 4px; }
+  .modal-content { padding: 16px 20px; }
+  .modal-close { align-self: flex-end; position: absolute; top: 16px; right: 16px; }
+  .modal-subtitle { text-align: center; }
+  .chapter-header { flex-direction: column; align-items: flex-start; gap: 6px; padding: 16px 18px; }
+  .chapter-title-group { flex-direction: row; align-items: center; gap: 10px; width: 100%; }
+  .chapter-num { min-width: auto; font-size: 0.75rem; white-space: nowrap; }
+  .chapter-name { font-size: 0.95rem; text-align: left; }
+  .chapter-meta { width: 100%; justify-content: flex-end; gap: 12px; }
+  .chapter-marks { font-size: 0.75rem; }
+  .chapter-body-inner { padding: 0 18px 20px; }
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .resource-card {
+    padding: 12px 12px;
+    border-radius: 10px;
+    gap: 8px;
+  }
+  .resource-card span { font-size: 0.8rem; }
+  .resource-icon-wrap { width: 20px; height: 20px; }
+  .resource-icon-wrap svg { width: 17px; height: 17px; }
 }
+
+@media (max-width: 390px) {
+  .modal-header { padding: 16px; }
+  .modal-content { padding: 12px 16px; }
+  .resources-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .resource-card { padding: 10px; }
+  .resource-card span { font-size: 0.75rem; }
+}
+
 
 .modal-toast {
   position: absolute;

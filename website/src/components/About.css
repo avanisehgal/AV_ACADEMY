@@ -60,6 +60,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.mobile-text { display: none; }
+
 /* Layer 3: Glassmorphism Card Phase */
 .about-box-wrap {
   position: absolute;
@@ -216,20 +218,71 @@
 
 @media (max-width: 900px) {
   .about-box {
-    padding: 40px 30px;
+    padding: 3vw 3vw;
+    border-radius: 28px;
+    gap: 2vw;
   }
   .about-box-top {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
+    /* Maintained horizontal row from desktop */
+    flex-direction: row;
+    align-items: center;
+    gap: 3vw;
+  }
+  .about-box-text {
+    flex: 1.5;
+  }
+  .about-box-visual {
+    flex: 1;
+    margin-right: 2vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .desktop-text { display: none; }
+  .mobile-text { display: inline; }
+  .about-oval-img {
+    width: clamp(140px, 18vw, 240px);
+    height: calc(clamp(210px, 28vw, 380px) + 15px);
+  }
+  .about-oval-img img {
+    padding: 20% 10%;
   }
   .about-thought {
-    border-radius: 20px;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 2vw;
+    right: -4vw;
+    width: clamp(100px, 12vw, 170px);
+    padding: 1vw;
+  }
+  .thought-quote-mark {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+  }
+  .thought-text {
+    font-size: clamp(0.5rem, 0.7vw, 0.72rem);
   }
   .about-list-horizontal {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
+    /* Maintained horizontal list */
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1vw;
   }
+  .about-list-horizontal li {
+    font-size: clamp(0.5rem, 0.8vw, 0.85rem);
+    gap: 5px;
+  }
+  .about-bio {
+    font-size: clamp(0.7rem, 1vw, 1.15rem);
+    margin-bottom: 1vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .desktop-text { display: none; }
+  .mobile-text { display: inline; }
+  .about-scroll { height: 500vh; }
+  .about-box { padding: 4vw 3vw; }
+  .about-headline { font-size: calc(clamp(3.5rem, 15vw, 6rem) + 10px); letter-spacing: -1px; line-height: 0.95; }
+  .about-oval-img { width: clamp(100px, 20vw, 130px); height: calc(clamp(150px, 30vw, 200px) + 15px); }
+  .about-thought { right: -2vw; bottom: 1vw; }
 }

@@ -74,3 +74,17 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 900px) {
+  .preloader--shrink .preloader__logo,
+  .preloader--fade .preloader__logo {
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader--shrink .preloader__logo,
+  .preloader--fade .preloader__logo {
+    left: 16px;
+  }
+}

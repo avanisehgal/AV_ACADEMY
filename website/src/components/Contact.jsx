@@ -53,6 +53,7 @@ export default function Contact() {
   const [showSuccess, setShowSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorText, setErrorText] = useState('')
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   const openForm = (type) => {
     setActiveForm(type)
@@ -106,11 +107,18 @@ export default function Contact() {
     <section id="contact" className="contact-premium-wrapper reveal" ref={ref}>
 
       {/* --- VIDEO BACKGROUND --- */}
-      <div className="contact-video-bg">
-        <video autoPlay loop muted playsInline>
+      <div className="contact-video-bg" style={{ backgroundColor: '#000000' }}>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          onCanPlay={() => setVideoLoaded(true)}
+          style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 0.6s ease' }}
+        >
           <source src="/landing_page_bg_video.mp4" type="video/mp4" />
         </video>
-        <div className="contact-video-overlay"></div>
+        <div className="contact-video-overlay" style={{ opacity: videoLoaded ? 1 : 0, transition: 'opacity 0.6s ease' }}></div>
       </div>
 
       {/* --- FLOATING GRAY BOX --- */}

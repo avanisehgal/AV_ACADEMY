@@ -83,6 +83,8 @@
     text-overflow: clip;
     will-change: transform, opacity; /* Hardware Acceleration */
   }
+
+  .yt-headline-break { display: inline; }
   
   /* Smoothing / Custom cubic-bezier animation */
   .yt-headline.reveal {
@@ -121,7 +123,7 @@
     gap: 15px;
     margin-bottom: 20px;
     padding-right: 5vw;
-    position: relative; /* Removed 'sticky' to eliminate overlap/clipping bugs natively */
+    position: relative; /* Fixed drifting bug */
     z-index: 50; /* Rigidly layer text above anything scrolling below */
   }
   
@@ -530,13 +532,185 @@
     .yt-row-header {
       flex-direction: column;
       align-items: flex-start;
-      gap: 15px; /* Increased gap to fix tight spacing issue */
+      gap: 15px;
     }
   }
-  
+
+  /* ═══════════════════════════════════════════════════════
+     YOUTUBE MOBILE — Priority: Premium Interactions
+     ═══════════════════════════════════════════════════════ */
   @media (max-width: 768px) {
+    .youtube-hub { overflow-x: clip; }
+
+    /* ── Section header ── */
+    .yt-identifier { padding: 40px 20px 0; }
+
+    /* ── Hero headline — allow wrap on mobile ── */
+    .yt-hero { padding: 16px 20px; }
+    .yt-headline {
+      font-size: calc(clamp(1.4rem, 7vw, 3rem) + 1rem);
+      white-space: normal !important;
+      word-break: break-word;
+      text-align: center;
+    }
+    .yt-headline-break { display: block; }
+    .yt-subtext { font-size: 0.9rem; padding: 0 4px; text-align: center; }
+
+    /* ── Row containers ── */
+    .yt-streamer-section { padding-top: 16px; padding-bottom: 24px; }
+    .yt-row-container { padding-left: 20px; margin-bottom: 36px; }
+    .yt-row-header { padding-right: 20px; margin-bottom: 14px; flex-direction: row; align-items: center; gap: 12px; }
+    .yt-row-num { font-size: calc(clamp(2.2rem, 7vw, 3rem) + 0.5rem); }
+    .yt-row-title { font-size: clamp(1rem, 4.5vw, 1.4rem); }
+    .yt-row-subtext { font-size: 0.8rem; }
+
+    /* ── Carousel — fluid momentum scrolling ── */
+    .yt-carousel {
+      padding-right: 20px;
+      gap: 14px;
+      padding-bottom: 16px;
+      /* Slightly stiffer snap keeps the "premium" feel on mobile */
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Card sizing — show 1.15 cards at edge to hint at scrollability */
+    .yt-card {
+      min-width: 260px;
+      width: clamp(260px, 74vw, 320px);
+      scroll-snap-align: start;
+    }
+
+    /* Card entry animation — cards fade+slide up as row enters viewport */
+    .yt-card.reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s cubic-bezier(0.25, 1, 0.5, 1),
+                  transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .yt-card.reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger card entries within each row */
+    .yt-carousel .yt-card:nth-child(1) { transition-delay: 0s; }
+    .yt-carousel .yt-card:nth-child(2) { transition-delay: 0.07s; }
+    .yt-carousel .yt-card:nth-child(3) { transition-delay: 0.14s; }
+    .yt-carousel .yt-card:nth-child(4) { transition-delay: 0.21s; }
+    .yt-carousel .yt-card:nth-child(5) { transition-delay: 0.28s; }
+
+    /* Touch-press scale — replaces hover on touch devices */
+    .yt-card:active {
+      transform: scale(0.97) !important;
+      transition: transform 0.12s ease !important;
+    }
+    .yt-card:active .yt-thumb-wrapper img {
+      transform: scale(1.04) !important;
+      filter: brightness(1.05) !important;
+    }
+    .yt-card:active .yt-play-overlay {
+      opacity: 1 !important;
+    }
+    .yt-card:active .yt-play-icon {
+      transform: scale(1) !important;
+    }
+
+    .yt-card-title { font-size: 0.9rem; }
+    .yt-thumb-wrapper { border-radius: 16px; }
+
+    /* ── Shorts section ── */
+    .yt-shorts-section { padding: 40px 0 40px 20px; }
+    .yt-shorts-header { padding-right: 20px; margin-bottom: 20px; }
+    .yt-shorts-title { font-size: calc(clamp(1.8rem, 7vw, 3rem) + 0.70rem); }
+    .yt-shorts-subtext { font-size: calc(clamp(1rem, 1.5vw, 1.2rem) - 0.15rem); }
+    .yt-shorts-carousel {
+      padding-right: 20px;
+      gap: 14px;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+    }
+
+    /* Short card sizing — show 2.3 at a time for clear swipability */
+    .yt-short-card-wrap {
+      min-width: 148px !important;
+      width: clamp(148px, 40vw, 210px) !important;
+      scroll-snap-align: start;
+    }
+
+    /* Short card entry animation */
+    .yt-short-card-wrap.reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                  transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .yt-short-card-wrap.reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .yt-shorts-carousel .yt-short-card-wrap:nth-child(1) { transition-delay: 0s; }
+    .yt-shorts-carousel .yt-short-card-wrap:nth-child(2) { transition-delay: 0.06s; }
+    .yt-shorts-carousel .yt-short-card-wrap:nth-child(3) { transition-delay: 0.12s; }
+    .yt-shorts-carousel .yt-short-card-wrap:nth-child(4) { transition-delay: 0.18s; }
+    .yt-shorts-carousel .yt-short-card-wrap:nth-child(5) { transition-delay: 0.24s; }
+
+    /* Short card press state */
+    .yt-short-card-wrap:active {
+      transform: scale(0.97) !important;
+      transition: transform 0.12s ease !important;
+    }
+    .yt-short-card-wrap:active .yt-short-thumb img {
+      transform: scale(1.05) !important;
+      filter: brightness(1.05) !important;
+    }
+    .yt-short-thumb { border-radius: 14px; }
+
+    /* ── Value cards grid ── */
+    .yt-value-grid-wrap { padding: 40px 20px; }
     .yt-value-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .yt-value-card {
+      padding: 18px 16px;
+      border-radius: 20px;
+      /* Entry animation */
+      transition: background 0.4s ease, transform 0.4s ease,
+                  box-shadow 0.4s ease, opacity 0.5s ease;
+    }
+    /* Touch press */
+    .yt-value-card:active {
+      transform: scale(0.97) translateY(-2px) !important;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.1) !important;
+    }
+    .yt-value-title { font-size: 0.85rem; }
+    .yt-value-desc  { font-size: 0.8rem; }
+
+    /* ── CTA footer ── */
+    .yt-cta-section { padding: 20px 20px 60px; }
+    .yt-cta-box { padding: 40px 20px; }
+    .yt-cta-text { font-size: clamp(1.5rem, 7vw, 2.5rem); margin-bottom: 24px; }
+    .yt-cta-btn {
+      padding: 16px 28px;
+      font-size: 0.92rem;
+      /* Haptic shrink on tap */
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    .yt-cta-btn:active {
+      transform: scale(0.95) !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .yt-value-grid { grid-template-columns: 1fr; }
+    .yt-card {
+      min-width: 230px;
+      width: clamp(230px, 80vw, 280px);
+    }
+    .yt-short-card-wrap {
+      min-width: 138px !important;
+      width: clamp(138px, 44vw, 190px) !important;
     }
   }
 

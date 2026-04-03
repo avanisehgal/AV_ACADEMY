@@ -88,7 +88,7 @@ export default function Youtube() {
 
       {/* 1. Hero / Hook */}
       <div className="yt-hero">
-        <h2 className="yt-headline reveal">Learn. Watch. Understand. Repeat.</h2>
+        <h2 className="yt-headline reveal">Learn. Watch.<span className="yt-headline-break"> Understand. Repeat.</span></h2>
         <p className="yt-subtext reveal">Simplifying complex variables into accessible victories. Maths, but make it easy.</p>
       </div>
 
@@ -132,7 +132,7 @@ export default function Youtube() {
       {/* 3. Shorts Breakout */}
       <div className="yt-shorts-section">
         <div className="yt-shorts-header reveal">
-          <h2 className="yt-shorts-title">Quick concepts.<br/>Faster understanding.</h2>
+          <h2 className="yt-shorts-title">Quick concepts.<br/><span style={{ whiteSpace: 'nowrap' }}>Faster understanding.</span></h2>
           <p className="yt-shorts-subtext">Scroll less. Learn more. Perfect for revision on the go.</p>
         </div>
         
