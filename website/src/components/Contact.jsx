@@ -158,7 +158,7 @@ export default function Contact() {
       {/* --- POPUP MODAL OVERLAY (Poppins / Vertical Curved Box) --- */}
       {activeForm && (
         <div className="contact-modal-overlay">
-          <div className="contact-modal-content" style={{ maxWidth: activeForm === 'privacy' ? '700px' : '420px' }}>
+          <div className="contact-modal-content" style={{ maxWidth: (activeForm === 'privacy' || activeForm === 'terms') ? '700px' : '420px' }}>
             <button className="contact-modal-close" onClick={closeForm}>&times;</button>
 
             {showSuccess ? (
@@ -242,6 +242,49 @@ export default function Contact() {
                   If you have any questions regarding this Privacy Policy, you can contact us at: <strong>avacademyedu@gmail.com</strong>
                 </p>
               </div>
+            ) : activeForm === 'terms' ? (
+              <div className="contact-modal-form poppins" style={{ padding: '30px', textAlign: 'left', maxHeight: '75vh', overflowY: 'auto' }}>
+                <h3 className="contact-modal-title" style={{ marginBottom: '20px', textAlign: 'left', color: '#ffffff' }}>Terms & Conditions</h3>
+                
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  By accessing and using AV Academy, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Use of Content</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  All content provided on this website, including videos, notes, and resources, is for educational purposes only. You may not copy, reproduce, or distribute content without permission.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>User Responsibility</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  You agree to use this website responsibly and not misuse any content or features. Any misuse may result in restricted access.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Accuracy of Information</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We strive to provide accurate and updated content, but we do not guarantee that all information is always complete or error-free.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>External Links</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  Our website may contain links to third-party platforms such as YouTube. We are not responsible for the content or policies of these external sites.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Limitation of Liability</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  AV Academy is not liable for any loss or damage resulting from the use of this website or reliance on its content.
+                </p>
+                
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Changes to Terms</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We may update these terms from time to time. Continued use of the website means you accept any updates.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Contact Us</h4>
+                <p style={{ marginBottom: '30px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  For any questions regarding these Terms & Conditions, contact: <strong>avacademyedu@gmail.com</strong>
+                </p>
+              </div>
             ) : null}
 
           </div>
@@ -287,14 +330,24 @@ export default function Contact() {
 
             <div className="contact-f__copy-block">
               <span className="contact-f__copy">© 2026 AV Academy.</span>
-              <button 
-                className="contact-f__privacy" 
-                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                onClick={(e) => { e.preventDefault(); openForm('privacy'); }}
-                data-hover
-              >
-                Privacy
-              </button>
+              <div style={{ display: 'flex', gap: '15px' }}>
+                <button 
+                  className="contact-f__privacy" 
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                  onClick={(e) => { e.preventDefault(); openForm('terms'); }}
+                  data-hover
+                >
+                  Terms
+                </button>
+                <button 
+                  className="contact-f__privacy" 
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                  onClick={(e) => { e.preventDefault(); openForm('privacy'); }}
+                  data-hover
+                >
+                  Privacy
+                </button>
+              </div>
             </div>
 
           </div>
