@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './About.css'
 
 const About = () => {
@@ -6,6 +6,24 @@ const About = () => {
   const overlayRef = useRef(null)
   const headlineRef = useRef(null)
   const boxWrapRef = useRef(null)
+
+  const [activeImgIndex, setActiveImgIndex] = useState(0)
+  
+  const images = [
+    '/image1.png',
+    '/image2.png',
+    '/image3.png',
+    '/image4.png',
+    '/image5.png',
+    '/image6.png'
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImgIndex((prev) => (prev + 1) % images.length)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     let ticking = false
@@ -120,8 +138,21 @@ const About = () => {
                </div>
 
                <div className="about-box-visual">
-                   <div className="about-oval-img">
-                     <img src="/logo.png" alt="Educator" />
+                   <div className="about-oval-container">
+                     <div className="about-oval-bg"></div>
+                     <div className="about-images-wrapper">
+                       {images.map((src, index) => {
+                         const isActive = index === activeImgIndex;
+                         return (
+                           <img 
+                             key={src}
+                             src={src} 
+                             alt={`Educator ${index + 1}`} 
+                             className={`about-dynamic-img img-${index + 1} ${isActive ? 'is-active' : ''}`}
+                           />
+                         )
+                       })}
+                     </div>
                    </div>
                    
                    {/* Thought Quote Moved Under Oval */}

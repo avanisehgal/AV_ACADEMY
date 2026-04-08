@@ -2,8 +2,10 @@
 .about-scroll {
   position: relative;
   width: 100%;
-  height: 400vh; /* 4 screens worth of scroll distance */
-  background-color: #ebe8df; /* 2 shades darker than var(--color-bg) */
+  height: 400vh;
+  /* 4 screens worth of scroll distance */
+  background-color: #ebe8df;
+  /* 2 shades darker than var(--color-bg) */
 }
 
 .about-sticky {
@@ -24,7 +26,8 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.65); /* Keeps white text legible and provides contrast */
+  filter: brightness(0.65);
+  /* Keeps white text legible and provides contrast */
 }
 
 /* Layer 2: Mask (Uses Lighten Blend Mode) */
@@ -36,8 +39,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  mix-blend-mode: lighten; /* Critical for video-in-text effect */
-  background-color: #ebe8df; /* 2 shades darker initial color */
+  mix-blend-mode: lighten;
+  /* Critical for video-in-text effect */
+  background-color: #ebe8df;
+  /* 2 shades darker initial color */
   color: var(--color-text-primary);
   pointer-events: none;
 }
@@ -48,10 +53,11 @@
   text-transform: uppercase;
   text-align: center;
   line-height: 0.9;
-  letter-spacing: -2px; /* tight modern look */
+  letter-spacing: -2px;
+  /* tight modern look */
   margin: 0;
   padding: 0 20px;
-  
+
   /* GPU Anti-Jitter/Tiling Fixes */
   transform-origin: center center;
   transform-style: preserve-3d;
@@ -60,7 +66,9 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.mobile-text { display: none; }
+.mobile-text {
+  display: none;
+}
 
 /* Layer 3: Glassmorphism Card Phase */
 .about-box-wrap {
@@ -75,12 +83,15 @@
 }
 
 .about-box {
-  background: rgba(247, 244, 239, 0.90); /* Reverted to the original cream/gray background color */
+  background: rgba(247, 244, 239, 0.90);
+  /* Reverted to the original cream/gray background color */
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.15); /* Original floating shadow */
-  border-radius: 40px; /* Original geometry restored or mixed with iOS 32px, let's keep 40px as original */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  /* Original floating shadow */
+  border-radius: 40px;
+  /* Original geometry restored or mixed with iOS 32px, let's keep 40px as original */
   max-width: 1100px;
   width: 100%;
   padding: 40px 50px 20px 50px;
@@ -91,8 +102,9 @@
 }
 
 .about-box:hover {
-  background: rgba(247, 244, 239, 0.95); /* Restored corresponding hover */
-  box-shadow: 0 35px 70px rgba(0,0,0,0.2); 
+  background: rgba(247, 244, 239, 0.95);
+  /* Restored corresponding hover */
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
 }
 
 /* Top half layout */
@@ -124,36 +136,136 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-right: 70px; /* extra space for the quote box pushed further right */
+  margin-right: 70px;
+  /* extra space for the quote box pushed further right */
 }
 
-.about-oval-img {
+/* 3D Oval Architecture */
+.about-oval-container {
+  position: relative;
   width: 240px;
-  height: 380px; /* increased length */
-  background: #e5e0d8;
-  border-radius: 120px; /* perfect vertical oval */
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  height: 380px;
+  /* No overflow:hidden to allow image top/shoulders to pop out */
 }
 
-.about-oval-img img {
-  width: 100%;
+.about-oval-bg {
+  position: absolute;
+  inset: 0;
+  background: #ebe8df;
+  border-radius: 120px;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.7), 0 15px 45px rgba(0, 0, 0, 0.08);
+  /* slight inner glow for depth */
+  z-index: 1;
+}
+
+.about-images-wrapper {
+  position: absolute;
+  /* Top negative value allows popping out completely over the top bound. */
+  top: -140px;
+  /* Massive side expansion to explicitly allow the arm and elements to bleed out horizontally */
+  left: -80px; 
+  right: -80px; 
+  bottom: 0;
+  z-index: 2;
+
+  /* Advanced composite CSS Mask allowing arbitrary top/lateral overflow while strictly curving the bottom 120px to perfectly match the 240px oval */
+  -webkit-mask-image: 
+    linear-gradient(black, black),
+    radial-gradient(120px 120px at 50% 0%, black 100%, transparent 100%);
+  mask-image: 
+    linear-gradient(black, black),
+    radial-gradient(120px 120px at 50% 0%, black 100%, transparent 100%);
+  -webkit-mask-size: 
+    100% calc(100% - 120px),
+    100% 120px;
+  mask-size: 
+    100% calc(100% - 120px),
+    100% 120px;
+  -webkit-mask-position: 
+    top left,
+    bottom left;
+  mask-position: 
+    top left,
+    bottom left;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.about-dynamic-img {
+  position: absolute;
+  bottom: -10px;
+  /* Slight sink so bottom edge matches oval cleanly */
+  /* Re-align offset to pixel absolute since wrapper is now 400px wide (-80 left, -80 right) */
+  left: 20px;
+  /* Wrapper starts at -80. -80 + 20 = -60 relative exactly identical to previous padding */
+  width: 360px;
+  /* Massive size scale-up locked to exact px dimension to preserve tuning perfectly */
   height: 100%;
-  object-fit: cover;
-  padding: 85px 40px; /* Squeezed padding to fit the logo as a smaller inner circle */
+  object-fit: contain;
+  object-position: bottom center;
+  transform-origin: bottom center;
+  /* Hidden state (Dissolve fade) */
+  opacity: 0;
+  transform: scale(1.1) translateY(0);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.about-dynamic-img.is-active {
+  /* Active state */
+  opacity: 1;
+  transform: scale(1.22) translateY(0);
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+  pointer-events: auto;
+}
+
+/* Individual Image Overrides */
+/* Individual Image Overrides */
+/* image 1: shift rightwards to center */
+.img-1.is-active {
+  transform: scale(1.29) translate(4%, 0);
+}
+
+/* image 2: decreased by 0.75rem (from 1.24) */
+.img-2.is-active {
+  transform: scale(1.21) translateY(0);
+}
+
+/* image 3: perfectly center and shrink slightly so hand isn't cut off inside */
+.img-3.is-active {
+  transform: scale(1.19) translate(8%, 0);
+}
+
+/* image 4: decreased size by 0.5rem (from base 1.22) */
+.img-4.is-active {
+  transform: scale(1.20) translateY(0);
+}
+
+/* image 5: shift rightwards to center */
+.img-5.is-active {
+  transform: scale(1.20) translate(5%, 0);
+}
+
+/* image 6: increased by 1rem */
+.img-6.is-active {
+  transform: scale(1.26) translateY(0);
 }
 
 /* Thought Quote Style (Now overlapping right side of oval) */
 .about-thought {
   position: absolute;
-  bottom: 40px;
-  right: -80px; /* moved further to the right */
+  bottom: -10px;
+  right: -80px;
+  z-index: 10; /* High z-index effectively forces it to overlap all wrapper and image layers */
   background: #fdfdfd;
-  border: 1px solid rgba(0,0,0,0.06);
-  padding: 12px 16px; /* tighter padding */
-  border-radius: 16px; 
-  width: 170px; /* remarkably smaller width */
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px 16px;
+  /* tighter padding */
+  border-radius: 16px;
+  width: 170px;
+  /* remarkably smaller width */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 .thought-quote-mark {
@@ -162,14 +274,15 @@
   left: 8px;
   font-family: 'Times New Roman', serif;
   font-size: 2rem;
-  color: rgba(0,0,0,0.12);
+  color: rgba(0, 0, 0, 0.12);
   line-height: 1;
 }
 
 .thought-text {
   font-family: 'Poppins', sans-serif;
   font-style: italic;
-  font-size: 0.72rem; /* notably smaller font size */
+  font-size: 0.72rem;
+  /* notably smaller font size */
   color: #555;
   margin: 0;
   line-height: 1.4;
@@ -178,8 +291,10 @@
 /* Bottom Half Horizontal Bullets */
 .about-box-bottom {
   width: 100%;
-  border-top: 1px solid rgba(0,0,0,0.08); /* Clean horizontal dividing line */
-  padding-top: 15px; /* squeezed layout */
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  /* Clean horizontal dividing line */
+  padding-top: 15px;
+  /* squeezed layout */
 }
 
 .about-list-horizontal {
@@ -198,7 +313,8 @@
   align-items: center;
   gap: 10px;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(0.75rem, 0.9vw, 0.85rem); /* remarkably tiny to save space */
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  /* remarkably tiny to save space */
   font-weight: 500;
   color: #333;
 }
@@ -222,15 +338,18 @@
     border-radius: 28px;
     gap: 2vw;
   }
+
   .about-box-top {
     /* Maintained horizontal row from desktop */
     flex-direction: row;
     align-items: center;
     gap: 3vw;
   }
+
   .about-box-text {
     flex: 1.5;
   }
+
   .about-box-visual {
     flex: 1;
     margin-right: 2vw;
@@ -239,38 +358,87 @@
     align-items: center;
     justify-content: center;
   }
-  .desktop-text { display: none; }
-  .mobile-text { display: inline; }
-  .about-oval-img {
-    width: clamp(140px, 18vw, 240px);
-    height: calc(clamp(210px, 28vw, 380px) + 15px);
+
+  .desktop-text {
+    display: none;
   }
-  .about-oval-img img {
-    padding: 20% 10%;
+
+  .mobile-text {
+    display: inline;
   }
+
+  /* MOBILE SPECIFIC IMAGE SCALE OVERRIDES */
+  .img-1.is-active { transform: scale(1.30) translate(4%, 0); } /* Decreased by ~0.65rem */
+  .img-2.is-active { transform: scale(1.24) translateY(0); } /* +0.25rem approx */
+  .img-3.is-active { transform: scale(1.23) translate(8%, 0); } /* +0.35rem approx */
+  .img-4.is-active { transform: scale(1.22) translateY(0); } /* +0.15rem approx */
+  .img-5.is-active { transform: scale(1.23) translate(5%, 0); } /* +0.25rem approx */
+  .img-6.is-active { transform: scale(1.27) translateY(0); } /* Decreased by ~0.65rem */
+
+  .about-oval-container {
+    width: 140px;
+    height: 220px;
+  }
+
+  .about-oval-bg {
+    border-radius: 70px;
+  }
+
+  .about-images-wrapper {
+    top: -60px;
+    /* Re-introduce expansive boundaries matched to pixel ratios for proper bleed */
+    left: -40px;
+    right: -40px;
+    bottom: 0;
+    overflow: visible;
+    
+    /* Exact replica of desktop geometric mask dynamically scaled to the new 140px parameter */
+    -webkit-mask-image: 
+      linear-gradient(black, black),
+      radial-gradient(70px 70px at 50% 0%, black 100%, transparent 100%);
+    -webkit-mask-size: 
+      100% calc(100% - 70px),
+      100% 70px;
+    -webkit-mask-position: top left, bottom left;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  .about-dynamic-img {
+    /* Exact equivalent proportional offsets to match 1.5x width scaling against 140px */
+    width: 210px;
+    left: 5px;
+    bottom: -5px;
+  }
+
   .about-thought {
     position: absolute;
-    bottom: 2vw;
-    right: -4vw;
-    width: clamp(100px, 12vw, 170px);
-    padding: 1vw;
+    bottom: -18px; 
+    right: -15px; /* Shifted horizontally LEFT by ~0.5rem from previous equivalent (-5vw -> -25px -> -15px approx calculation) */
+    width: clamp(80px, 12vw, 140px); 
+    padding: 0.8vw; 
+    z-index: 10;
   }
+
   .thought-quote-mark {
-    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Reduced mark size */
   }
+
   .thought-text {
-    font-size: clamp(0.5rem, 0.7vw, 0.72rem);
+    font-size: clamp(0.45rem, 0.6vw, 0.55rem); /* Substantially reduced text size */
   }
+
   .about-list-horizontal {
     /* Maintained horizontal list */
     flex-direction: row;
     justify-content: space-between;
     gap: 1vw;
   }
+
   .about-list-horizontal li {
     font-size: clamp(0.5rem, 0.8vw, 0.85rem);
     gap: 5px;
   }
+
   .about-bio {
     font-size: clamp(0.7rem, 1vw, 1.15rem);
     margin-bottom: 1vw;
@@ -278,11 +446,63 @@
 }
 
 @media (max-width: 480px) {
-  .desktop-text { display: none; }
-  .mobile-text { display: inline; }
-  .about-scroll { height: 500vh; }
-  .about-box { padding: 4vw 3vw; }
-  .about-headline { font-size: calc(clamp(3.5rem, 15vw, 6rem) + 10px); letter-spacing: -1px; line-height: 0.95; }
-  .about-oval-img { width: clamp(100px, 20vw, 130px); height: calc(clamp(150px, 30vw, 200px) + 15px); }
-  .about-thought { right: -2vw; bottom: 1vw; }
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: inline;
+  }
+
+  .about-scroll {
+    height: 500vh;
+  }
+
+  .about-box {
+    padding: 4vw 3vw;
+  }
+
+  .about-headline {
+    font-size: calc(clamp(3.5rem, 15vw, 6rem) + 10px);
+    letter-spacing: -1px;
+    line-height: 0.95;
+  }
+
+  .about-oval-container {
+    width: 100px;
+    height: 160px;
+  }
+
+  .about-oval-bg {
+    border-radius: 50px;
+  }
+
+  .about-images-wrapper {
+    top: -50px;
+    left: -30px;
+    right: -30px;
+    bottom: 0;
+    overflow: visible;
+
+    -webkit-mask-image: 
+      linear-gradient(black, black),
+      radial-gradient(50px 50px at 50% 0%, black 100%, transparent 100%);
+    -webkit-mask-size: 
+      100% calc(100% - 50px),
+      100% 50px;
+    -webkit-mask-position: top left, bottom left;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  .about-dynamic-img {
+    width: 150px;
+    left: 5px;
+    bottom: -5px;
+  }
+
+  .about-thought {
+    right: -10px; /* Adjusted leftward horizontally from previous edge layout */
+    bottom: -18px; 
+    z-index: 10;
+  }
 }

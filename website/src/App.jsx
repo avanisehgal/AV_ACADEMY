@@ -27,7 +27,13 @@ export default function App() {
     if (!isLoaded) return
     const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      (entries) => entries.forEach((e) => { 
+        if (e.isIntersecting) {
+          e.target.classList.add('visible')
+        } else {
+          e.target.classList.remove('visible')
+        }
+      }),
       { threshold: 0.12 }
     )
     elements.forEach((el) => observer.observe(el))

@@ -158,7 +158,7 @@ export default function Contact() {
       {/* --- POPUP MODAL OVERLAY (Poppins / Vertical Curved Box) --- */}
       {activeForm && (
         <div className="contact-modal-overlay">
-          <div className="contact-modal-content">
+          <div className="contact-modal-content" style={{ maxWidth: activeForm === 'privacy' ? '700px' : '420px' }}>
             <button className="contact-modal-close" onClick={closeForm}>&times;</button>
 
             {showSuccess ? (
@@ -203,6 +203,45 @@ export default function Contact() {
                   {isSubmitting ? 'Sending...' : 'Submit Proposal'}
                 </button>
               </form>
+            ) : activeForm === 'privacy' ? (
+              <div className="contact-modal-form poppins" style={{ padding: '30px', textAlign: 'left', maxHeight: '75vh', overflowY: 'auto' }}>
+                <h3 className="contact-modal-title" style={{ marginBottom: '20px', textAlign: 'left', color: '#ffffff' }}>Privacy Policy</h3>
+                
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We respect your privacy and are committed to protecting your personal information. This page explains what data we collect and how we use it.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Information We Collect</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We may collect basic information such as your name, email address, and any message you send through the contact form. We may also collect basic usage data such as how you interact with the website to improve your experience.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>How We Use Your Information</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We use your information to respond to your queries, improve our content, and enhance your learning experience. We do not use your data for anything unrelated to your interaction with the platform.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Third-Party Services</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  Our website may use third-party platforms such as YouTube for video content and analytics tools to understand user behavior. These platforms may collect basic usage data as per their own policies.
+                </p>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Data Protection</h4>
+                <p style={{ marginBottom: '20px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  We take reasonable steps to protect your data and ensure it is handled securely. We do not sell, trade, or misuse your personal information.
+                </p>
+                
+                <div style={{ padding: '16px', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '8px', marginBottom: '24px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <p style={{ fontSize: '15px', color: '#ffffff', fontWeight: '500', margin: 0, textAlign: 'center' }}>
+                    We don’t spam. We don’t sell your data. We just use it to make learning better.
+                  </p>
+                </div>
+
+                <h4 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '8px', color: '#ffffff' }}>Contact Us</h4>
+                <p style={{ marginBottom: '30px', fontSize: '15px', color: 'rgba(255,255,255,0.8)', lineHeight: '1.6' }}>
+                  If you have any questions regarding this Privacy Policy, you can contact us at: <strong>avacademyedu@gmail.com</strong>
+                </p>
+              </div>
             ) : null}
 
           </div>
@@ -248,7 +287,14 @@ export default function Contact() {
 
             <div className="contact-f__copy-block">
               <span className="contact-f__copy">© 2026 AV Academy.</span>
-              <a href="#" className="contact-f__privacy" data-hover>Privacy</a>
+              <button 
+                className="contact-f__privacy" 
+                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                onClick={(e) => { e.preventDefault(); openForm('privacy'); }}
+                data-hover
+              >
+                Privacy
+              </button>
             </div>
 
           </div>
