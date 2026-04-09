@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Cursor from './components/Cursor'
 import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
@@ -52,6 +53,7 @@ export default function App() {
         <Youtube />
         <Contact />
       </main>
+      <Analytics />
     </>
   )
 }
