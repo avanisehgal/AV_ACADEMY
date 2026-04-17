@@ -1,0 +1,242 @@
+[
+{
+"question": "Let $A = \\{1, 2, 3\\}$. The total number of different relations that can be defined on $A$ is:",
+"options": ["A. $2^3$", "B. $2^6$", "C. $2^9$", "D. $3^2$"],
+"answer": "C. $2^9$",
+"explanation": "The number of relations on a set with $n$ elements is given by $2^{n^2}$. For $n=3$, the total number is $2^{3^2} = 2^9$."
+},
+{
+"question": "A relation $R$ in a set $A$ is called an equivalence relation if it is:",
+"options": ["A. Reflexive and Symmetric only", "B. Symmetric and Transitive only", "C. Reflexive, Symmetric, and Transitive", "D. Reflexive and Transitive only"],
+"answer": "C. Reflexive, Symmetric, and Transitive",
+"explanation": "By definition, an equivalence relation must satisfy the properties of reflexivity, symmetry, and transitivity."
+},
+{
+"question": "Let $R$ be a relation on the set $\\mathbb{N}$ defined by $xRy$ if $x + 2y = 8$. The domain of $R$ is:",
+"options": ["A. $\\{2, 4, 8\\}$", "B. $\\{2, 4, 6\\}$", "C. $\\{1, 2, 3, 4\\}$", "D. $\\{2, 4\\}$"],
+"answer": "B. $\\{2, 4, 6\\}$",
+"explanation": "Since $x, y \\in \\mathbb{N}$, possible values for $y$ are 1, 2, 3 (as $y=4$ makes $x=0 \\notin \\mathbb{N}$). For $y=1, x=6$; $y=2, x=4$; $y=3, x=2$. The domain is $\\{2, 4, 6\\}$."
+},
+{
+"question": "The number of reflexive relations on a set with $n$ elements is:",
+"options": ["A. $2^n$", "B. $2^{n^2 - n}$", "C. $2^{n^2}$", "D. $n^2$"],
+"answer": "B. $2^{n^2 - n}$",
+"explanation": "In a reflexive relation, the $n$ diagonal elements $(a, a)$ must be present. The remaining $n^2 - n$ elements can either be in the relation or not, leading to $2^{n^2-n}$ possibilities."
+},
+{
+"question": "If $A = \\{1, 2, 3\\}$, how many equivalence relations can be defined containing $(1, 2)$?",
+"options": ["A. 1", "B. 2", "C. 3", "D. 5"],
+"answer": "B. 2",
+"explanation": "The equivalence relations are $R_1 = \\{(1,1), (2,2), (3,3), (1,2), (2,1)\\}$ and $R_2 = A \\times A$ (the universal relation)."
+},
+{
+"question": "The void (empty) relation on a non-empty set $A$ is:",
+"options": ["A. Reflexive", "B. Symmetric and Transitive", "C. Reflexive and Symmetric", "D. None of these"],
+"answer": "B. Symmetric and Transitive",
+"explanation": "The empty relation is symmetric ($aRb \\implies bRa$ is vacuously true) and transitive, but not reflexive since $(a, a) \\notin \\emptyset$."
+},
+{
+"question": "Let $L$ be the set of all lines in a plane and $R$ be the relation in $L$ defined as $R = \\{(L_1, L_2) : L_1 \\perp L_2\\}$. Then $R$ is:",
+"options": ["A. Reflexive", "B. Symmetric", "C. Transitive", "D. Equivalence"],
+"answer": "B. Symmetric",
+"explanation": "If $L_1 \\perp L_2$, then $L_2 \\perp L_1$ (symmetric). It is not reflexive (no line is $\\perp$ to itself) nor transitive (if $L_1 \\perp L_2$ and $L_2 \\perp L_3$, then $L_1 \\parallel L_3$)."
+},
+{
+"question": "If $A = \\{a, b, c, d\\}$, then the relation $R = \\{(a, a), (b, b), (c, c), (d, d)\\}$ is:",
+"options": ["A. Only Reflexive", "B. Only Symmetric", "C. Only Transitive", "D. All of the above"],
+"answer": "D. All of the above",
+"explanation": "This is the identity relation, which is reflexive, symmetric, and transitive, making it an equivalence relation."
+},
+{
+"question": "Let $R = \\{(x, y) : x^2 + y^2 = 1, x, y \\in \\mathbb{R}\\}$. The relation $R$ is:",
+"options": ["A. Reflexive", "B. Symmetric", "C. Transitive", "D. Anti-symmetric"],
+"answer": "B. Symmetric",
+"explanation": "If $(x, y) \\in R$, then $x^2 + y^2 = 1$, which implies $y^2 + x^2 = 1$, so $(y, x) \\in R$."
+},
+{
+"question": "If $n(A) = m$, the number of symmetric relations on $A$ is:",
+"options": ["A. $2^{m^2}$", "B. $2^{m(m+1)/2}$", "C. $2^{m(m-1)/2}$", "D. $m^2$"],
+"answer": "B. $2^{m(m+1)/2}$",
+"explanation": "Symmetry is determined by the $m$ diagonal elements and the $m(m-1)/2$ pairs of off-diagonal elements. Total independent choices = $m + m(m-1)/2 = m(m+1)/2$."
+},
+{
+"question": "The function $f: \\mathbb{R} \\to \\mathbb{R}$ defined by $f(x) = x^2$ is:",
+"options": ["A. One-one and onto", "B. Onto but not one-one", "C. One-one but not onto", "D. Neither one-one nor onto"],
+"answer": "D. Neither one-one nor onto",
+"explanation": "$f(1)=f(-1)=1$ (not one-one) and the range is $[0, \\infty)$, which does not equal the co-domain \\mathbb{R} (not onto)."
+},
+{
+"question": "Let $A$ have 3 elements and $B$ have 4 elements. The number of injective (one-one) functions from $A$ to $B$ is:",
+"options": ["A. 12", "B. 24", "C. 64", "D. 81"],
+"answer": "B. 24",
+"explanation": "The number of one-one functions is $^nP_m = ^4P_3 = 4 \\times 3 \\times 2 = 24$."
+},
+{
+"question": "A function $f: X \\to Y$ is surjective (onto) if and only if:",
+"options": ["A. Range of $f = Y$", "B. Range of $f \\subset Y$", "C. $X = Y$", "D. $f$ is one-one"],
+"answer": "A. Range of $f = Y$",
+"explanation": "By definition, a function is onto if its range covers the entire co-domain $Y$."
+},
+{
+"question": "The function $f: \\mathbb{N} \\to \\mathbb{N}$ given by $f(n) = 2n + 3$ is:",
+"options": ["A. Surjective but not injective", "B. Injective but not surjective", "C. Bijective", "D. Neither injective nor surjective"],
+"answer": "B. Injective but not surjective",
+"explanation": "Different $n$ give different values (injective). However, $f(n)=1$ or $f(n)=2$ is impossible in $\\mathbb{N}$, so it's not surjective."
+},
+{
+"question": "If $n(A) = 3$ and $n(B) = 2$, the number of onto functions from $A$ to $B$ is:",
+"options": ["A. 8", "B. 6", "C. 4", "D. 0"],
+"answer": "B. 6",
+"explanation": "Total functions = $2^3 = 8$. Only two functions are not onto (all map to first element or all to second). $8 - 2 = 6$."
+},
+{
+"question": "The function $f(x) = |x|$ from $\\mathbb{R} \\to \\mathbb{R}$ is:",
+"options": ["A. One-one", "B. Onto", "C. Many-one and into", "D. Bijective"],
+"answer": "C. Many-one and into",
+"explanation": "$f(1)=f(-1)=1$ (many-one) and range is $[0, \\infty) \\subset \\mathbb{R}$ (into)."
+},
+{
+"question": "Find the range of $f(x) = \\frac{x}{1 + |x|}$ for $x \\in \\mathbb{R}$:",
+"options": ["A. $\\mathbb{R}$", "B. $(-1, 1)$", "C. $[-1, 1]$", "D. $(0, 1)$"],
+"answer": "B. $(-1, 1)$",
+"explanation": "For $x \\ge 0, f(x) = x/(1+x) \\in [0, 1)$. For $x < 0, f(x) = x/(1-x) \\in (-1, 0)$. Combined range is $(-1, 1)$."
+},
+{
+"question": "The Greatest Integer Function $f(x) = [x]$ is:",
+"options": ["A. Continuous everywhere", "B. Bijective", "C. Neither one-one nor onto on \\mathbb{R}", "D. One-one but not onto"],
+"answer": "C. Neither one-one nor onto on \\mathbb{R}",
+"explanation": "$f(1.1) = f(1.9) = 1$ (many-one) and range is the set of integers $\\mathbb{Z} \\neq \\mathbb{R} (not onto)."
+},
+{
+"question": "Let $f: A \\to B$ and $n(A) = 5, n(B) = 6$. The number of bijective functions is:",
+"options": ["A. $5!$", "B. $6!$", "C. 0", "D. $6^5$"],
+"answer": "C. 0",
+"explanation": "A bijection can only exist between sets of equal cardinality. Since $5 \\neq 6$, no such function exists."
+},
+{
+"question": "The function $f: \\mathbb{R} \\to \\mathbb{R}$ defined by $f(x) = \\sin x$ is bijective if the domain is restricted to:",
+"options": ["A. $[0, \\pi]$", "B. $[-\\pi/2, \\pi/2]$", "C. $[-\\pi, \\pi]$", "D. $(0, \\pi)$"],
+"answer": "B. $[-\\pi/2, \\pi/2]$",
+"explanation": "This is the standard principal value branch where the sine function is strictly monotonic and maps to $[-1, 1]$."
+},
+{
+"question": "If $f(x) = x + 7$ and $g(x) = x - 7$, then $(f \\circ g)(x)$ is:",
+"options": ["A. $x$", "B. $x + 14$", "C. $x - 14$", "D. $x^2 - 49$"],
+"answer": "A. $x$",
+"explanation": "$(f \\circ g)(x) = f(g(x)) = f(x - 7) = (x - 7) + 7 = x$."
+},
+{
+"question": "If $f(x) = 8x^3$ and $g(x) = x^{1/3}$, find $g(f(x))$:",
+"options": ["A. $8x$", "B. $2x$", "C. $x$", "D. $4x$"],
+"answer": "B. $2x$",
+"explanation": "$g(f(x)) = g(8x^3) = (8x^3)^{1/3} = 2x$."
+},
+{
+"question": "The inverse of the function $f(x) = \\frac{x-1}{x+1}$ ($x \\neq -1$) is:",
+"options": ["A. $\\frac{1+x}{1-x}$", "B. $\\frac{x+1}{x-1}$", "C. $\\frac{1-x}{1+x}$", "D. $\\frac{x+1}{1-x}$"],
+"answer": "A. $\\frac{1+x}{1-x}$",
+"explanation": "Let $y = (x-1)/(x+1) \\implies yx + y = x - 1 \\implies y + 1 = x(1 - y) \\implies x = (1+y)/(1-y)$."
+},
+{
+"question": "If $f(x) = 2x + 3$, then $f^{-1}(x)$ is:",
+"options": ["A. $\\frac{x-3}{2}$", "B. $3x + 2$", "C. $\\frac{x+3}{2}$", "D. $2x - 3$"],
+"answer": "A. $\\frac{x-3}{2}$",
+"explanation": "Let $y = 2x + 3 \\implies y - 3 = 2x \\implies x = (y - 3)/2$."
+},
+{
+"question": "If $f$ is a bijection, then $(f^{-1})^{-1}$ is:",
+"options": ["A. $f^{-1}$", "B. $f$", "C. Identity function", "D. None of these"],
+"answer": "B. $f$",
+"explanation": "The inverse of an inverse function returns the original function."
+},
+{
+"question": "Let $f: \\mathbb{R} \\to \\mathbb{R}$ be given by $f(x) = (3 - x^3)^{1/3}$. Then $f(f(x))$ is:",
+"options": ["A. $x^{1/3}$", "B. $x^3$", "C. $x$", "D. $3 - x^3$"],
+"answer": "C. $x$",
+"explanation": "$f(f(x)) = (3 - ((3 - x^3)^{1/3})^3)^{1/3} = (3 - (3 - x^3))^{1/3} = (x^3)^{1/3} = x$."
+},
+{
+"question": "If $f: A \\to B$ and $g: B \\to C$ are one-one and onto, then $(g \\circ f)^{-1}$ is:",
+"options": ["A. $g^{-1} \\circ f^{-1}$", "B. $f^{-1} \\circ g^{-1}$", "C. $f \\circ g$", "D. $g \\circ f$"],
+"answer": "B. $f^{-1} \\circ g^{-1}$",
+"explanation": "The inverse of a composition follows the reversal law: $(g \\circ f)^{-1} = f^{-1} \\circ g^{-1}$."
+},
+{
+"question": "Find the domain of $f(x) = \\frac{1}{\\sqrt{x^2 - 1}}$:",
+"options": ["A. $(-1, 1)$", "B. $(-\\infty, -1) \\cup (1, \\infty)$", "C. $\\mathbb{R} - \\{-1, 1\\}$", "D. $[1, \\infty)$"],
+"answer": "B. $(-\\infty, -1) \\cup (1, \\infty)$",
+"explanation": "Requires $x^2 - 1 > 0 \\implies |x| > 1 \\implies x \\in (-\\infty, -1) \\cup (1, \\infty)$."
+},
+{
+"question": "The function $f(x) = e^x$ is:",
+"options": ["A. One-one but not onto on $\\mathbb{R}$", "B. Onto but not one-one", "C. Bijective on \\mathbb{R}", "D. Neither one-one nor onto"],
+"answer": "A. One-one but not onto on $\\mathbb{R}$",
+"explanation": "Exponential is injective as $e^x$ is strictly increasing. Range is $(0, \\infty)$, missing negative values in co-domain \\mathbb{R}, so not onto."
+},
+{
+"question": "If $f(x) = \\frac{x+1}{x-1}$, then $f(f(x))$ is equal to:",
+"options": ["A. $x$", "B. $1/x$", "C. $-x$", "D. 1"],
+"answer": "A. $x$",
+"explanation": "$f(f(x)) = \\frac{((x+1)/(x-1)) + 1}{((x+1)/(x-1)) - 1} = \\frac{(x+1) + (x-1)}{(x+1) - (x-1)} = \\frac{2x}{2} = x$."
+},
+{
+"question": "Assertion (A): Every even function is many-one. Reason (R): $f(x) = f(-x)$ for even functions.",
+"options": ["A. Both A and R are true and R is the correct explanation of A.", "B. Both A and R are true but R is NOT the explanation.", "C. A is true but R is false.", "D. A is false but R is true."],
+"answer": "A. Both A and R are true and R is the correct explanation of A.",
+"explanation": "Since $f(x) = f(-x)$, different inputs $x$ and $-x$ yield the same output, proving the function is many-one."
+},
+{
+"question": "The number of binary operations on a set $\\{a, b\\}$ is:",
+"options": ["A. 2", "B. 4", "C. 16", "D. 8"],
+"answer": "C. 16",
+"explanation": "Number of binary operations on a set with $n$ elements is $n^{n^2}$. For $n=2$, it's $2^{2^2} = 2^4 = 16$."
+},
+{
+"question": "Domain of $f(x) = \\sin^{-1}(x)$ is:",
+"options": ["A. $(-1, 1)$", "B. $[-\\pi/2, \\pi/2]$", "C. $[-1, 1]$", "D. $[0, \\pi]$"],
+"answer": "C. $[-1, 1]$",
+"explanation": "The inverse sine function is defined for values between -1 and 1 inclusive."
+},
+{
+"question": "If $R$ is a relation on set $A$, and $R = R^{-1}$, then $R$ is:",
+"options": ["A. Reflexive", "B. Symmetric", "C. Transitive", "D. Equivalence"],
+"answer": "B. Symmetric",
+"explanation": "The condition $R = R^{-1}$ means $(a, b) \\in R \\iff (b, a) \\in R$, which is the definition of a symmetric relation."
+},
+{
+"question": "If $f(x) = \\log(\\frac{1-x}{1+x})$, then $f(\\frac{2x}{1+x^2})$ is:",
+"options": ["A. $f(x)$", "B. $2f(x)$", "C. $[f(x)]^2$", "D. $-f(x)$"],
+"answer": "B. $2f(x)$",
+"explanation": "Substitution gives $\\log(\\frac{1 - 2x/(1+x^2)}{1 + 2x/(1+x^2)}) = \\log(\\frac{1+x^2-2x}{1+x^2+2x}) = \\log((\\frac{1-x}{1+x})^2) = 2\\log(\\frac{1-x}{1+x}) = 2f(x)$."
+},
+{
+"question": "A relation $R$ is defined on $\\mathbb{Z}$ as $aRb$ if $a - b$ is divisible by $n$. This relation is:",
+"options": ["A. Reflexive only", "B. Symmetric only", "C. Equivalence relation", "D. Anti-symmetric"],
+"answer": "C. Equivalence relation",
+"explanation": "This is congruence modulo $n$, which is reflexive ($0$ is div by $n$), symmetric (if $a-b$ div, then $b-a$ div), and transitive."
+},
+{
+"question": "Which of the following is an identity function?",
+"options": ["A. $f(x) = 1$", "B. $f(x) = x$", "C. $f(x) = 0$", "D. $f(x) = |x|$"],
+"answer": "B. $f(x) = x$",
+"explanation": "An identity function maps every element exactly to itself."
+},
+{
+"question": "The range of $f(x) = \\frac{x^2}{1 + x^2}$ is:",
+"options": ["A. $[0, 1)$", "B. $(0, 1)$", "C. $[0, 1]$", "D. $\\mathbb{R}$"],
+"answer": "A. $[0, 1)$",
+"explanation": "$x^2 \\ge 0 \\implies f(x) \\ge 0$. Since $x^2 < 1+x^2$ for all $x$, $f(x) < 1$. Range is $[0, 1)$."
+},
+{
+"question": "If $f: \\mathbb{R} \\to \\mathbb{R}$ is defined by $f(x) = 3x - 4$, then $f$ is:",
+"options": ["A. Bijective", "B. Not injective", "C. Not surjective", "D. None of these"],
+"answer": "A. Bijective",
+"explanation": "Linear functions on $\\mathbb{R}$ are both one-one and onto."
+},
+{
+"question": "Total number of onto functions from $\\{1, 2, ..., n\\}$ to $\\{a, b\\}$ is:",
+"options": ["A. $2^n$", "B. $2^n - 2$", "C. $2^{n-1}$", "D. $n^2$"],
+"answer": "B. $2^n - 2$",
+"explanation": "Total functions are $2^n$. Subtract the 2 constant functions (all map to $a$ or all map to $b$) which are not onto."
+}
+]

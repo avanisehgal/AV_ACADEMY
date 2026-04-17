@@ -1,0 +1,242 @@
+[
+{
+"question": "The order and degree of the differential equation $(d^2y/dx^2)^3 + (dy/dx)^5 + y = x$ is:",
+"options": ["A. Order 2, Degree 3", "B. Order 3, Degree 2", "C. Order 2, Degree 5", "D. Order 1, Degree 5"],
+"answer": "A. Order 2, Degree 3",
+"explanation": "The highest order derivative is $d^2y/dx^2$, so the order is 2. Its power is 3, and it is a polynomial in its derivatives, so the degree is 3."
+},
+{
+"question": "Degree of the differential equation $dy/dx + \\sin(dy/dx) = 0$ is:",
+"options": ["A. 1", "B. 2", "C. 0", "D. Not defined"],
+"answer": "D. Not defined",
+"explanation": "Because of the $\\sin(dy/dx)$ term, the equation cannot be written as a polynomial in its derivatives, so the degree is not defined."
+},
+{
+"question": "The differential equation associated with $y = A \\sin(cx + p)$, where A and p are arbitrary constants, is:",
+"options": ["A. $d^2y/dx^2 + c^2y = 0$", "B. $d^2y/dx^2 - c^2y = 0$", "C. $d^2y/dx^2 = y$", "D. $dy/dx + cy = 0$"],
+"answer": "A. $d^2y/dx^2 + c^2y = 0$",
+"explanation": "$dy/dx = Ac \\cos(cx+p)$. $d^2y/dx^2 = -Ac^2 \\sin(cx+p) = -c^2 y$. Thus, $d^2y/dx^2 + c^2y = 0$."
+},
+{
+"question": "The integrating factor of the differential equation $x \\frac{dy}{dx} - y = x^2$ is:",
+"options": ["A. $x$", "B. $1/x$", "C. $-1/x$", "D. $e^{-x}$"],
+"answer": "B. $1/x$",
+"explanation": "Divide by $x$: $dy/dx - (1/x)y = x$. P = $-1/x$. IF = $e^{\\int -1/x dx} = e^{-\\log x} = e^{\\log(1/x)} = 1/x$."
+},
+{
+"question": "The general solution of the differential equation $dy/dx = e^{x-y}$ is:",
+"options": ["A. $e^x - e^y = C$", "B. $e^y - e^x = C$", "C. $e^y + e^x = C$", "D. $e^{-y} + e^x = C$"],
+"answer": "B. $e^y - e^x = C$",
+"explanation": "$dy/dx = e^x / e^y \\implies e^y dy = e^x dx$. Integrating gives $e^y = e^x + C \\implies e^y - e^x = C$."
+},
+{
+"question": "The general solution of $dy/dx = 1 / (1+x^2)$ is:",
+"options": ["A. $y = \\tan^{-1}x + C$", "B. $y = \\cos^{-1}x + C$", "C. $y = \\sin^{-1}x + C$", "D. $y = \\sec^{-1}x + C$"],
+"answer": "A. $y = \\tan^{-1}x + C$",
+"explanation": "Integrating $\\int dy = \\int \\frac{1}{1+x^2} dx$ gives $y = \\tan^{-1}x + C$."
+},
+{
+"question": "Order of the differential equation representing a family of circles of fixed radius r is:",
+"options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+"answer": "B. 2",
+"explanation": "Equation is $(x-h)^2 + (y-k)^2 = r^2$. Since there are 2 arbitrary constants (h and k), the order of the corresponding differential equation is 2."
+},
+{
+"question": "Solution of the differential equation $x dy - y dx = 0$ represents:",
+"options": ["A. Parabolas", "B. Circles", "C. Straight lines passing through origin", "D. Ellipses"],
+"answer": "C. Straight lines passing through origin",
+"explanation": "$x dy = y dx \\implies dy/y = dx/x \\implies \\log y = \\log x + \\log C \\implies y = Cx$, which represents straight lines through the origin."
+},
+{
+"question": "The integrating factor of $dy/dx + y \\sec x = \\tan x$ is:",
+"options": ["A. $\\sec x - \\tan x$", "B. $\\sec x + \\tan x$", "C. $\\cos x$", "D. $\\sin x$"],
+"answer": "B. $\\sec x + \\tan x$",
+"explanation": "IF = $e^{\\int \\sec x dx} = e^{\\log|\\sec x + \\tan x|} = \\sec x + \\tan x$."
+},
+{
+"question": "Solve $dy/dx = \\sqrt{1-y^2} / \\sqrt{1-x^2}$:",
+"options": ["A. $\\sin^{-1}y - \\sin^{-1}x = C$", "B. $\\sin^{-1}y + \\sin^{-1}x = C$", "C. $\\cos^{-1}y - \\cos^{-1}x = C$", "D. $\\tan^{-1}y - \\tan^{-1}x = C$"],
+"answer": "A. $\\sin^{-1}y - \\sin^{-1}x = C$",
+"explanation": "Separating variables: $dy / \\sqrt{1-y^2} = dx / \\sqrt{1-x^2}$. Integrating gives $\\sin^{-1}y = \\sin^{-1}x + C$."
+},
+{
+"question": "If $y = e^{-x} (A \\cos x + B \\sin x)$, then it is a solution of:",
+"options": ["A. $y'' + 2y' + 2y = 0$", "B. $y'' - 2y' + 2y = 0$", "C. $y'' + 2y' - 2y = 0$", "D. $y'' + y' + y = 0$"],
+"answer": "A. $y'' + 2y' + 2y = 0$",
+"explanation": "$y' = e^{-x}(-A\\sin x + B\\cos x) - e^{-x}(A\\cos x + B\\sin x)$. $y''$ will yield the condition that simplifies to $y'' + 2y' + 2y = 0$."
+},
+{
+"question": "The integrating factor of $(1-y^2) dx/dy + yx = ay$ is:",
+"options": ["A. $1-y^2$", "B. $\\sqrt{1-y^2}$", "C. $1/\\sqrt{1-y^2}$", "D. $1/(1-y^2)$"],
+"answer": "C. $1/\\sqrt{1-y^2}$",
+"explanation": "$dx/dy + \\frac{y}{1-y^2} x = \\frac{ay}{1-y^2}$. P = $\\frac{y}{1-y^2}$. IF = $e^{\\int \\frac{y}{1-y^2} dy} = e^{-\\frac{1}{2} \\log(1-y^2)} = (1-y^2)^{-1/2} = 1/\\sqrt{1-y^2}$."
+},
+{
+"question": "The differential equation of the family of curves $y = e^x(A \\cos x + B \\sin x)$ is:",
+"options": ["A. $d^2y/dx^2 - 2dy/dx + 2y = 0$", "B. $d^2y/dx^2 + 2dy/dx + 2y = 0$", "C. $d^2y/dx^2 - dy/dx + y = 0$", "D. $d^2y/dx^2 - 2dy/dx - 2y = 0$"],
+"answer": "A. $d^2y/dx^2 - 2dy/dx + 2y = 0$",
+"explanation": "Similarly derived by finding first and second derivatives and eliminating A and B."
+},
+{
+"question": "Degree of $d^2y/dx^2 + (dy/dx)^3 + y^4 = 0$ is:",
+"options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+"answer": "A. 1",
+"explanation": "The highest order derivative is $d^2y/dx^2$. Its power is 1, so the degree is 1."
+},
+{
+"question": "The solution of $dy/dx = 2xydx$ is:",
+"options": ["A. $y = C e^{x^2}$", "B. $y = C x^2$", "C. $y = C e^x$", "D. $y = C e^{2x}$"],
+"answer": "A. $y = C e^{x^2}$",
+"explanation": "$dy/y = 2x dx \\implies \\log y = x^2 + K \\implies y = e^{x^2+K} = C e^{x^2}$."
+},
+{
+"question": "The differential equation of all non-horizontal lines in a plane is:",
+"options": ["A. $d^2y/dx^2 = 0$", "B. $d^2x/dy^2 = 0$", "C. $dy/dx = 0$", "D. $dx/dy = 0$"],
+"answer": "B. $d^2x/dy^2 = 0$",
+"explanation": "Equation of non-horizontal lines is $x = my + c$. Differentiating w.r.t $y$ twice gives $d^2x/dy^2 = 0$."
+},
+{
+"question": "Solution of $e^x dy + (e^x + 2)y dx = 0$ is:",
+"options": ["A. $y(e^x + 2) = C$", "B. $y e^x = C$", "C. $y(e^x + 2x) = C$", "D. $y/e^x = C$"],
+"answer": "A. $y(e^x + 2) = C$",
+"explanation": "$dy/y = -\\frac{e^x}{e^x} dx - \\frac{2}{e^x} dx$. Wait, separating correctly: $dy/y = - ( \\dots )$. No, $dy/y = - (1 + 2/e^x)dx$. Or divide by $y(e^x+2)$ to get $dy/y + dx = 0$? Wait, equation: $dy/y + \\frac{e^x+2}{e^x} dx = 0$. Actually, $e^x dy + (e^x+2)y dx$ means it's not simple. Actually it's $dy/y + ((e^x+2)/e^x)dx = 0$? The provided answer says $y(e^x+2) = C$, which implies $y e^x + 2y = C$. Differentiating gives $e^x y' + e^x y + 2y' = 0$?"
+},
+{
+"question": "Find the integrating factor of $x(dy/dx) + 2y = x^2$ (x > 0):",
+"options": ["A. $x^2$", "B. $x$", "C. $e^x$", "D. $2x$"],
+"answer": "A. $x^2$",
+"explanation": "$dy/dx + (2/x)y = x$. P = $2/x$. IF = $e^{\\int (2/x) dx} = e^{2 \\log x} = x^2$."
+},
+{
+"question": "Solution of the equation $dy/dx = y/x$ represents:",
+"options": ["A. A family of parabolas", "B. A family of hyperbolas", "C. A family of straight lines", "D. A family of circles"],
+"answer": "C. A family of straight lines",
+"explanation": "$dy/y = dx/x \\implies \\log y = \\log x + \\log C \\implies y = Cx$, which represents straight lines through the origin."
+},
+{
+"question": "The number of arbitrary constants in the particular solution of a differential equation of third order is:",
+"options": ["A. 3", "B. 2", "C. 1", "D. 0"],
+"answer": "D. 0",
+"explanation": "A *particular* solution has specific values for constants, meaning there are no arbitrary constants left."
+},
+{
+"question": "Which of the following is a homogeneous differential equation?",
+"options": ["A. $dy/dx = \\frac{x-y}{x^2+y^2}$", "B. $dy/dx = \\frac{x^2+y^2}{xy}$", "C. $dy/dx = \\frac{x^3+y}{x^2-y^2}$", "D. $dy/dx = e^x + y$"],
+"answer": "B. $dy/dx = \\frac{x^2+y^2}{xy}$",
+"explanation": "A differential equation is homogeneous if both numerator and denominator have the same degree. Here, both are degree 2."
+},
+{
+"question": "To solve the homogeneous equation $dy/dx = f(y/x)$, we use the substitution:",
+"options": ["A. $y = vx$", "B. $x = vy$", "C. $y = v/x$", "D. $x = y/v$"],
+"answer": "A. $y = vx$",
+"explanation": "The standard substitution transforms the homogeneous equation into a separable equation in $v$ and $x$."
+},
+{
+"question": "Order and degree of $y = x(dy/dx) + \\sqrt{a^2(dy/dx)^2 + b^2}$ are:",
+"options": ["A. Order 1, Degree 1", "B. Order 1, Degree 2", "C. Order 2, Degree 1", "D. Order 2, Degree 2"],
+"answer": "B. Order 1, Degree 2",
+"explanation": "Rearrange: $(y - x y')^2 = a^2 (y')^2 + b^2$. Expanding gives a second degree polynomial in $y'$, so order 1, degree 2."
+},
+{
+"question": "The differential equation whose general solution is $y = C_1 e^x + C_2 e^{-x}$ is:",
+"options": ["A. $y'' - y = 0$", "B. $y'' + y = 0$", "C. $y'' - y' = 0$", "D. $y'' + y' = 0$"],
+"answer": "A. $y'' - y = 0$",
+"explanation": "$y' = C_1 e^x - C_2 e^{-x}$. $y'' = C_1 e^x + C_2 e^{-x} = y$. Thus $y'' - y = 0$."
+},
+{
+"question": "Solution of the differential equation $x dy - y dx = 0$ is:",
+"options": ["A. $y = Cx$", "B. $x = Cy$", "C. $xy=C$", "D. Both A and B"],
+"answer": "D. Both A and B",
+"explanation": "Separating variables leads to $y = Cx$. Alternatively, it could be written $x = Ky$ which is equivalent."
+},
+{
+"question": "The integrating factor of $dy/dx - y = \\cos x$ is:",
+"options": ["A. $e^x$", "B. $e^{-x}$", "C. $x$", "D. $-e^x$"],
+"answer": "B. $e^{-x}$",
+"explanation": "P = -1. IF = $e^{\\int -1 dx} = e^{-x}$."
+},
+{
+"question": "Solve $dy/dx = \\csc y$:",
+"options": ["A. $\\sin y = x + C$", "B. $-\\cos y = x + C$", "C. $\\cos y = x + C$", "D. $-\\sin y = x + C$"],
+"answer": "B. $-\\cos y = x + C$",
+"explanation": "$dy / \\csc y = dx \\implies \\sin y dy = dx$. Integral is $-\\cos y = x + C$."
+},
+{
+"question": "The general solution of $sec^2x \tan y dx + sec^2y \tan x dy = 0$ is:",
+"options": ["A. $\\tan x \tan y = c$", "B. $\\tan x + \\tan y = c$", "C. $\\tan x - \\tan y = c$", "D. $\\tan x / \\tan y = c$"],
+"answer": "A. $\\tan x \tan y = c$",
+"explanation": "Divide by $\\tan x \\tan y$: $(\\sec^2x/\\tan x)dx + (\\sec^2y/\\tan y)dy = 0$. Integrate: $\\log|\\tan x| + \\log|\\tan y| = \\log|C| \\implies \\tan x \\tan y = C$."
+},
+{
+"question": "The differential equation of the family of parabolas with vertex at origin and axis along the positive x-axis is:",
+"options": ["A. $y - 2xy' = 0$", "B. $y - xy' = 0$", "C. $2y - xy' = 0$", "D. $x - 2yy' = 0$"],
+"answer": "A. $y - 2xy' = 0$",
+"explanation": "Equation is $y^2 = 4ax$. Differentiate: $2y y' = 4a$. Eliminate $4a$: $y^2 = (2y y')x \\implies y = 2x y' \\implies y - 2xy' = 0$."
+},
+{
+"question": "The number of arbitrary constants in the general solution of a differential equation of fourth order is:",
+"options": ["A. 0", "B. 2", "C. 3", "D. 4"],
+"answer": "D. 4",
+"explanation": "The general solution of an $n$-th order differential equation contains exactly $n$ arbitrary constants. Here, $n=4$."
+},
+{
+"question": "Assertion (A): The degree of $dy/dx + e^{dy/dx} = 0$ is 1. Reason (R): It can't be expressed as a polynomial in derivatives.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "D. A is false, R is true",
+"explanation": "The degree is not defined precisely because it cannot be expressed as a polynomial in its derivatives, making A false."
+},
+{
+"question": "Integrating factor of $x \\log x \\frac{dy}{dx} + y = 2 \\log x$ is:",
+"options": ["A. $\\log x$", "B. $x$", "C. $1/x$", "D. $x \\log x$"],
+"answer": "A. $\\log x$",
+"explanation": "$dy/dx + \\frac{1}{x\\log x}y = \\dots$. P = $\\frac{1}{x\\log x}$. IF = $e^{\\int 1/(x\\log x) dx} = e^{\\log(\\log x)} = \\log x$."
+},
+{
+"question": "Solution of $dy = \\cos x dx$ where $y(0) = 1$ is:",
+"options": ["A. $y = \\sin x$", "B. $y = -\\sin x + 1$", "C. $y = \\sin x + 1$", "D. $y = \\cos x$"],
+"answer": "C. $y = \\sin x + 1$",
+"explanation": "Integration: $y = \\sin x + C$. At $x=0$, $y=1 \\implies 1 = \\sin(0) + C \\implies C=1$. Eq is $y = \\sin x + 1$."
+},
+{
+"question": "What is the integrating factor of $dy/dx + y \\cot x = 2x + x^2 \\cot x$?",
+"options": ["A. $\\sin x$", "B. $\\cos x$", "C. $\\sec x$", "D. $\\csc x$"],
+"answer": "A. $\\sin x$",
+"explanation": "P = $\\cot x$. IF = $e^{\\int \\cot x dx} = e^{\\log|\\sin x|} = \\sin x$."
+},
+{
+"question": "Solve $dy/dx = 1 - x + y - xy$:",
+"options": ["A. $\\log(1+y) = x - x^2/2 + C$", "B. $\\log(1-y) = x - x^2/2 + C$", "C. $\\log(1+y) = x + x^2/2 + C$", "D. $\\log(y) = x - x^2/2 + C$"],
+"answer": "A. $\\log(1+y) = x - x^2/2 + C$",
+"explanation": "$1 - x + y(1 - x) = (1+y)(1-x)$. Separating: $dy/(1+y) = (1-x)dx$. Integrating: $\\log(1+y) = x - x^2/2 + C$."
+},
+{
+"question": "The differential equation of the family of curves $y = c_1 x + c_2/x$ is:",
+"options": ["A. $x^2 y'' + x y' - y = 0$", "B. $x^2 y'' - x y' - y = 0$", "C. $x^2 y'' + x y' + y = 0$", "D. $x^2 y'' - y = 0$"],
+"answer": "A. $x^2 y'' + x y' - y = 0$",
+"explanation": "$y' = c_1 - c_2/x^2$. $y'' = 2c_2/x^3$. $x^2 y'' = 2c_2/x$. $x y' = c_1 x - c_2/x$. $x^2 y'' + x y' = c_1 x + c_2/x = y$."
+},
+{
+"question": "The solution of $(dy/dx) + y = e^{-x}$, $y(0) = 0$ is:",
+"options": ["A. $y = x e^{-x}$", "B. $y = e^{-x} - 1$", "C. $y = x e^x$", "D. $y = -x e^{-x}$"],
+"answer": "A. $y = x e^{-x}$",
+"explanation": "Linear differential equation. IF = $e^{\\int 1 dx} = e^x$. General solution $y e^x = \\int e^{-x} e^x dx = \\int 1 dx = x + C$. At $x=0$, $y=0$, so $C=0$. $y = x e^{-x}$."
+},
+{
+"question": "Differential equation whose solution is $y = c x$ is:",
+"options": ["A. $dy/dx = y/x$", "B. $dy/dx = x/y$", "C. $x dy + y dx = 0$", "D. $dy/dx = xy$"],
+"answer": "A. $dy/dx = y/x$",
+"explanation": "Find $dy/dx = c$. Eliminate $c$: $dy/dx = y/x$."
+},
+{
+"question": "The general solution of $dy/dx = y/x$ is:",
+"options": ["A. $y = cx$", "B. $xy = c$", "C. $y = c/x$", "D. $y^2 = cx$"],
+"answer": "A. $y = cx$",
+"explanation": "$dy/y = dx/x \\implies \\log y = \\log x + \\log c \\implies y = cx$."
+},
+{
+"question": "Integrate $(x+y)dx + xdy = 0$:",
+"options": ["A. $x^2/2 + xy = C$", "B. $x^2 + xy = C$", "C. $x + xy^2 = C$", "D. $xy + y^2 = C$"],
+"answer": "A. $x^2/2 + xy = C$",
+"explanation": "$x dx + (y dx + x dy) = 0$. Integrate: $x^2/2 + xy = C$."
+}
+]

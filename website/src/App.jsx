@@ -9,6 +9,7 @@ import About from './components/About'
 import Works from './components/Works'
 import Youtube from './components/Youtube'
 import Contact from './components/Contact'
+import AdminDashboard from './components/AdminDashboard'
 import './App.css'
 
 export default function App() {
@@ -41,9 +42,19 @@ export default function App() {
     return () => observer.disconnect()
   }, [isLoaded])
 
+  // Native SPA Route for Admin Portal (Bypassing Navbar/Hero)
+  if (window.location.pathname === '/av-admin-portal') {
+    return (
+      <>
+        <Cursor />
+        <AdminDashboard />
+        <Analytics />
+      </>
+    );
+  }
+
   return (
     <>
-      <Cursor />
       <Preloader onComplete={handlePreloaderDone} />
       <Navbar showLogo={isPreloaderDone} />
       <main style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.5s ease 0.1s' }}>
@@ -53,6 +64,7 @@ export default function App() {
         <Youtube />
         <Contact />
       </main>
+      <Cursor />
       <Analytics />
     </>
   )

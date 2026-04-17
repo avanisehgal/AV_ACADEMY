@@ -38,6 +38,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  /* Reserve vertical scrollbar gutter so page never reflows when scrollbar appears */
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -48,6 +50,9 @@ body {
   line-height: 1.6;
   letter-spacing: -0.022em;
   overflow-x: clip;
+  /* Reserve scrollbar gutter at all times — prevents the 1-frame layout shift
+     (and resulting horizontal glitch line) when Chrome repaints on address-bar hover */
+  scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   cursor: none;
 }

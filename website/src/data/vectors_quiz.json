@@ -1,0 +1,242 @@
+[
+{
+"question": "The magnitude of the vector $\\hat{i} + \\hat{j} + \\hat{k}$ is:",
+"options": ["A. 1", "B. $\\sqrt{2}$", "C. $\\sqrt{3}$", "D. 3"],
+"answer": "C. $\\sqrt{3}$",
+"explanation": "The magnitude of $\\vec{v} = x\\hat{i} + y\\hat{j} + z\\hat{k}$ is $\\sqrt{x^2 + y^2 + z^2}$. Thus, $\\sqrt{1^2 + 1^2 + 1^2} = \\sqrt{3}$."
+},
+{
+"question": "Unit vector in the direction of vector $\\vec{a} = 2\\hat{i} + 3\\hat{j} + \\hat{k}$ is:",
+"options": ["A. $(2\\hat{i} + 3\\hat{j} + \\hat{k})/\\sqrt{14}$", "B. $(2\\hat{i} + 3\\hat{j} + \\hat{k})/14$", "C. $(2\\hat{i} + 3\\hat{j} + \\hat{k})/\\sqrt{13}$", "D. $(2\\hat{i} + 3\\hat{j} + \\hat{k})/6$"],
+"answer": "A. $(2\\hat{i} + 3\\hat{j} + \\hat{k})/\\sqrt{14}$",
+"explanation": "Magnitude $= \\sqrt{2^2 + 3^2 + 1^2} = \\sqrt{4 + 9 + 1} = \\sqrt{14}$. Unit vector $= \\vec{a}/|\\vec{a}| = (2\\hat{i} + 3\\hat{j} + \\hat{k})/\\sqrt{14}$."
+},
+{
+"question": "The scalar product (dot product) of vectors $2\\hat{i} - \\hat{j} + \\hat{k}$ and $\\hat{i} + 2\\hat{j} - \\hat{k}$ is:",
+"options": ["A. -1", "B. 0", "C. 1", "D. 3"],
+"answer": "A. -1",
+"explanation": "Dot product $= (2)(1) + (-1)(2) + (1)(-1) = 2 - 2 - 1 = -1$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are two non-zero vectors such that $\\vec{a} \\cdot \\vec{b} = 0$, then:",
+"options": ["A. $\\vec{a}$ is parallel to $\\vec{b}$", "B. $\\vec{a} = \\vec{b}$", "C. $\\vec{a}$ is perpendicular to $\\vec{b}$", "D. $|\\vec{a}| = |\\vec{b}|$"],
+"answer": "C. $\\vec{a}$ is perpendicular to $\\vec{b}$",
+"explanation": "$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta = 0$. Since magnitudes are non-zero, $\\cos\\theta = 0 \\implies \\theta = 90^\\circ$."
+},
+{
+"question": "The projection of vector $\\vec{a} = 2\\hat{i} + 3\\hat{j} + 2\\hat{k}$ on vector $\\vec{b} = \\hat{i} + 2\\hat{j} + \\hat{k}$ is:",
+"options": ["A. $10/\\sqrt{6}$", "B. $10/\\sqrt{17}$", "C. $5/\\sqrt{6}$", "D. $10/6$"],
+"answer": "A. $10/\\sqrt{6}$",
+"explanation": "Projection = $(\\vec{a} \\cdot \\vec{b}) / |\\vec{b}| = (2+6+2)/\\sqrt{1+4+1} = 10/\\sqrt{6}$."
+},
+{
+"question": "Vector (cross) product of $\\hat{i} \\times \\hat{j}$ is:",
+"options": ["A. $\\hat{k}$", "B. $-\\hat{k}$", "C. $0$", "D. 1"],
+"answer": "A. $\\hat{k}$",
+"explanation": "By definition of the right-hand rule for standard basis vectors, $\\hat{i} \\times \\hat{j} = \\hat{k}$."
+},
+{
+"question": "Area of a parallelogram with adjacent sides given by vectors $\\vec{a}$ and $\\vec{b}$ is:",
+"options": ["A. $\\vec{a} \\cdot \\vec{b}$", "B. $|\\vec{a} \\times \\vec{b}|$", "C. $\\frac{1}{2}|\\vec{a} \\times \\vec{b}|$", "D. $|\\vec{a}| |\\vec{b}|$"],
+"answer": "B. $|\\vec{a} \\times \\vec{b}|$",
+"explanation": "The magnitude of the cross product of two vectors gives the area of the parallelogram formed by them."
+},
+{
+"question": "Area of a triangle with adjacent sides given by vectors $\\vec{a}$ and $\\vec{b}$ is:",
+"options": ["A. $\\vec{a} \\cdot \\vec{b}$", "B. $|\\vec{a} \\times \\vec{b}|$", "C. $\\frac{1}{2}|\\vec{a} \\times \\vec{b}|$", "D. $|\\vec{a}| |\\vec{b}|$"],
+"answer": "C. $\\frac{1}{2}|\\vec{a} \\times \\vec{b}|$",
+"explanation": "The area of the triangle is half the area of the corresponding parallelogram, so $\\frac{1}{2}|\\vec{a} \\times \\vec{b}|$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are collinear vectors, then which of the following is incorrect?",
+"options": ["A. $\\vec{b} = \\lambda \\vec{a}$ for some scalar $\\lambda$", "B. $\\vec{a} = \\pm \\vec{b}$", "C. $\\vec{a} \\times \\vec{b} = 0$", "D. Components of $\\vec{a}$ and $\\vec{b}$ are proportional"],
+"answer": "B. $\\vec{a} = \\pm \\vec{b}$",
+"explanation": "Collinear vectors are proportional ($\\vec{b} = \\lambda \\vec{a}$), but their magnitudes don't have to be equal, so $\\vec{a} = \\pm \\vec{b}$ is incorrect in general."
+},
+{
+"question": "Let $\\vec{a}$ and $\\vec{b}$ be two unit vectors and $\\theta$ is the angle between them. Then $\\vec{a} + \\vec{b}$ is a unit vector if:",
+"options": ["A. $\\theta = \\pi/4$", "B. $\\theta = \\pi/3$", "C. $\\theta = \\pi/2$", "D. $\\theta = 2\\pi/3$"],
+"answer": "D. $\\theta = 2\\pi/3$",
+"explanation": "$|\\vec{a} + \\vec{b}|^2 = |\\vec{a}|^2 + |\\vec{b}|^2 + 2|\\vec{a}||\\vec{b}|\\cos\\theta = 1 + 1 + 2\\cos\\theta = 2 + 2\\cos\\theta$. For it to be a unit vector, $2 + 2\\cos\\theta = 1 \\implies 2\\cos\\theta = -1 \\implies \\cos\\theta = -1/2 \\implies \\theta = 2\\pi/3$."
+},
+{
+"question": "Find the value of $x$ for which $x(\\hat{i} + \\hat{j} + \\hat{k})$ is a unit vector:",
+"options": ["A. $\\pm 1/\\sqrt{3}$", "B. $\\pm 1/3$", "C. $\\pm \\sqrt{3}$", "D. $\\pm 1/\\sqrt{2}$"],
+"answer": "A. $\\pm 1/\\sqrt{3}$",
+"explanation": "$|x(\\hat{i} + \\hat{j} + \\hat{k})| = |x|\\sqrt{1^2+1^2+1^2} = |x|\\sqrt{3}$. $|x|\\sqrt{3} = 1 \\implies |x| = 1/\\sqrt{3} \\implies x = \\pm 1/\\sqrt{3}$."
+},
+{
+"question": "The vectors $2\\hat{i} - 3\\hat{j} + 4\\hat{k}$ and $-4\\hat{i} + 6\\hat{j} - 8\\hat{k}$ are:",
+"options": ["A. Perpendicular", "B. Collinear", "C. Equal", "D. Orthogonal"],
+"answer": "B. Collinear",
+"explanation": "$-4\\hat{i} + 6\\hat{j} - 8\\hat{k} = -2(2\\hat{i} - 3\\hat{j} + 4\\hat{k})$. Since one is a scalar multiple of the other, they are collinear."
+},
+{
+"question": "Position vector of the midpoint of the line segment joining the points $P(2, 3, 4)$ and $Q(4, 1, -2)$ is:",
+"options": ["A. $3\\hat{i} + 2\\hat{j} + \\hat{k}$", "B. $3\\hat{i} + 4\\hat{j} + \\hat{k}$", "C. $\\hat{i} + \\hat{j} + \\hat{k}$", "D. $6\\hat{i} + 4\\hat{j} + 2\\hat{k}$"],
+"answer": "A. $3\\hat{i} + 2\\hat{j} + \\hat{k}$",
+"explanation": "Midpoint $= ((2+4)/2, (3+1)/2, (4-2)/2) = (3, 2, 1)$. The position vector is $3\\hat{i} + 2\\hat{j} + \\hat{k}$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ represent the adjacent sides of a regular hexagon, then the vector representing the diametrically opposite vertex is:",
+"options": ["A. $2\\vec{a} + 2\\vec{b}$", "B. $\\vec{a} + \\vec{b}$", "C. $2(\\vec{a} + \\vec{b})$", "D. $\\vec{a} - \\vec{b}$"],
+"answer": "C. $2(\\vec{a} + \\vec{b})$",
+"explanation": "In a regular hexagon, the main diagonal is twice the vector connecting the center to the vertex, which effectively makes it $2(\\vec{a} + \\vec{b})$."
+},
+{
+"question": "The direction cosines of the vector $\\hat{i} + 2\\hat{j} + 3\\hat{k}$ are:",
+"options": ["A. $(1, 2, 3)$", "B. $(1/14, 2/14, 3/14)$", "C. $(1/\\sqrt{14}, 2/\\sqrt{14}, 3/\\sqrt{14})$", "D. $(1/6, 2/6, 3/6)$"],
+"answer": "C. $(1/\\sqrt{14}, 2/\\sqrt{14}, 3/\\sqrt{14})$",
+"explanation": "Magnitude $= \\sqrt{1^2 + 2^2 + 3^2} = \\sqrt{14}$. Direction cosines are obtained by dividing components by the magnitude."
+},
+{
+"question": "If $\\theta$ is the angle between two vectors $\\vec{a}$ and $\\vec{b}$, then $\\vec{a} \\cdot \\vec{b} \\geq 0$ only when:",
+"options": ["A. $0 < \\theta < \\pi/2$", "B. $0 \\leq \\theta \\leq \\pi/2$", "C. $0 < \\theta < \\pi$", "D. $0 \\leq \\theta \\leq \\pi$"],
+"answer": "B. $0 \\leq \\theta \\leq \\pi/2$",
+"explanation": "Since $\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$, it is $\\geq 0$ when $\\cos\\theta \\geq 0$, which occurs for $0 \\leq \\theta \\leq \\pi/2$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are two unit vectors such that $\\vec{a} + \\vec{b}$ is also a unit vector, then the angle between them is:",
+"options": ["A. $120^\\circ$", "B. $60^\\circ$", "C. $90^\\circ$", "D. $0^\\circ$"],
+"answer": "A. $120^\\circ$",
+"explanation": "$|\\vec{a}+\\vec{b}|^2 = 1 \\implies 1 + 1 + 2(1)(1)\\cos\\theta = 1 \\implies 2\\cos\\theta = -1 \\implies \\cos\\theta = -1/2 \\implies \\theta = 120^\\circ$."
+},
+{
+"question": "Value of $\\hat{i} \\cdot (\\hat{j} \\times \\hat{k}) + \\hat{j} \\cdot (\\hat{i} \\times \\hat{k}) + \\hat{k} \\cdot (\\hat{i} \\times \\hat{j})$ is:",
+"options": ["A. 0", "B. 1", "C. 3", "D. -1"],
+"answer": "B. 1",
+"explanation": "$\\hat{j} \\times \\hat{k} = \\hat{i}$, $\\hat{i} \\times \\hat{k} = -\\hat{j}$, $\\hat{i} \\times \\hat{j} = \\hat{k}$. Thus $\\hat{i}\\cdot\\hat{i} + \\hat{j}\\cdot(-\\hat{j}) + \\hat{k}\\cdot\\hat{k} = 1 - 1 + 1 = 1$."
+},
+{
+"question": "For any vector $\\vec{r}$, the value of $(\\vec{r} \\cdot \\hat{i})^2 + (\\vec{r} \\cdot \\hat{j})^2 + (\\vec{r} \\cdot \\hat{k})^2$ equals:",
+"options": ["A. $3|\\vec{r}|^2$", "B. 0", "C. $|\\vec{r}|^2$", "D. $2|\\vec{r}|^2$"],
+"answer": "C. $|\\vec{r}|^2$",
+"explanation": "Let $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$. Then $\\vec{r} \\cdot \\hat{i} = x$, $\\vec{r} \\cdot \\hat{j} = y$, $\\vec{r} \\cdot \\hat{k} = z$. Sum of squares is $x^2 + y^2 + z^2 = |\\vec{r}|^2$."
+},
+{
+"question": "If $\\vec{a}, \\vec{b}, \\vec{c}$ are unit vectors such that $\\vec{a} + \\vec{b} + \\vec{c} = \\vec{0}$, find the value of $\\vec{a} \\cdot \\vec{b} + \\vec{b} \\cdot \\vec{c} + \\vec{c} \\cdot \\vec{a}$:",
+"options": ["A. 1", "B. 3", "C. -3/2", "D. 3/2"],
+"answer": "C. -3/2",
+"explanation": "$|\\vec{a} + \\vec{b} + \\vec{c}|^2 = 0 \\implies |\\vec{a}|^2 + |\\vec{b}|^2 + |\\vec{c}|^2 + 2(\\vec{a} \\cdot \\vec{b} + \\vec{b} \\cdot \\vec{c} + \\vec{c} \\cdot \\vec{a}) = 0 \\implies 1 + 1 + 1 + 2X = 0 \\implies 2X = -3 \\implies X = -3/2$."
+},
+{
+"question": "The projection vector of $\\vec{a}$ on $\\vec{b}$ is:",
+"options": ["A. $( (\\vec{a} \\cdot \\vec{b}) / |\\vec{b}| ) \\hat{b}$", "B. $(\\vec{a} \\cdot \\vec{b}) / |\\vec{b}|$ ", "C. $(\\vec{a} \\cdot \\vec{b}) / |\\vec{a}|$ ", "D. $( (\\vec{a} \\cdot \\vec{b}) / |\\vec{a}|^2 ) \\vec{a}$"],
+"answer": "A. $( (\\vec{a} \\cdot \\vec{b}) / |\\vec{b}| ) \\hat{b}$",
+"explanation": "Projection scalar is $(\\vec{a} \\cdot \\vec{b}) / |\\vec{b}|$. Projection vector is obtained by multiplying the scalar by the unit vector $\\hat{b} = \\vec{b}/|\\vec{b}|$."
+},
+{
+"question": "Vector of magnitude 5 in the direction opposite to $\\vec{a} = -\\hat{i} + 2\\hat{j} - 2\\hat{k}$ is:",
+"options": ["A. $5(\\hat{i} - 2\\hat{j} + 2\\hat{k})/3$", "B. $5(-\\hat{i} + 2\\hat{j} - 2\\hat{k})/3$", "C. $5(\\hat{i} + 2\\hat{j} + 2\\hat{k})/3$", "D. $-5(\\hat{i} - 2\\hat{j} + 2\\hat{k})/3$"],
+"answer": "A. $5(\\hat{i} - 2\\hat{j} + 2\\hat{k})/3$",
+"explanation": "$|\\vec{a}| = \\sqrt{1+4+4} = 3$. Unit vector opposite to $\\vec{a}$ is $-\\vec{a}/3 = (\\hat{i} - 2\\hat{j} + 2\\hat{k})/3$. Multiplying by magnitude 5 gives $5(\\hat{i} - 2\\hat{j} + 2\\hat{k})/3$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are vectors such that $|\\vec{a}| = 3$, $|\\vec{b}| = 4$, and $|\\vec{a} \\times \\vec{b}| = 6$, then $\\vec{a} \\cdot \\vec{b}$ is:",
+"options": ["A. $6\\sqrt{3}$", "B. $\\pm 6\\sqrt{3}$", "C. $12$", "D. $6$"],
+"answer": "B. $\\pm 6\\sqrt{3}$",
+"explanation": "$|\\vec{a} \\times \\vec{b}|^2 + (\\vec{a} \\cdot \\vec{b})^2 = |\\vec{a}|^2 |\\vec{b}|^2$. $6^2 + (\\vec{a} \\cdot \\vec{b})^2 = 3^2 \\cdot 4^2 \\implies 36 + (\\vec{a} \\cdot \\vec{b})^2 = 144 \\implies (\\vec{a} \\cdot \\vec{b})^2 = 108 \\implies \\vec{a} \\cdot \\vec{b} = \\pm\\sqrt{108} = \\pm 6\\sqrt{3}$."
+},
+{
+"question": "The angle between two vectors $\\vec{a}$ and $\\vec{b}$ with magnitudes 1 and 2 respectively, and $\\vec{a} \\cdot \\vec{b} = 1$ is:",
+"options": ["A. $30^\\circ$", "B. $45^\\circ$", "C. $60^\\circ$", "D. $90^\\circ$"],
+"answer": "C. $60^\\circ$",
+"explanation": "$\\cos\\theta = (\\vec{a} \\cdot \\vec{b}) / (|\\vec{a}||\\vec{b}|) = 1 / (1 \\cdot 2) = 1/2$. Thus $\\theta = 60^\\circ$."
+},
+{
+"question": "Value of $\\lambda$ for which the vectors $3\\hat{i} - 6\\hat{j} + \\hat{k}$ and $2\\hat{i} - 4\\hat{j} + \\lambda\\hat{k}$ are parallel is:",
+"options": ["A. 2/3", "B. 3/2", "C. 5/2", "D. 2"],
+"answer": "A. 2/3",
+"explanation": "If parallel, direction ratios are proportional: $3/2 = -6/-4 = 1/\\lambda \\implies 3/2 = 1/\\lambda \\implies \\lambda = 2/3$."
+},
+{
+"question": "Value of $p$ for which vectors $p\\hat{i} - \\hat{j} + \\hat{k}$ and $2\\hat{i} - p\\hat{j} - 4\\hat{k}$ are perpendicular is:",
+"options": ["A. 1", "B. 2", "C. 4/3", "D. Both A and C"],
+"answer": "C. 4/3",
+"explanation": "Dot product must be zero: $2p + p - 4 = 0 \\implies 3p = 4 \\implies p = 4/3$."
+},
+{
+"question": "Area of a rectangle having vertices A, B, C, D with position vectors $-\\hat{i}+\\frac{1}{2}\\hat{j}+4\\hat{k}$, $\\hat{i}+\\frac{1}{2}\\hat{j}+4\\hat{k}$, $\\hat{i}-\\frac{1}{2}\\hat{j}+4\\hat{k}$, $-\\hat{i}-\\frac{1}{2}\\hat{j}+4\\hat{k}$ is:",
+"options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+"answer": "B. 2",
+"explanation": "$AB = 2\\hat{i}$. $BC = -\\hat{j}$. Area $= |AB \\times BC| = |2\\hat{i} \\times -\\hat{j}| = |-2\\hat{k}| = 2$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are adjacent sides of a parallelogram, and the diagonals are $\\vec{d}_1$ and $\\vec{d}_2$, then:",
+"options": ["A. $\\vec{d}_1 + \\vec{d}_2 = 2\\vec{a}$", "B. $\\vec{d}_1 - \\vec{d}_2 = 2\\vec{b}$", "C. Both A and B are true if properly signed", "D. $\\vec{d}_1 \\cdot \\vec{d}_2 = 0$"],
+"answer": "C. Both A and B are true if properly signed",
+"explanation": "$\\vec{d}_1 = \\vec{a} + \\vec{b}$ and $\\vec{d}_2 = \\vec{a} - \\vec{b}$. Sum $= 2\\vec{a}$. Difference $= 2\\vec{b}$."
+},
+{
+"question": "If $\\vec{a} + \\vec{b} + \\vec{c} = \\vec{0}$, then $\\vec{a} \\times \\vec{b}$ is equal to:",
+"options": ["A. $\\vec{b} \\times \\vec{c}$", "B. $\\vec{c} \\times \\vec{a}$", "C. $0$", "D. Both A and B"],
+"answer": "D. Both A and B",
+"explanation": "$\\vec{a} = -(\\vec{b} + \\vec{c})$. $\\vec{a} \\times \\vec{b} = -(\\vec{b} + \\vec{c}) \\times \\vec{b} = -(\\vec{b} \\times \\vec{b} + \\vec{c} \\times \\vec{b}) = -\\vec{c} \\times \\vec{b} = \\vec{b} \\times \\vec{c}$. Similarly it equals $\\vec{c} \\times \\vec{a}$."
+},
+{
+"question": "The direction cosines $l, m, n$ of a vector satisfy:",
+"options": ["A. $l+m+n=1$", "B. $l^2+m^2+n^2=1$", "C. $l^2+m^2+n^2=0$", "D. $l=m=n$"],
+"answer": "B. $l^2+m^2+n^2=1$",
+"explanation": "This is the fundamental relationship of direction cosines, corresponding to a unit vector."
+},
+{
+"question": "Volume of a parallelepiped with coterminous edges $\\vec{a}, \\vec{b}, \\vec{c}$ is given by:",
+"options": ["A. $\\vec{a} + \\vec{b} + \\vec{c}$", "B. $(\\vec{a} \\times \\vec{b}) \\times \\vec{c}$", "C. $\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})$", "D. $(\\vec{a} \\cdot \\vec{b}) \\vec{c}$"],
+"answer": "C. $\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})$",
+"explanation": "The scalar triple product $\\vec{a} \\cdot (\\vec{b} \\times \\vec{c})$ yields the volume of the parallelepiped."
+},
+{
+"question": "The scalar triple product $[\\vec{a}, \\vec{b}, \\vec{c}]$ is zero if and only if:",
+"options": ["A. Vectors are mutually perpendicular", "B. Vectors are coplanar", "C. $\\vec{a} = \\vec{b} = \\vec{c}$", "D. Vectors form a right-handed system"],
+"answer": "B. Vectors are coplanar",
+"explanation": "If the volume of the parallelepiped formed by three vectors is zero, they must lie in the same plane (coplanar)."
+},
+{
+"question": "The value of $[\\hat{i}, \\hat{j}, \\hat{k}]$ is:",
+"options": ["A. 0", "B. 1", "C. -1", "D. 3"],
+"answer": "B. 1",
+"explanation": "$[\\hat{i}, \\hat{j}, \\hat{k}] = \\hat{i} \\cdot (\\hat{j} \\times \\hat{k}) = \\hat{i} \\cdot \\hat{i} = 1$."
+},
+{
+"question": "If vectors $\\vec{a}, \\vec{b}, \\vec{c}$ are coplanar, then $[\\vec{a}+\\vec{b}, \\vec{b}+\\vec{c}, \\vec{c}+\\vec{a}]$ is:",
+"options": ["A. 0", "B. 1", "C. 2", "D. $[\\vec{a}, \\vec{b}, \\vec{c}]$"],
+"answer": "A. 0",
+"explanation": "$[\\vec{a}+\\vec{b}, \\vec{b}+\\vec{c}, \\vec{c}+\\vec{a}] = 2[\\vec{a}, \\vec{b}, \\vec{c}]$. Since they are coplanar, $[\\vec{a}, \\vec{b}, \\vec{c}] = 0$. Hence $2(0) = 0$."
+},
+{
+"question": "Assertion (A): For any two vectors, $|\\vec{a} \\cdot \\vec{b}| \\leq |\\vec{a}| |\\vec{b}|$. Reason (R): This is known as Cauchy-Schwarz inequality.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is correct explanation",
+"explanation": "$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta$. Since $|\\cos\\theta| \\leq 1$, the inequality holds and is uniquely known as Cauchy-Schwarz."
+},
+{
+"question": "Assertion (A): Triangle inequality states $|\\vec{a} + \\vec{b}| \\leq |\\vec{a}| + |\\vec{b}|$. Reason (R): The length of any side of a triangle is less than the sum of the other two sides.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is correct explanation",
+"explanation": "The geometric intuition of vectors forming a triangle perfectly explains the algebraic triangle inequality."
+},
+{
+"question": "If $\\vec{a} = 2\\hat{i} + \\lambda\\hat{j} + \\hat{k}$ and $\\vec{b} = -\\hat{i} + 2\\hat{j} - 3\\hat{k}$ are orthogonal, then $\\lambda$ is:",
+"options": ["A. 1", "B. 2/5", "C. 5/2", "D. 0"],
+"answer": "C. 5/2",
+"explanation": "$2(-1) + 2\\lambda - 3 = 0 \\implies 2\\lambda - 5 = 0 \\implies \\lambda = 5/2$."
+},
+{
+"question": "Unit vector perpendicular to both $2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\hat{i} - \\hat{j} + 2\\hat{k}$ is:",
+"options": ["A. $\\frac{5\\hat{i} - 5\\hat{j} - 5\\hat{k}}{5\\sqrt{3}}$", "B. $\\frac{\\hat{i} - \\hat{j} - \\hat{k}}{\\sqrt{3}}$", "C. $\\frac{5\\hat{i} - 5\\hat{j} - 5\\hat{k}}{5}$", "D. Both A and B"],
+"answer": "D. Both A and B",
+"explanation": "Cross product gives $5\\hat{i} - 5\\hat{j} - 5\\hat{k}$. Magnitude is $5\\sqrt{3}$. Unit vector is $(5\\hat{i}-5\\hat{j}-5\\hat{k})/5\\sqrt{3} = (\\hat{i}-\\hat{j}-\\hat{k})/\\sqrt{3}$. Both A and B represent this."
+},
+{
+"question": "Moment of a force $\\vec{F}$ applied at point $P$ about a point $O$ is given by:",
+"options": ["A. $\\vec{r} \\cdot \\vec{F}$", "B. $\\vec{r} \\times \\vec{F}$", "C. $\\vec{F} \\times \\vec{r}$", "D. $|\\vec{r}||\\vec{F}|$"],
+"answer": "B. $\\vec{r} \\times \\vec{F}$",
+"explanation": "The moment or torque is the cross product of the position vector $\\vec{r}$ (from O to P) and the force $\\vec{F}$."
+},
+{
+"question": "If $\\vec{a}$ and $\\vec{b}$ are non-collinear, and $x\\vec{a} + y\\vec{b} = \\vec{0}$, then:",
+"options": ["A. $x=0, y=0$", "B. $x=y$", "C. $x \\neq 0, y \\neq 0$", "D. $\\vec{a} = \\vec{b}$"],
+"answer": "A. $x=0, y=0$",
+"explanation": "Since $\\vec{a}$ and $\\vec{b}$ are non-collinear (linearly independent in 2D space), the only combination that yields the zero vector is the trivial one: $x=0, y=0$."
+}
+]

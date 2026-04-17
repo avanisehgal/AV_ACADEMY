@@ -1,0 +1,242 @@
+[
+{
+"question": "If A is a 3x3 matrix and |A| = 4, then the value of |3A| is:",
+"options": ["A. 12", "B. 36", "C. 108", "D. 81"],
+"answer": "C. 108",
+"explanation": "Using the property |kA| = k^n |A|, where n is the order of the matrix. Here, n=3 and k=3, so |3A| = 3^3 * |A| = 27 * 4 = 108."
+},
+{
+"question": "If |[x, 2], [18, x]| = |[6, 2], [18, 6]|, then x is equal to:",
+"options": ["A. 6", "B. ±6", "C. -6", "D. 0"],
+"answer": "B. ±6",
+"explanation": "Expanding both determinants: x^2 - 36 = 36 - 36 => x^2 - 36 = 0 => x^2 = 36 => x = ±6."
+},
+{
+"question": "A square matrix A is said to be singular if:",
+"options": ["A. |A| = 0", "B. |A| != 0", "C. A = I", "D. A = 0"],
+"answer": "A. |A| = 0",
+"explanation": "By definition, a matrix is singular if its determinant is zero."
+},
+{
+"question": "For what value of k is the matrix [[1-k, 2], [4, 8]] singular?",
+"options": ["A. 0", "B. 1", "C. -1", "D. 2"],
+"answer": "D. 2",
+"explanation": "For singular matrix, |A| = 0. (1-k)8 - (4)(2) = 0 => 8 - 8k - 8 = 0 => -8k = 0 => k = 0."
+},
+{
+"question": "If the area of a triangle with vertices (2, -6), (5, 4), and (k, 4) is 35 sq. units, then k is:",
+"options": ["A. 12", "B. -2", "C. 12, -2", "D. 10"],
+"answer": "C. 12, -2",
+"explanation": "Area = 1/2 |x1(y2-y3) + x2(y3-y1) + x3(y1-y2)| = 35. |2(4-4) + 5(4+6) + k(-6-4)| = 70 => |50 - 10k| = 70. 50-10k = 70 or 50-10k = -70. k = -2 or k = 12."
+},
+{
+"question": "If A = [aij] is a matrix of order 3x3, then the value of a11A11 + a12A12 + a13A13 is:",
+"options": ["A. 0", "B. 1", "C. |A|", "D. -|A|"],
+"answer": "C. |A|",
+"explanation": "The sum of the products of elements of any row with their corresponding cofactors is equal to the determinant of the matrix."
+},
+{
+"question": "If a, b, c are in A.P., then the value of determinant [[x+1, x+2, x+a], [x+2, x+3, x+b], [x+3, x+4, x+c]] is:",
+"options": ["A. 3", "B. -3", "C. 0", "D. 1"],
+"answer": "C. 0",
+"explanation": "Applying R1 -> R1 + R3 - 2R2. The row becomes [0, 0, a+c-2b]. Since a, b, c are in A.P, a+c-2b = 0. A row of zeros makes the determinant 0."
+},
+{
+"question": "If A is a square matrix of order n, then |kA| is equal to:",
+"options": ["A. k|A|", "B. k^n|A|", "C. k^{n-1}|A|", "D. n^k|A|"],
+"answer": "B. k^n|A|",
+"explanation": "This is a standard property where the constant k is pulled out from each of the n rows."
+},
+{
+"question": "The determinant of a skew-symmetric matrix of odd order is:",
+"options": ["A. 1", "B. -1", "C. 0", "D. any non-zero value"],
+"answer": "C. 0",
+"explanation": "Standard theorem: The determinant of every skew-symmetric matrix of odd order is zero."
+},
+{
+"question": "Value of |[sin 10, -cos 10], [sin 80, cos 80]| is:",
+"options": ["A. 0", "B. 1", "C. -1", "D. 1/2"],
+"answer": "B. 1",
+"explanation": "Expansion: sin10cos80 - (-cos10sin80) = sin10cos80 + cos10sin80 = sin(10+80) = sin 90 = 1."
+},
+{
+"question": "If A is a square matrix of order 3 and |A| = 5, then |adj A| is:",
+"options": ["A. 5", "B. 25", "C. 125", "D. 10"],
+"answer": "B. 25",
+"explanation": "|adj A| = |A|^{n-1}. For n=3, |adj A| = |A|^2 = 5^2 = 25."
+},
+{
+"question": "For any square matrix A, A(adj A) is equal to:",
+"options": ["A. |A|I", "B. I", "C. A", "D. |A|"],
+"answer": "A. |A|I",
+"explanation": "Standard matrix theorem: A(adj A) = (adj A)A = |A|I."
+},
+{
+"question": "If A is an invertible matrix of order 2, then |A^{-1}| is equal to:",
+"options": ["A. |A|", "B. 1/|A|", "C. 1", "D. 0"],
+"answer": "B. 1/|A|",
+"explanation": "Since A * A^{-1} = I, taking determinants on both sides gives |A| * |A^{-1}| = |I| = 1. So |A^{-1}| = 1/|A|."
+},
+{
+"question": "If A is a matrix of order n, then |adj(adj A)| is:",
+"options": ["A. |A|^{n-1}", "B. |A|^{(n-1)^2}", "C. |A|^n", "D. |A|^{2n}"],
+"answer": "B. |A|^{(n-1)^2}",
+"explanation": "Using the property |adj B| = |B|^{n-1}, where B = adj A. So |adj(adj A)| = |adj A|^{n-1} = (|A|^{n-1})^{n-1} = |A|^{(n-1)^2}."
+},
+{
+"question": "If A and B are non-singular matrices of the same order, then adj(AB) is:",
+"options": ["A. (adj A)(adj B)", "B. (adj B)(adj A)", "C. adj A + adj B", "D. AB"],
+"answer": "B. (adj B)(adj A)",
+"explanation": "The adjoint of a product follows the reversal law, similar to the inverse property."
+},
+{
+"question": "If A is a symmetric matrix, then adj A is:",
+"options": ["A. Symmetric", "B. Skew-symmetric", "C. Diagonal", "D. Scalar"],
+"answer": "A. Symmetric",
+"explanation": "If A is symmetric, its cofactor matrix is symmetric, and thus its transpose (adj A) is also symmetric."
+},
+{
+"question": "If |A| = 3 and order is 2x2, then |adj(5A)| is:",
+"options": ["A. 15", "B. 75", "C. 25", "D. 3"],
+"answer": "B. 75",
+"explanation": "|adj(5A)| = |5A|^{2-1} = |5A| = 5^2 * |A| = 25 * 3 = 75."
+},
+{
+"question": "If A^2 - A + I = O, then A^{-1} is:",
+"options": ["A. A + I", "B. I - A", "C. A - I", "D. A"],
+"answer": "B. I - A",
+"explanation": "A^2 - A + I = O => I = A - A^2 => I = A(I - A). Thus A^{-1} = I - A."
+},
+{
+"question": "Matrix A is invertible if and only if:",
+"options": ["A. A is singular", "B. A is non-singular", "C. A is symmetric", "D. A is a zero matrix"],
+"answer": "B. A is non-singular",
+"explanation": "A matrix has an inverse if and only if its determinant is not zero."
+},
+{
+"question": "If A is order 3x3 and |A| = 8, find |adj A|.",
+"options": ["A. 8", "B. 16", "C. 64", "D. 512"],
+"answer": "C. 64",
+"explanation": "|adj A| = |A|^{n-1} = 8^{3-1} = 8^2 = 64."
+},
+{
+"question": "System AX = B is consistent and has a unique solution if:",
+"options": ["A. |A| != 0", "B. |A| = 0", "C. adj A * B = O", "D. |A| = 0 and (adj A)B != O"],
+"answer": "A. |A| != 0",
+"explanation": "A non-zero determinant ensures the matrix is invertible, providing a unique solution X = A^{-1}B."
+},
+{
+"question": "If |A| = 0 and (adj A)B != O, then the system has:",
+"options": ["A. Unique solution", "B. Infinitely many solutions", "C. No solution", "D. Trivial solution"],
+"answer": "C. No solution",
+"explanation": "This is the condition for an inconsistent system of linear equations."
+},
+{
+"question": "For homogeneous system AX = O, if |A| != 0, then the system has:",
+"options": ["A. Only trivial solution", "B. Infinitely many solutions", "C. No solution", "D. Unique non-zero solution"],
+"answer": "A. Only trivial solution",
+"explanation": "If |A| is non-zero, the only solution is X = A^{-1}*O = O (the zero solution)."
+},
+{
+"question": "Number of solutions of x + y = 2 and 2x + 2y = 4 is:",
+"options": ["A. 1", "B. 0", "C. Infinite", "D. 2"],
+"answer": "C. Infinite",
+"explanation": "The equations are dependent (the second is twice the first), representing the same line."
+},
+{
+"question": "If A = [[2, -3], [3, 4]], then A^{-1} is:",
+"options": ["A. 1/17 [[4, 3], [-3, 2]]", "B. 1/17 [[4, -3], [3, 2]]", "C. [[4, 3], [-3, 2]]", "D. 1/7 [[4, 3], [-3, 2]]"],
+"answer": "A. 1/17 [[4, 3], [-3, 2]]",
+"explanation": "|A| = 8 - (-9) = 17. adj A = [[4, 3], [-3, 2]]. A^{-1} = (1/17)*adj A."
+},
+{
+"question": "If A is an orthogonal matrix, then |A| is:",
+"options": ["A. 0", "B. ±1", "C. ±2", "D. n"],
+"answer": "B. ±1",
+"explanation": "For orthogonal matrix, AA' = I. So |A||A'| = |I| => |A|^2 = 1 => |A| = ±1."
+},
+{
+"question": "Sum of products of elements of any row with cofactors of any other row is:",
+"options": ["A. |A|", "B. 1", "C. 0", "D. -1"],
+"answer": "C. 0",
+"explanation": "Standard property: The sum of products of elements of one row with the cofactors of another row is always zero."
+},
+{
+"question": "If A is order 3, |A * adj A| is:",
+"options": ["A. |A|^2", "B. |A|^3", "C. |A|", "D. 0"],
+"answer": "B. |A|^3",
+"explanation": "|A * adj A| = ||A|I| = |A|^3 * |I| = |A|^3."
+},
+{
+"question": "Let A = [[1, sinθ, 1], [-sinθ, 1, sinθ], [-1, -sinθ, 1]]. Then |A| lies in the interval:",
+"options": ["A. (2, 4)", "B. [2, 4]", "C. [0, 2]", "D. (0, inf)"],
+"answer": "B. [2, 4]",
+"explanation": "|A| = 1(1+sin^2θ) - sinθ(-sinθ+sinθ) + 1(sin^2θ+1) = 2(1+sin^2θ). Since 0 <= sin^2θ <= 1, 2 <= |A| <= 4."
+},
+{
+"question": "If A is a non-singular matrix, then adj(A^{-1}) is equal to:",
+"options": ["A. A", "B. A^{-1}", "C. (adj A)^{-1}", "D. I"],
+"answer": "C. (adj A)^{-1}",
+"explanation": "This is a standard property of adjoints and inverses."
+},
+{
+"question": "If x, y, z are non-zero, inverse of [[x, 0, 0], [0, y, 0], [0, 0, z]] is:",
+"options": ["A. [[x^-1, 0, 0], [0, y^-1, 0], [0, 0, z^-1]]", "B. xyz[[x^-1, 0, 0], [0, y^-1, 0], [0, 0, z^-1]]", "C. 1/(xyz) I", "D. [[1/x, 0, 0], [0, 1/y, 0], [0, 0, 1/z]]"],
+"answer": "A. [[x^-1, 0, 0], [0, y^-1, 0], [0, 0, z^-1]]",
+"explanation": "The inverse of a diagonal matrix is a diagonal matrix of the reciprocals of the diagonal elements."
+},
+{
+"question": "If A = [[0, 1], [0, 0]], then (aI + bA)^n is:",
+"options": ["A. a^n I + na^{n-1}bA", "B. a^n I + b^n A", "C. a^n I + nabA", "D. a^n I + n^2bA"],
+"answer": "A. a^n I + na^{n-1}bA",
+"explanation": "Using binomial expansion: (aI)^n + n(aI)^{n-1}(bA) + ... All higher terms contain A^2, A^3, which are zero matrices since A^2 = 0."
+},
+{
+"question": "If A^2 = I, then possible values of |A| are:",
+"options": ["A. 1", "B. -1", "C. ±1", "D. 0"],
+"answer": "C. ±1",
+"explanation": "A^2 = I => |A|^2 = |I| = 1 => |A| = ±1."
+},
+{
+"question": "Assertion (A): |A.B| = |A|.|B| for square matrices A, B. Reason (R): Determinant of product is product of determinants.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is correct explanation",
+"explanation": "The assertion is a fundamental property, and the reason is the statement of that property."
+},
+{
+"question": "Let f(x) = |[0, x-a, x-b], [x+a, 0, x-c], [x+b, x+c, 0]|. Then f(0) is:",
+"options": ["A. a+b+c", "B. 0", "C. abc", "D. 1"],
+"answer": "B. 0",
+"explanation": "f(0) is the determinant of a skew-symmetric matrix of order 3, which is zero."
+},
+{
+"question": "If A is square matrix of order 3, then |2A'| is:",
+"options": ["A. 2|A|", "B. 4|A|", "C. 8|A|", "D. 6|A|"],
+"answer": "C. 8|A|",
+"explanation": "|2A'| = 2^3 * |A'| = 8 * |A|."
+},
+{
+"question": "If A = [[cos a, -sin a], [sin a, cos a]], then A^{-1} is:",
+"options": ["A. [[cos a, sin a], [-sin a, cos a]]", "B. [[-cos a, sin a], [sin a, cos a]]", "C. [[sin a, cos a], [cos a, sin a]]", "D. A"],
+"answer": "A. [[cos a, sin a], [-sin a, cos a]]",
+"explanation": "|A| = cos^2a + sin^2a = 1. adj A = [[cos a, sin a], [-sin a, cos a]]. Since |A|=1, A^{-1} = adj A."
+},
+{
+"question": "Value of |[1, w, w^2], [w, w^2, 1], [w^2, 1, w]| where w is cube root of unity is:",
+"options": ["A. 1", "B. w", "C. w^2", "D. 0"],
+"answer": "D. 0",
+"explanation": "C1 -> C1+C2+C3 makes the first column all (1+w+w^2). Since 1+w+w^2 = 0, the determinant is 0."
+},
+{
+"question": "If A is 2x2 and |A| = 2, then |A.adj A| is:",
+"options": ["A. 2", "B. 4", "C. 8", "D. 1"],
+"answer": "B. 4",
+"explanation": "A.adj A = |A|I. So |A.adj A| = ||A|I| = |A|^2 * |I| = 2^2 * 1 = 4."
+},
+{
+"question": "Area of triangle with (x1, y1), (x2, y2), (x3, y3) is:",
+"options": ["A. |[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]|", "B. 1/2 |[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]|", "C. 1/2 |[x1, y1, 0], [x2, y2, 0], [x3, y3, 0]|", "D. |A|"],
+"answer": "B. 1/2 |[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]|",
+"explanation": "This is the standard determinant formula for the area of a triangle."
+}
+]

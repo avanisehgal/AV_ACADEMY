@@ -1,0 +1,242 @@
+[
+  {
+    "question": "If P(A) = 0.6, P(B) = 0.3 and P(A ∩ B) = 0.2, then P(A|B) is:",
+    "options": ["A. 1/2", "B. 3/5", "C. 1/3", "D. 2/3"],
+    "answer": "D. 2/3",
+    "explanation": "P(A|B) = P(A ∩ B) / P(B) = 0.2 / 0.3 = 2/3."
+  },
+  {
+    "question": "If A and B are two events such that P(A) ≠ 0 and P(B|A) = 1, then which of the following is true?",
+    "options": ["A. A ∩ B = ∅", "B. B = ∅", "C. A ⊂ B", "D. B ⊂ A"],
+    "answer": "C. A ⊂ B",
+    "explanation": "If P(B|A) = 1, then P(A ∩ B) / P(A) = 1, which means P(A ∩ B) = P(A). This happens only if A is a subset of B."
+  },
+  {
+    "question": "If P(A) = 1/2 and P(B) = 0, then P(A|B) is:",
+    "options": ["A. 1/2", "B. Not defined", "C. 1", "D. 0"],
+    "answer": "B. Not defined",
+    "explanation": "Conditional probability P(A|B) is only defined when P(B) > 0."
+  },
+  {
+    "question": "Two cards are drawn from a pack of 52 cards one after another without replacement. The probability that both are red is:",
+    "options": ["A. 25/51", "B. 26/51", "C. 1/4", "D. 25/102"],
+    "answer": "D. 25/102",
+    "explanation": "P(Both Red) = (26/52) * (25/51) = 1/2 * 25/51 = 25/102."
+  },
+  {
+    "question": "If P(A|B) > P(A), then which of the following is correct?",
+    "options": ["A. P(B|A) = P(B)", "B. P(A ∩ B) < P(A) * P(B)", "C. P(B|A) < P(B)", "D. P(B|A) > P(B)"],
+    "answer": "D. P(B|A) > P(B)",
+    "explanation": "P(A|B) > P(A) => P(A ∩ B)/P(B) > P(A) => P(A ∩ B) > P(A)P(B). Dividing by P(A) gives P(B|A) > P(B)."
+  },
+  {
+    "question": "If A and B are independent events, then P(A ∩ B) is equal to:",
+    "options": ["A. P(A) + P(B)", "B. P(A|B)", "C. P(A) - P(B)", "D. P(A) * P(B)"],
+    "answer": "D. P(A) * P(B)",
+    "explanation": "The definition of independent events is P(A ∩ B) = P(A) * P(B)."
+  },
+  {
+    "question": "If A and B are independent events such that P(A) = 0.3 and P(B) = 0.4, then P(A ∪ B) is:",
+    "options": ["A. 0.12", "B. 0.58", "C. 0.42", "D. 0.7"],
+    "answer": "B. 0.58",
+    "explanation": "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.3 + 0.4 - (0.3 * 0.4) = 0.7 - 0.12 = 0.58."
+  },
+  {
+    "question": "Let A and B be independent events. If P(A) = x, P(B) = y, then P(exactly one of A, B occurs) is:",
+    "options": ["A. x + y - xy", "B. xy", "C. 1 - xy", "D. x + y - 2xy"],
+    "answer": "D. x + y - 2xy",
+    "explanation": "P(exactly one) = P(A ∪ B) - P(A ∩ B) = (x + y - xy) - xy = x + y - 2xy."
+  },
+  {
+    "question": "Three coins are tossed. Let A be 'three heads' and B be 'at least one head'. Then P(A|B) is:",
+    "options": ["A. 1/7", "B. 7/8", "C. 1/2", "D. 1/8"],
+    "answer": "A. 1/7",
+    "explanation": "P(A ∩ B) = 1/8 (HHH), P(B) = 7/8 (all except TTT). P(A|B) = (1/8) / (7/8) = 1/7."
+  },
+  {
+    "question": "If A and B are independent, then A' and B' are:",
+    "options": ["A. Dependent", "B. Exhaustive", "C. Mutually exclusive", "D. Independent"],
+    "answer": "D. Independent",
+    "explanation": "A property of independent events is that their complements are also independent."
+  },
+  {
+    "question": "In a factory, machine A produces 60% and B produces 40% of items. 2% of A and 1% of B are defective. If an item is defective, the probability it was from A is:",
+    "options": ["A. 1/2", "B. 4/5", "C. 3/4", "D. 2/3"],
+    "answer": "C. 3/4",
+    "explanation": "By Bayes' Theorem: P(A|D) = (0.6 * 0.02) / (0.6 * 0.02 + 0.4 * 0.01) = 0.012 / (0.012 + 0.004) = 0.012 / 0.016 = 3/4."
+  },
+  {
+    "question": "A random variable X has distribution: X: 0, 1, 2 with P(X): k, 2k, 3k. Then k is:",
+    "options": ["A. 1/2", "B. 1", "C. 1/3", "D. 1/6"],
+    "answer": "D. 1/6",
+    "explanation": "Sum of probabilities must be 1: k + 2k + 3k = 1 => 6k = 1 => k = 1/6."
+  },
+  {
+    "question": "If Var(X) = 4, then Var(3X + 5) is:",
+    "options": ["A. 17", "B. 36", "C. 9", "D. 12"],
+    "answer": "B. 36",
+    "explanation": "Var(aX + b) = a^2 * Var(X). Here, 3^2 * 4 = 9 * 4 = 36."
+  },
+  {
+    "question": "In a Binomial distribution B(n, p), the mean is 4 and variance is 3. Then p is:",
+    "options": ["A. 1/2", "B. 2/3", "C. 3/4", "D. 1/4"],
+    "answer": "D. 1/4",
+    "explanation": "np = 4, npq = 3. 4q = 3 => q = 3/4. Since p + q = 1, p = 1/4."
+  },
+  {
+    "question": "The probability of hitting a target is 1/3. If 5 shots are fired, probability of hitting at least once is:",
+    "options": ["A. 1 - (2/3)^5", "B. 2/3", "C. (1/3)^5", "D. 1 - (1/3)^5"],
+    "answer": "A. 1 - (2/3)^5",
+    "explanation": "P(at least once) = 1 - P(none) = 1 - (2/3)^5."
+  },
+  {
+    "question": "If P(A) = 0.8 and P(B|A) = 0.4, then P(A ∩ B) is:",
+    "options": ["A. 0.4", "B. 0.5", "C. 0.32", "D. 0.12"],
+    "answer": "C. 0.32",
+    "explanation": "P(A ∩ B) = P(A) * P(B|A) = 0.8 * 0.4 = 0.32."
+  },
+  {
+    "question": "In a school, 40% play football, 30% play cricket, and 10% play both. If a student plays football, the probability they play cricket is:",
+    "options": ["A. 2/5", "B. 1/10", "C. 1/4", "D. 1/3"],
+    "answer": "C. 1/4",
+    "explanation": "P(Cricket|Football) = P(Cricket ∩ Football) / P(Football) = 0.10 / 0.40 = 1/4."
+  },
+  {
+    "question": "If P(A ∩ B) = 1/6 and P(A ∩ B') = 1/3, then P(A) is:",
+    "options": ["A. 1/6", "B. 1/4", "C. 1/2", "D. 1/3"],
+    "answer": "C. 1/2",
+    "explanation": "P(A) = P(A ∩ B) + P(A ∩ B') = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2."
+  },
+  {
+    "question": "If E(X) = 2 and E(X^2) = 8, then Var(X) is:",
+    "options": ["A. 2", "B. 6", "C. 4", "D. 10"],
+    "answer": "C. 4",
+    "explanation": "Var(X) = E(x^2) - [E(X)]^2 = 8 - 2^2 = 8 - 4 = 4."
+  },
+  {
+    "question": "If A and B are mutually exclusive events, then P(A|B) is:",
+    "options": ["A. P(A)", "B. P(B)", "C. 1", "D. 0"],
+    "answer": "D. 0",
+    "explanation": "Mutually exclusive means P(A ∩ B) = 0. Therefore, P(A|B) = 0/P(B) = 0."
+  },
+  {
+    "question": "Two independent events A and B have P(A) = 0.3 and P(B) = 0.6. The probability neither occurs is:",
+    "options": ["A. 0.18", "B. 0.42", "C. 0.72", "D. 0.28"],
+    "answer": "D. 0.28",
+    "explanation": "P(Neither) = P(A') * P(B') = (1 - 0.3) * (1 - 0.6) = 0.7 * 0.4 = 0.28."
+  },
+  {
+    "question": "A bag contains 4 red and 4 black balls, another contains 2 red and 6 black. One bag is chosen and a ball drawn. Prob(red) is:",
+    "options": ["A. 5/8", "B. 3/8", "C. 1/2", "D. 1/4"],
+    "answer": "B. 3/8",
+    "explanation": "P(Red) = (1/2 * 4/8) + (1/2 * 2/8) = 1/4 + 1/8 = 3/8."
+  },
+  {
+    "question": "If P(A ∪ B) = 0.8 and P(A ∩ B) = 0.3, then P(A') + P(B') is:",
+    "options": ["A. 0.3", "B. 0.5", "C. 0.8", "D. 0.9"],
+    "answer": "D. 0.9",
+    "explanation": "P(A)+P(B) = P(A ∪ B) + P(A ∩ B) = 1.1. P(A') + P(B') = (1-P(A)) + (1-P(B)) = 2 - 1.1 = 0.9."
+  },
+  {
+    "question": "In B(n, p), the mean is:",
+    "options": ["A. sqrt(npq)", "B. np", "C. npq", "D. nq"],
+    "answer": "B. np",
+    "explanation": "The mean of a Binomial distribution is given by np."
+  },
+  {
+    "question": "Probability that A speaks truth is 4/5. A coin is tossed and A reports a head. Prob(it was actually head) is:",
+    "options": ["A. 4/5", "B. 2/5", "C. 1/5", "D. 1/2"],
+    "answer": "A. 4/5",
+    "explanation": "By Bayes' Theorem, P(H|reports H) = (1/2 * 4/5) / (1/2 * 4/5 + 1/2 * 1/5) = 4/5."
+  },
+  {
+    "question": "Standard deviation of Binomial distribution is:",
+    "options": ["A. q", "B. np", "C. sqrt(npq)", "D. npq"],
+    "answer": "C. sqrt(npq)",
+    "explanation": "Variance is npq, so standard deviation is sqrt(npq)."
+  },
+  {
+    "question": "If P(A ∩ B) = 7/10 and P(B) = 17/20, then P(A|B) is:",
+    "options": ["A. 1", "B. 7/20", "C. 14/17", "D. 17/20"],
+    "answer": "C. 14/17",
+    "explanation": "P(A|B) = (7/10) / (17/20) = (14/20) / (17/20) = 14/17."
+  },
+  {
+    "question": "The mean of a constant c is:",
+    "options": ["A. 1", "B. 0", "C. c", "D. c^2"],
+    "answer": "C. c",
+    "explanation": "The expected value of a constant is the constant itself. E(c) = c."
+  },
+  {
+    "question": "A die is thrown twice. Let X be number of sixes. Possible values of X are:",
+    "options": ["A. {1, 2}", "B. {0, 1, ..., 6}", "C. {0, 1, 2}", "D. {1, 2, ..., 6}"],
+    "answer": "C. {0, 1, 2}",
+    "explanation": "In two throws, you can get zero, one, or two sixes."
+  },
+  {
+    "question": "The sum of products of random variable values and their probabilities is:",
+    "options": ["A. Standard Deviation", "B. Total Probability", "C. Mean", "D. Variance"],
+    "answer": "C. Mean",
+    "explanation": "E(X) = Σ x * P(x), which is the Mean."
+  },
+  {
+    "question": "If P(A) = 0.4, P(B) = 0.8 and P(B|A) = 0.6. P(A ∪ B) is:",
+    "options": ["A. 0.64", "B. 0.24", "C. 0.96", "D. 0.56"],
+    "answer": "C. 0.96",
+    "explanation": "P(A ∩ B) = P(A)P(B|A) = 0.4 * 0.6 = 0.24. P(A ∪ B) = 0.4 + 0.8 - 0.24 = 0.96."
+  },
+  {
+    "question": "Which of the following is true for any two events A and B?",
+    "options": ["A. P(A ∩ B) ≤ P(A)", "B. P(A) + P(B) = 1", "C. P(A ∪ B) ≤ P(A)", "D. P(A|B) ≥ 1"],
+    "answer": "A. P(A ∩ B) ≤ P(A)",
+    "explanation": "The probability of an intersection is always less than or equal to the probability of its individual events."
+  },
+  {
+    "question": "If A and B are independent events, which of the following is false?",
+    "options": ["A. P(A ∩ B) = P(A)P(B)", "B. P(B|A) = P(B)", "C. P(A ∪ B) = P(A) + P(B)", "D. P(A|B) = P(A)"],
+    "answer": "C. P(A ∪ B) = P(A) + P(B)",
+    "explanation": "This is only true if the events are also mutually exclusive (P(A ∩ B) = 0)."
+  },
+  {
+    "question": "The probability of obtaining an even prime number on each die when a pair of dice is rolled is:",
+    "options": ["A. 1/6", "B. 0", "C. 1/12", "D. 1/36"],
+    "answer": "D. 1/36",
+    "explanation": "Even prime is {2}. Probability of 2 on both dice is 1/6 * 1/6 = 1/36."
+  },
+  {
+    "question": "In a Binomial distribution, if the number of trials 'n' is 10 and 'p' is 0.5, what is the variance?",
+    "options": ["A. 1.25", "B. 10", "C. 5", "D. 2.5"],
+    "answer": "D. 2.5",
+    "explanation": "Variance = npq = 10 * 0.5 * 0.5 = 2.5."
+  },
+  {
+    "question": "If P(A) = 0.3, P(B) = 0.4, then P(A ∩ B) = 0.12. This statement is:",
+    "options": ["A. Always true", "B. Always false", "C. True only if A and B are independent", "D. True only if A and B are exclusive"],
+    "answer": "C. True only if A and B are independent",
+    "explanation": "P(A ∩ B) = P(A)P(B) only when events are independent."
+  },
+  {
+    "question": "Assertion (A): Var(X) = E(X^2) - [E(X)]^2. Reason (R): Variance measures the dispersion of the distribution.",
+    "options": ["A. A is false, R is true", "B. A is true, R is false", "C. Both A and R are true and R is the correct explanation", "D. Both A and R are true but R is not the explanation of A"],
+    "answer": "D. Both A and R are true but R is not the explanation of A",
+    "explanation": "While both are true, the reason is a conceptual definition and doesn't explain the mathematical derivation of the formula in Assertion A."
+  },
+  {
+    "question": "If P(A|B) = 0.5 and P(A) = 0.5, then A and B are:",
+    "options": ["A. Mutually exclusive", "B. Exhaustive", "C. Dependent", "D. Independent"],
+    "answer": "D. Independent",
+    "explanation": "If P(A|B) = P(A), then event B does not affect event A, making them independent."
+  },
+  {
+    "question": "If X is a random variable and E(X) = μ, then E(X - μ) is:",
+    "options": ["A. μ", "B. 1", "C. 0", "D. Var(X)"],
+    "answer": "C. 0",
+    "explanation": "E(X - μ) = E(X) - E(μ) = μ - μ = 0."
+  },
+  {
+    "question": "A box contains 3 red and 7 black balls. Two balls are drawn without replacement. The probability that the first is red and second is black is:",
+    "options": ["A. 3/10", "B. 1/2", "C. 7/30", "D. 21/100"],
+    "answer": "C. 7/30",
+    "explanation": "P(1st R and 2nd B) = (3/10) * (7/9) = 21/90 = 7/30."
+  }
+]

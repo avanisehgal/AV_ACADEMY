@@ -1,0 +1,242 @@
+[
+{
+"question": "If a line makes angles $\\alpha$, $\\beta$, $\\gamma$ with the positive direction of coordinate axes, then $\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma$ is:",
+"options": ["A. 0", "B. 1", "C. 2", "D. 3"],
+"answer": "B. 1",
+"explanation": "These are the direction cosines $l, m, n$. The fundamental relation is $l^2 + m^2 + n^2 = 1$."
+},
+{
+"question": "The direction cosines of the x-axis are:",
+"options": ["A. (1, 1, 1)", "B. (0, 1, 0)", "C. (1, 0, 0)", "D. (0, 0, 1)"],
+"answer": "C. (1, 0, 0)",
+"explanation": "The x-axis makes angles $0^\\circ, 90^\\circ, 90^\\circ$ with x, y, and z axes respectively. $\\cos 0=1, \\cos 90=0$."
+},
+{
+"question": "The Cartesian equation of a line passing through $(a, b, c)$ and parallel to z-axis is:",
+"options": ["A. $(x-a)/1 = (y-b)/1 = (z-c)/0$", "B. $(x-a)/0 = (y-b)/0 = (z-c)/1$", "C. $(x-a)/0 = (y-b)/1 = (z-c)/0$", "D. $(x-a)/a = (y-b)/b = (z-c)/c$"],
+"answer": "B. $(x-a)/0 = (y-b)/0 = (z-c)/1$",
+"explanation": "The direction ratios of the z-axis are (0, 0, 1). Using the line equation formula gives this result."
+},
+{
+"question": "The shortest distance between the lines $\\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1$ and $\\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2$ is:",
+"options": ["A. $|(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2)| / |\\vec{b}_1 \\times \\vec{b}_2|$", "B. $|(\\vec{a}_2 - \\vec{a}_1) \\times (\\vec{b}_1 \\times \\vec{b}_2)| / |\\vec{b}_1 \\times \\vec{b}_2|$", "C. $|\\vec{b}_1 \\times \\vec{b}_2| / |\\vec{a}_2 - \\vec{a}_1|$", "D. 0"],
+"answer": "A. $|(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2)| / |\\vec{b}_1 \\times \\vec{b}_2|$",
+"explanation": "This is the standard formula for the shortest distance between two skew lines."
+},
+{
+"question": "If two lines with direction ratios $a_1, b_1, c_1$ and $a_2, b_2, c_2$ are perpendicular, then:",
+"options": ["A. $a_1/a_2 = b_1/b_2 = c_1/c_2$", "B. $a_1 a_2 + b_1 b_2 + c_1 c_2 = 0$", "C. $a_1^2 + b_1^2 + c_1^2 = 0$", "D. $a_1 a_2 + b_1 b_2 + c_1 c_2 = 1$"],
+"answer": "B. $a_1 a_2 + b_1 b_2 + c_1 c_2 = 0$",
+"explanation": "The dot product of their direction vectors must be zero if they are perpendicular."
+},
+{
+"question": "If $\\sin^2 \\alpha + \\sin^2 \\beta + \\sin^2 \\gamma = k$, where $\\alpha, \\beta, \\gamma$ are direction angles of a line, then $k$ is:",
+"options": ["A. 1", "B. 2", "C. 3", "D. 0"],
+"answer": "B. 2",
+"explanation": "$(1 - \\cos^2 \\alpha) + (1 - \\cos^2 \\beta) + (1 - \\cos^2 \\gamma) = 3 - (\\cos^2 \\alpha + \\cos^2 \\beta + \\cos^2 \\gamma) = 3 - 1 = 2$."
+},
+{
+"question": "The distance of the point $(3, -4, 5)$ from the origin is:",
+"options": ["A. $\\sqrt{50}$", "B. $50$", "C. $5$", "D. $12$"],
+"answer": "A. $\\sqrt{50}$",
+"explanation": "$D = \\sqrt{3^2 + (-4)^2 + 5^2} = \\sqrt{9 + 16 + 25} = \\sqrt{50}$."
+},
+{
+"question": "Two lines $\\frac{x-x_1}{a_1} = \\frac{y-y_1}{b_1} = \\frac{z-z_1}{c_1}$ and $\\frac{x-x_2}{a_2} = \\frac{y-y_2}{b_2} = \\frac{z-z_2}{c_2}$ intersect if shortest distance is:",
+"options": ["A. 1", "B. $\\infty$", "C. 0", "D. -1"],
+"answer": "C. 0",
+"explanation": "If the shortest distance between two lines is zero, it means they meet at a point (intersect)."
+},
+{
+"question": "Equation of x-axis in symmetric form is:",
+"options": ["A. $\\frac{x}{1} = \\frac{y}{1} = \\frac{z}{1}$", "B. $\\frac{x}{0} = \\frac{y}{1} = \\frac{z}{1}$", "C. $\\frac{x}{1} = \\frac{y}{0} = \\frac{z}{0}$", "D. $\\frac{x}{0} = \\frac{y}{0} = \\frac{z}{0}$"],
+"answer": "C. $\\frac{x}{1} = \\frac{y}{0} = \\frac{z}{0}$",
+"explanation": "Passes through origin (0,0,0) with direction ratios (1,0,0)."
+},
+{
+"question": "The angle between lines whose direction ratios are $(1, 1, 2)$ and $(\\sqrt{3}-1, -\\sqrt{3}-1, 4)$ is:",
+"options": ["A. $30^\\circ$", "B. $45^\\circ$", "C. $60^\\circ$", "D. $90^\\circ$"],
+"answer": "C. $60^\\circ$",
+"explanation": "Calculated using $\\cos \\theta = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{a}||\\vec{b}|}$. $\\vec{a} \\cdot \\vec{b} = 1(\\sqrt{3}-1) + 1(-\\sqrt{3}-1) + 2(4) = \\sqrt{3}-1-\\sqrt{3}-1+8 = 6$. $|\\vec{a}| = \\sqrt{6}$, $|\\vec{b}| = \\sqrt{24}$. $\\cos \\theta = 6 / \\sqrt{144} = 6/12 = 1/2 \\implies \\theta = 60^\\circ$."
+},
+{
+"question": "The foot of the perpendicular from point $(\\alpha, \\beta, \\gamma)$ on the y-axis is:",
+"options": ["A. $(0, \\beta, 0)$", "B. $(\\alpha, 0, \\gamma)$", "C. $(0, 0, 0)$", "D. $(\\alpha, \\beta, 0)$"],
+"answer": "A. $(0, \\beta, 0)$",
+"explanation": "Dropping a perpendicular to the y-axis ensures the x and z coordinates become exactly zero."
+},
+{
+"question": "Equation of a line through $(1, 2, 3)$ and parallel to $\\frac{x-1}{2} = \\frac{y}{3} = \\frac{z+1}{-2}$ is:",
+"options": ["A. $\\frac{x-1}{-2} = \\frac{y-2}{3} = \\frac{z-3}{-2}$", "B. $\\frac{x-1}{2} = \\frac{y-2}{3} = \\frac{z-3}{-2}$", "C. $\\frac{x-2}{1} = \\frac{y-3}{2} = \\frac{z+2}{3}$", "D. $\\frac{x+1}{2} = \\frac{y+2}{3} = \\frac{z+3}{-2}$"],
+"answer": "B. $\\frac{x-1}{2} = \\frac{y-2}{3} = \\frac{z-3}{-2}$",
+"explanation": "Parallel lines have identical direction ratios: (2, 3, -2). The line passes through (1, 2, 3)."
+},
+{
+"question": "The points $A(1, 2, 3)$, $B(4, 0, 4)$ and $C(-2, 4, 2)$ are:",
+"options": ["A. Collinear", "B. Vertices of right triangle", "C. Vertices of equilateral triangle", "D. Non-collinear"],
+"answer": "A. Collinear",
+"explanation": "Direction ratios of AB: (3, -2, 1). Direction ratios of AC: (-3, 2, -1). Since AC is proportional to AB, they are collinear."
+},
+{
+"question": "Vector equation of a line passing through the point $A(\\vec{a})$ and parallel to a vector $\\vec{b}$ is:",
+"options": ["A. $\\vec{r} = \\vec{a} + \\lambda\\vec{b}$", "B. $\\vec{r} = \\vec{b} + \\lambda\\vec{a}$", "C. $\\vec{r} = \\vec{a} - \\lambda\\vec{b}$", "D. $\\vec{r} \\times \\vec{b} = \\vec{a}$"],
+"answer": "A. $\\vec{r} = \\vec{a} + \\lambda\\vec{b}$",
+"explanation": "This is the standard vector form equation of a line."
+},
+{
+"question": "If a line has direction ratios $2, -1, -2$, then its direction cosines are:",
+"options": ["A. $(2/3, -1/3, -2/3)$", "B. $(2/9, -1/9, -2/9)$", "C. $(2, -1, -2)$", "D. $(2/\\sqrt{3}, -1/\\sqrt{3}, -2/\\sqrt{3})$"],
+"answer": "A. $(2/3, -1/3, -2/3)$",
+"explanation": "Magnitude $= \\sqrt{4+1+4} = 3$. Direction cosines are obtained by dividing each ratio by the magnitude."
+},
+{
+"question": "Angle between the lines $\\frac{x}{1} = \\frac{y}{0} = \\frac{z}{-1}$ and $\\frac{x}{3} = \\frac{y}{4} = \\frac{z}{5}$ is:",
+"options": ["A. $\\cos^{-1}(1/5)$", "B. $\\cos^{-1}(-1/5)$", "C. $\\cos^{-1}(-2/5\\sqrt{2})$", "D. $\\cos^{-1}(2/5\\sqrt{2})$"],
+"answer": "B. $\\cos^{-1}(-1/5)$",
+"explanation": "$\\vec{n}_1 = (1, 0, -1)$, $\\vec{n}_2 = (3, 4, 5)$. $\\vec{n}_1 \\cdot \\vec{n}_2 = 3 + 0 - 5 = -2$. $|\\vec{n}_1| = \\sqrt{2}$, $|\\vec{n}_2| = \\sqrt{50} = 5\\sqrt{2}$. $\\cos \\theta = -2 / (\\sqrt{2} \\cdot 5\\sqrt{2}) = -2/10 = -1/5$."
+},
+{
+"question": "The shortest distance between lines $\\vec{r} = (\\hat{i}+2\\hat{j}+\\hat{k}) + \\lambda(\\hat{i}-\\hat{j}+\\hat{k})$ and $\\vec{r} = (2\\hat{i}-\\hat{j}-\\hat{k}) + \\mu(2\\hat{i}+\\hat{j}+2\\hat{k})$ is:",
+"options": ["A. $3/\\sqrt{2}$", "B. $3/\\sqrt{5}$", "C. $0$", "D. $1/\\sqrt{2}$"],
+"answer": "A. $3/\\sqrt{2}$",
+"explanation": "$a_2-a1 = (1, -3, -2)$. $b_1 \\times b_2 = \\begin{vmatrix} i & j & k \\\\ 1 & -1 & 1 \\\\ 2 & 1 & 2 \\end{vmatrix} = (-3, 0, 3)$. $|b_1 \\times b_2| = \\sqrt{9+9} = 3\\sqrt{2}$. Dot product = $-3 - 0 - 6 = -9$. Distance = $|-9| / 3\\sqrt{2} = 3/\\sqrt{2}$."
+},
+{
+"question": "If $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$, then equation of x-axis in vector form is:",
+"options": ["A. $\\vec{r} = \\lambda \\hat{i}$", "B. $\\vec{r} = \\lambda \\hat{j}$", "C. $\\vec{r} = \\lambda \\hat{k}$", "D. $\\vec{r} = \\lambda(\\hat{i} + \\hat{j} + \\hat{k})$"],
+"answer": "A. $\\vec{r} = \\lambda \\hat{i}$",
+"explanation": "The x-axis passes through origin and goes along $\\hat{i}$ direction."
+},
+{
+"question": "Equation of line passing through origin and point $(a, b, c)$ is:",
+"options": ["A. $\\frac{x}{a} = \\frac{y}{b} = \\frac{z}{c}$", "B. $\\frac{x-a}{a} = \\frac{y-b}{b} = \\frac{z-c}{c}$", "C. $\\frac{x-a}{1} = \\frac{y-b}{1} = \\frac{z-c}{1}$", "D. $\\frac{x}{1} = \\frac{y}{1} = \\frac{z}{1}$"],
+"answer": "A. $\\frac{x}{a} = \\frac{y}{b} = \\frac{z}{c}$",
+"explanation": "Direction ratios are $(a-0, b-0, c-0) = (a, b, c)$. Equation through $(0,0,0)$ is $x/a = y/b = z/c$."
+},
+{
+"question": "Shortest distance between two parallel lines $\\vec{r} = \\vec{a}_1 + \\lambda\\vec{b}$ and $\\vec{r} = \\vec{a}_2 + \\mu\\vec{b}$ is:",
+"options": ["A. $|(\\vec{a}_2 - \\vec{a}_1) \\times \\vec{b}| / |\\vec{b}|$", "B. $|(\\vec{a}_2 - \\vec{a}_1) \\cdot \\vec{b}| / |\\vec{b}|$", "C. $|\\vec{a}_2 - \\vec{a}_1| / |\\vec{b}|$", "D. $0$"],
+"answer": "A. $|(\\vec{a}_2 - \\vec{a}_1) \\times \\vec{b}| / |\\vec{b}|$",
+"explanation": "This is the fundamental distance formula specifically for parallel lines."
+},
+{
+"question": "The lines $\\frac{x-1}{2} = \\frac{y-2}{3} = \\frac{z-3}{4}$ and $\\frac{x-4}{5} = \\frac{y-1}{2} = z$ intersect at:",
+"options": ["A. (-1, -1, -1)", "B. (1, 1, 1)", "C. There is no intersection", "D. (-1, 1, -1)"],
+"answer": "A. (-1, -1, -1)",
+"explanation": "Letting first equal $\\lambda$, general point is $(2\\lambda+1, 3\\lambda+2, 4\\lambda+3)$. For the second, equal $\\mu$, point is $(5\\mu+4, 2\\mu+1, \\mu)$. Equating components gives $\\lambda=-1$, leading to $(-1, -1, -1)$."
+},
+{
+"question": "Assertion (A): Points $A(1,2,3), B(2,3,4)$ and $C(3,4,5)$ are collinear. Reason (R): Direction ratios of AB and BC are proportional.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is correct explanation",
+"explanation": "DR of AB: (1, 1, 1). DR of BC: (1, 1, 1). Since they share point B and have proportional direction ratios, they are collinear."
+},
+{
+"question": "Coordinates of any point on the line $\\frac{x-2}{3} = \\frac{y+1}{4} = \\frac{z-3}{2} = \\lambda$ are:",
+"options": ["A. $(3\\lambda+2, 4\\lambda-1, 2\\lambda+3)$", "B. $(3\\lambda-2, 4\\lambda+1, 2\\lambda-3)$", "C. $(2\\lambda+3, -1\\lambda+4, 3\\lambda+2)$", "D. $(\\lambda+2, \\lambda-1, \\lambda+3)$"],
+"answer": "A. $(3\\lambda+2, 4\\lambda-1, 2\\lambda+3)$",
+"explanation": "Express $x, y, z$ in terms of $\\lambda$: $x = 3\\lambda+2$, $y = 4\\lambda-1$, $z = 2\\lambda+3$."
+},
+{
+"question": "Vector equation of the line passing through $(3, -2, -5)$ and $(3, -2, 6)$ is:",
+"options": ["A. $\\vec{r} = (3\\hat{i} - 2\\hat{j} - 5\\hat{k}) + \\lambda (11\\hat{k})$", "B. $\\vec{r} = (3\\hat{i} - 2\\hat{j} + 6\\hat{k}) + \\lambda (11\\hat{i})$", "C. $\\vec{r} = \\lambda(3\\hat{i} - 2\\hat{j})$", "D. $\\vec{r} = (3\\hat{i} - 2\\hat{j} - 5\\hat{k}) + \\lambda (\\hat{i}+\\hat{j})$"],
+"answer": "A. $\\vec{r} = (3\\hat{i} - 2\\hat{j} - 5\\hat{k}) + \\lambda (11\\hat{k})$",
+"explanation": "Direction vector = $(3-3, -2-(-2), 6-(-5)) = (0, 0, 11) = 11\\hat{k}$."
+},
+{
+"question": "If lines $\\frac{x-1}{-3} = \\frac{y-2}{2k} = \\frac{z-3}{2}$ and $\\frac{x-1}{3k} = \\frac{y-1}{1} = \\frac{z-6}{-5}$ are perpendicular, then $k$ is:",
+"options": ["A. -10/7", "B. 10/7", "C. -7/10", "D. 7/10"],
+"answer": "A. -10/7",
+"explanation": "$a_1 a_2 + b_1 b_2 + c_1 c_2 = 0 \\implies (-3)(3k) + (2k)(1) + (2)(-5) = 0 \\implies -9k + 2k - 10 = 0 \\implies -7k = 10 \\implies k = -10/7$."
+},
+{
+"question": "Intersection point of x-axis with line passing through $(3, 4, 1)$ and $(5, 1, 6)$ is:",
+"options": ["A. There is no intersection", "B. (2, 0, 0)", "C. (0, 0, 0)", "D. (0, 4, 0)"],
+"answer": "A. There is no intersection",
+"explanation": "Line: $x=3+2\\lambda, y=4-3\\lambda, z=1+5\\lambda$. x-axis requires $y=0$ and $z=0$. $4-3\\lambda=0 \\implies \\lambda=4/3$. $1+5\\lambda=0 \\implies \\lambda=-1/5$. Since they don't match, there is no intersection."
+},
+{
+"question": "Angle between the line $\\vec{r} = \\hat{i}+\\hat{j}+\\lambda(2\\hat{i}-\\hat{j}+2\\hat{k})$ and z-axis is:",
+"options": ["A. $\\cos^{-1}(2/3)$", "B. $\\cos^{-1}(1/3)$", "C. $\\cos^{-1}(-1/3)$", "D. $\\pi/2$"],
+"answer": "A. $\\cos^{-1}(2/3)$",
+"explanation": "Direction of line is $(2, -1, 2)$. Direction of z-axis is $(0, 0, 1)$. $\\cos \\theta = |(2)(0) + (-1)(0) + (2)(1)| / (\\sqrt{2^2+(-1)^2+2^2} \\cdot 1) = 2/3$."
+},
+{
+"question": "The direction cosines of a line parallel to y-axis are:",
+"options": ["A. (0, 1, 0)", "B. (1, 0, 0)", "C. (0, 0, 1)", "D. (1, 1, 1)"],
+"answer": "A. (0, 1, 0)",
+"explanation": "Any line parallel to an axis has the same direction ratios and cosines as that axis."
+},
+{
+"question": "Distance of the point $(a, b, c)$ from x-axis is:",
+"options": ["A. $\\sqrt{b^2 + c^2}$", "B. $\\sqrt{a^2 + b^2}$", "C. $\\sqrt{a^2 + c^2}$", "D. $a$"],
+"answer": "A. $\\sqrt{b^2 + c^2}$",
+"explanation": "The foot of the perpendicular on the x-axis is $(a, 0, 0)$. The distance is $\\sqrt{(a-a)^2 + (b-0)^2 + (c-0)^2} = \\sqrt{b^2 + c^2}$."
+},
+{
+"question": "The condition for two lines $\\frac{x-1}{a} = \\frac{y-2}{b} = \\frac{z-3}{c}$ and $\\frac{x-1}{a'} = \\frac{y-2}{b'} = \\frac{z-3}{c'}$ to coincide is:",
+"options": ["A. $a/a' = b/b' = c/c'$", "B. $aa' + bb' + cc' = 0$", "C. $a+b+c = a'+b'+c'$", "D. $a=a', b=b', c=c'$ (only)"],
+"answer": "A. $a/a' = b/b' = c/c'$",
+"explanation": "Since they share a point (1, 2, 3), they will coincide if their direction ratios are proportional."
+},
+{
+"question": "If $\\vec{r} \\cdot \\hat{n} = d$ is the equation of a plane, the distance of the plane from origin is:",
+"options": ["A. $d$", "B. $|d|$", "C. $-d$", "D. $d/|\\vec{n}|$"],
+"answer": "B. $|d|$",
+"explanation": "If $\\hat{n}$ is a unit vector, $|d|$ represents the perpendicular distance from the origin."
+},
+{
+"question": "Angle between two planes $\\vec{r} \\cdot \\vec{n}_1 = d_1$ and $\\vec{r} \\cdot \\vec{n}_2 = d_2$ is:",
+"options": ["A. $\\cos^{-1} \\frac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1||\\vec{n}_2|}$", "B. $\\cos^{-1} \\frac{|\\vec{n}_1 \\times \\vec{n}_2|}{|\\vec{n}_1||\\vec{n}_2|}$", "C. $\\sin^{-1} \\frac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1||\\vec{n}_2|}$", "D. $\\pi/2$"],
+"answer": "A. $\\cos^{-1} \\frac{|\\vec{n}_1 \\cdot \\vec{n}_2|}{|\\vec{n}_1||\\vec{n}_2|}$",
+"explanation": "The angle between two planes is the angle between their normal vectors."
+},
+{
+"question": "Distance between parallel planes $2x-y+3z=4$ and $2x-y+3z=18$ is:",
+"options": ["A. $14/\\sqrt{14}$", "B. $14$", "C. $\\sqrt{14}$", "D. Both A and C"],
+"answer": "D. Both A and C",
+"explanation": "Distance = $|d_2 - d_1| / \\sqrt{a^2+b^2+c^2} = |18 - 4| / \\sqrt{4+1+9} = 14 / \\sqrt{14} = \\sqrt{14}$."
+},
+{
+"question": "The plane $x/a + y/b + z/c = 1$ intersects axes at A, B, C. Centroid of $\\triangle ABC$ is:",
+"options": ["A. $(a/3, b/3, c/3)$", "B. $(a, b, c)$", "C. $(a/2, b/2, c/2)$", "D. $(0, 0, 0)$"],
+"answer": "A. $(a/3, b/3, c/3)$",
+"explanation": "Intersection points are $(a,0,0), (0,b,0), (0,0,c)$. Centroid = $((a+0+0)/3, (0+b+0)/3, (0+0+c)/3)$."
+},
+{
+"question": "Coordinates of the foot of the perpendicular from $(0,0,0)$ to plane $3x-4y+12z=3$ is:",
+"options": ["A. $(9/169, -12/169, 36/169)$", "B. $(3, -4, 12)$", "C. $(3/13, -4/13, 12/13)$", "D. $(9/13, -12/13, 36/13)$"],
+"answer": "A. $(9/169, -12/169, 36/169)$",
+"explanation": "Plane in normal form: divided by $\\sqrt{3^2+(-4)^2+12^2} = 13$, so $(3/13)x - (4/13)y + (12/13)z = 3/13$. Foot coordinates are $l d, m d, n d = (3/13)(3/13), (-4/13)(3/13), (12/13)(3/13) = (9/169, -12/169, 36/169)$."
+},
+{
+"question": "The angle between line $\\vec{r} = \\vec{a} + \\lambda\\vec{b}$ and plane $\\vec{r} \\cdot \\vec{n} = d$ is:",
+"options": ["A. $\\sin^{-1} \\frac{|\\vec{b} \\cdot \\vec{n}|}{|\\vec{b}||\\vec{n}|}$", "B. $\\cos^{-1} \\frac{|\\vec{b} \\cdot \\vec{n}|}{|\\vec{b}||\\vec{n}|}$", "C. $\\sin^{-1} \\frac{|\\vec{b} \\times \\vec{n}|}{|\\vec{b}||\\vec{n}|}$", "D. $\\pi/2$"],
+"answer": "A. $\\sin^{-1} \\frac{|\\vec{b} \\cdot \\vec{n}|}{|\\vec{b}||\\vec{n}|}$",
+"explanation": "The angle $\\theta$ between line and plane is complementary to the angle $\\alpha$ between line's direction $\\vec{b}$ and plane's normal $\\vec{n}$. So $\\sin \\theta = \\cos \\alpha = \\frac{|\\vec{b} \\cdot \\vec{n}|}{|\\vec{b}||\\vec{n}|}$."
+},
+{
+"question": "If line $\\frac{x-1}{2} = \\frac{y-2}{3} = \\frac{z-3}{4}$ is parallel to plane $3x+2y+cz=5$, then c is:",
+"options": ["A. -3", "B. 3", "C. 0", "D. -4"],
+"answer": "A. -3",
+"explanation": "For line to be parallel to plane, line's direction vector must be perpendicular to plane's normal. $2(3) + 3(2) + 4(c) = 0 \\implies 6 + 6 + 4c = 0 \\implies 4c = -12 \\implies c = -3$."
+},
+{
+"question": "Equation of plane passing through intersection of two planes $P_1 = 0$ and $P_2 = 0$ is:",
+"options": ["A. $P_1 + \\lambda P_2 = 0$", "B. $P_1 - P_2 = 0$", "C. $P_1 / P_2 = \\lambda$", "D. $P_1 P_2 = 0$"],
+"answer": "A. $P_1 + \\lambda P_2 = 0$",
+"explanation": "This is the standard family of planes equation."
+},
+{
+"question": "A line makes equal angles with coordinate axes. Its direction cosines are:",
+"options": ["A. $(\\pm 1/\\sqrt{3}, \\pm 1/\\sqrt{3}, \\pm 1/\\sqrt{3})$", "B. $(1/3, 1/3, 1/3)$", "C. $(1, 1, 1)$", "D. $(\\pm 1/\\sqrt{2}, \\pm 1/\\sqrt{2}, \\pm 1/\\sqrt{2})$"],
+"answer": "A. $(\\pm 1/\\sqrt{3}, \\pm 1/\\sqrt{3}, \\pm 1/\\sqrt{3})$",
+"explanation": "Let angles be $\\alpha$. $\\cos^2\\alpha + \\cos^2\\alpha + \\cos^2\\alpha = 1 \\implies 3\\cos^2\\alpha = 1 \\implies \\cos\\alpha = \\pm 1/\\sqrt{3}$."
+},
+{
+"question": "Image of point $(1, 6, 3)$ in line $\\frac{x}{1} = \\frac{y-1}{2} = \\frac{z-2}{3}$ is:",
+"options": ["A. $(1, 0, 7)$", "B. $(1, 6, 3)$", "C. $(0, 7, 1)$", "D. $(7, 0, 1)$"],
+"answer": "A. $(1, 0, 7)$",
+"explanation": "Let foot be $(t, 2t+1, 3t+2)$. Direction of perpendicular is $(t-1, 2t-5, 3t-1)$. Dot product with line direction (1,2,3) is 0. $(t-1) + 2(2t-5) + 3(3t-1) = 0 \\implies 14t - 14 = 0 \\implies t=1$. Foot is $(1, 3, 5)$. If image is $(p,q,r)$, $(1+p)/2 = 1 \\implies p=1$, $(6+q)/2 = 3 \\implies q=0$, $(3+r)/2 = 5 \\implies r=7$."
+}
+]

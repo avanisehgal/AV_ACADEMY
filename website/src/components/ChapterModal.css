@@ -1,22 +1,50 @@
 /* ChapterModal.css */
 .modal-overlay {
+  /* Positioning — fully covers viewport, above everything */
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+
+  /* Semi-transparent dark tint (actual blur comes via ::before) */
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* Layout */
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  z-index: 99999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   padding: 40px 20px;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow: hidden;
+
+  /* Visibility toggle */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* GPU layer — stable compositor layer prevents jitter on Chrome repaint */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
+/* Blur layer scoped inside the overlay's own compositing context.
+   Putting backdrop-filter on a ::before child (not the overlay itself)
+   prevents the stacking-context boundary from appearing as a
+   1-frame glitch line when Chrome repaints on address-bar hover. */
+.modal-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  backdrop-filter: blur(12px) brightness(0.9);
+  -webkit-backdrop-filter: blur(12px) brightness(0.9);
+}
+
+/* Custom cursor should still be visible, we only hide the native system pointer */
 .modal-overlay, .modal-overlay * {
   cursor: none !important;
 }
@@ -30,16 +58,24 @@
   background: #ffffff;
   width: 90%;
   max-width: 800px;
-  max-height: calc(100vh - 80px); /* Limits height leaving perfect 40px top/bottom margins */
+  max-height: calc(100vh - 80px);
   margin: auto;
   border-radius: 20px;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Prevent inner scroll crashing over border radius */
+  overflow: hidden;
+
+  /* Entrance animation */
   transform: translateY(20px) scale(0.95);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   border: 1px solid #eaeaea;
+
+  /* Separate GPU layer for the container so its transform animation
+     doesn't conflict with the overlay's compositing layer */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .modal-overlay.show .modal-container {
@@ -92,6 +128,9 @@
 .modal-content {
   padding: 30px 40px;
   overflow-y: auto;
+  /* Reserve scrollbar gutter space at all times so content width never
+     jumps when the scrollbar appears/disappears on chapter expand/collapse */
+  scrollbar-gutter: stable;
   flex-grow: 1;
 }
 

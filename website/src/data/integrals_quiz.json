@@ -1,0 +1,242 @@
+[
+{
+"question": "The value of ∫ dx / (sin²x cos²x) is:",
+"options": ["A. tan x + cot x + C", "B. tan x - cot x + C", "C. cot x - tan x + C", "D. tan x cot x + C"],
+"answer": "B. tan x - cot x + C",
+"explanation": "Replace 1 in the numerator with sin²x + cos²x. The integral becomes ∫ (sin²x + cos²x) / (sin²x cos²x) dx = ∫ (sec²x + cosec²x) dx = tan x - cot x + C."
+},
+{
+"question": "Evaluate ∫ [e^x (1+x) / cos²(xe^x)] dx:",
+"options": ["A. tan(xe^x) + C", "B. cot(xe^x) + C", "C. sin(xe^x) + C", "D. cos(xe^x) + C"],
+"answer": "A. tan(xe^x) + C",
+"explanation": "Let xe^x = t. Then (e^x + xe^x)dx = dt. The integral becomes ∫ sec²t dt = tan t + C = tan(xe^x) + C."
+},
+{
+"question": "∫ dx / (x² + 2x + 2) is equal to:",
+"options": ["A. x tan⁻¹(x+1) + C", "B. tan⁻¹(x+1) + C", "C. (x+1) tan⁻¹x + C", "D. tan⁻¹x + C"],
+"answer": "B. tan⁻¹(x+1) + C",
+"explanation": "x² + 2x + 2 = (x+1)² + 1. The integral of 1 / (u² + a²) is (1/a) tan⁻¹(u/a). Here u = x+1 and a = 1."
+},
+{
+"question": "The value of ∫ dx / (x + x log x) is:",
+"options": ["A. log|1 + log x| + C", "B. log|log x| + C", "C. x + log x + C", "D. 1 / (1 + log x)² + C"],
+"answer": "A. log|1 + log x| + C",
+"explanation": "∫ dx / [x(1 + log x)]. Let 1 + log x = t, then (1/x)dx = dt. Integral is ∫ dt/t = log|t| + C = log|1 + log x| + C."
+},
+{
+"question": "Evaluate ∫ e^x (sin x + cos x) dx:",
+"options": ["A. e^x cos x + C", "B. e^x sin x + C", "C. -e^x sin x + C", "D. e^x(sin x - cos x) + C"],
+"answer": "B. e^x sin x + C",
+"explanation": "Using the rule ∫ e^x [f(x) + f'(x)] dx = e^x f(x) + C. Here f(x) = sin x and f'(x) = cos x."
+},
+{
+"question": "∫ dx / √(9 - 25x²) is equal to:",
+"options": ["A. 1/3 sin⁻¹(5x/3) + C", "B. 1/5 sin⁻¹(5x/3) + C", "C. 1/15 sin⁻¹(3x/5) + C", "D. sin⁻¹(5x/3) + C"],
+"answer": "B. 1/5 sin⁻¹(5x/3) + C",
+"explanation": "Take 25 common: (1/5) ∫ dx / √((3/5)² - x²). Using ∫ dx / √(a² - x²) = sin⁻¹(x/a), we get (1/5) sin⁻¹(5x/3) + C."
+},
+{
+"question": "Evaluate ∫ [(cos 2x - cos 2α) / (cos x - cos α)] dx:",
+"options": ["A. 2[sin x + x cos α] + C", "B. 2[sin x - x cos α] + C", "C. 2[cos x + sin α] + C", "D. 2[sin x + sin α] + C"],
+"answer": "A. 2[sin x + x cos α] + C",
+"explanation": "cos 2x - cos 2α = (2cos²x - 1) - (2cos²α - 1) = 2(cos²x - cos²α). Dividing by (cos x - cos α) gives 2(cos x + cos α). Integrating gives 2sin x + 2x cos α."
+},
+{
+"question": "The value of ∫ [x³ / (x + 1)] dx is:",
+"options": ["A. x³/3 - x²/2 + x - log|x+1| + C", "B. x³/3 + x²/2 + x + log|x+1| + C", "C. x²/2 - x + log|x+1| + C", "D. x² - x + C"],
+"answer": "A. x³/3 - x²/2 + x - log|x+1| + C",
+"explanation": "By long division, x³ / (x + 1) = x² - x + 1 - 1/(x+1). Integrating term by term gives the result."
+},
+{
+"question": "Evaluate ∫ dx / [cos²x (1 - tan x)²]:",
+"options": ["A. 1 / (1 - tan x) + C", "B. 1 / (tan x - 1) + C", "C. log|1 - tan x| + C", "D. -1 / (1 - tan x) + C"],
+"answer": "A. 1 / (1 - tan x) + C",
+"explanation": "The integral is ∫ sec²x dx / (1 - tan x)². Let 1 - tan x = t, then -sec²x dx = dt. Integral is ∫ -dt/t² = 1/t + C = 1 / (1 - tan x) + C."
+},
+{
+"question": "∫ tan²(2x - 3) dx is equal to:",
+"options": ["A. 1/2 tan(2x-3) - x + C", "B. tan(2x-3) - x + C", "C. 1/2 tan(2x-3) + x + C", "D. sec²(2x-3) + C"],
+"answer": "A. 1/2 tan(2x-3) - x + C",
+"explanation": "∫ (sec²(2x-3) - 1) dx. Integrating sec²(2x-3) gives (1/2) tan(2x-3) and integrating 1 gives x."
+},
+{
+"question": "∫ x sec²x dx is equal to:",
+"options": ["A. x tan x + log|cos x| + C", "B. x tan x - log|sec x| + C", "C. x tan x + log|sec x| + C", "D. tan x + x log|cos x| + C"],
+"answer": "A. x tan x + log|cos x| + C",
+"explanation": "Using Integration by Parts: x ∫ sec²x dx - ∫ [1 * tan x] dx = x tan x - log|sec x| + C = x tan x + log|cos x| + C."
+},
+{
+"question": "The value of ∫ log x dx is:",
+"options": ["A. x log x + x + C", "B. x log x - x + C", "C. 1/x + C", "D. x log x + C"],
+"answer": "B. x log x - x + C",
+"explanation": "Using Integration by Parts with 1 as the second function: log x * x - ∫ (1/x * x) dx = x log x - x + C."
+},
+{
+"question": "∫ dx / [(x+1)(x+2)] is equal to:",
+"options": ["A. log |(x+1)/(x+2)| + C", "B. log |(x+2)/(x+1)| + C", "C. log |(x+1)(x+2)| + C", "D. 1/(x+1) + 1/(x+2) + C"],
+"answer": "A. log |(x+1)/(x+2)| + C",
+"explanation": "Using partial fractions: 1/[(x+1)(x+2)] = 1/(x+1) - 1/(x+2). Integration gives log|x+1| - log|x+2| = log|(x+1)/(x+2)|."
+},
+{
+"question": "Evaluate ∫ e^x (1/x - 1/x²) dx:",
+"options": ["A. e^x/x² + C", "B. e^x log x + C", "C. e^x/x + C", "D. -e^x/x + C"],
+"answer": "C. e^x/x + C",
+"explanation": "Using ∫ e^x [f(x) + f'(x)] dx = e^x f(x). Here f(x) = 1/x and f'(x) = -1/x²."
+},
+{
+"question": "∫ [x / (x-1)(x-2)] dx is equal to:",
+"options": ["A. log |(x-2)² / (x-1)| + C", "B. log |(x-1) / (x-2)²| + C", "C. log |(x-1)(x-2)| + C", "D. log |(x-2) / (x-1)| + C"],
+"answer": "A. log |(x-2)² / (x-1)| + C",
+"explanation": "By partial fractions: x/[(x-1)(x-2)] = -1/(x-1) + 2/(x-2). Integration gives -log|x-1| + 2log|x-2| = log|(x-2)²/(x-1)|."
+},
+{
+"question": "Evaluate ∫ e^x [(1 + sin x) / (1 + cos x)] dx:",
+"options": ["A. e^x tan(x/2) + C", "B. e^x cot(x/2) + C", "C. e^x sin x + C", "D. e^x cos x + C"],
+"answer": "A. e^x tan(x/2) + C",
+"explanation": "(1 + sin x) / (1 + cos x) = [1 + 2sin(x/2)cos(x/2)] / [2cos²(x/2)] = (1/2)sec²(x/2) + tan(x/2). This is e^x[f'(x) + f(x)] where f(x) = tan(x/2)."
+},
+{
+"question": "∫ sin⁻¹ x dx is equal to:",
+"options": ["A. x sin⁻¹ x + √(1-x²) + C", "B. x sin⁻¹ x - √(1-x²) + C", "C. 1 / √(1-x²) + C", "D. x sin⁻¹ x + C"],
+"answer": "A. x sin⁻¹ x + √(1-x²) + C",
+"explanation": "Integration by parts: x sin⁻¹ x - ∫ x / √(1-x²) dx. Let 1-x² = t, result is x sin⁻¹ x + √(1-x²) + C."
+},
+{
+"question": "The value of ∫ [2x / (x²+1)(x²+3)] dx is:",
+"options": ["A. log |(x²+1)/(x²+3)| + C", "B. 1/2 log |(x²+1)/(x²+3)| + C", "C. 1/2 log |(x²+3)/(x²+1)| + C", "D. log |(x²+1)(x²+3)| + C"],
+"answer": "B. 1/2 log |(x²+1)/(x²+3)| + C",
+"explanation": "Let x² = t, 2xdx = dt. Integral is ∫ dt / [(t+1)(t+3)]. By partial fractions: (1/2) ∫ [1/(t+1) - 1/(t+3)] dt = (1/2) log |(t+1)/(t+3)|."
+},
+{
+"question": "The value of ∫₀^(π/2) [√sin x / (√sin x + √cos x)] dx is:",
+"options": ["A. π/2", "B. π/4", "C. π", "D. 0"],
+"answer": "B. π/4",
+"explanation": "Using property ∫₀ᵃ f(x) dx = ∫₀ᵃ f(a-x) dx. Adding both forms gives 2I = ∫₀^(π/2) 1 dx = π/2, so I = π/4."
+},
+{
+"question": "The value of ∫₋ₚᵢ/₂^(π/2) sin⁷x dx is:",
+"options": ["A. 1", "B. 1/7", "C. 0", "D. π"],
+"answer": "C. 0",
+"explanation": "sin⁷x is an odd function. For any odd function f(x), ∫₋ₐᵃ f(x) dx = 0."
+},
+{
+"question": "Evaluate ∫₀¹ [tan⁻¹x / (1+x²)] dx:",
+"options": ["A. π²/8", "B. π²/32", "C. π/4", "D. π/8"],
+"answer": "B. π²/32",
+"explanation": "Let tan⁻¹x = t, then 1/(1+x²)dx = dt. Limits change from [0, 1] to [0, π/4]. Integral is ∫₀^(π/4) t dt = [t²/2] = (π/4)² / 2 = π²/32."
+},
+{
+"question": "The value of ∫₀^(π) |cos x| dx is:",
+"options": ["A. 0", "B. 2", "C. 1", "D. 4"],
+"answer": "B. 2",
+"explanation": "Split at π/2: ∫₀^(π/2) cos x dx + ∫ₚᵢ/₂^(π) -cos x dx = [sin x]₀^(π/2) - [sin x]ₚᵢ/₂^(π) = 1 - (0 - 1) = 2."
+},
+{
+"question": "The value of ∫₋₁¹ |x| dx is:",
+"options": ["A. 0", "B. 2", "C. 1", "D. 1/2"],
+"answer": "C. 1",
+"explanation": "Function is even: 2 ∫₀¹ x dx = 2 [x²/2]₀¹ = 1."
+},
+{
+"question": "Evaluate ∫₀^(π/2) log(tan x) dx:",
+"options": ["A. π/2", "B. π/4", "C. 0", "D. π log 2"],
+"answer": "C. 0",
+"explanation": "Using property ∫₀ᵃ f(x) dx = ∫₀ᵃ f(a-x) dx, I = ∫ log(tan(π/2-x)) = ∫ log(cot x). 2I = ∫ log(tan x * cot x) = ∫ log 1 = 0."
+},
+{
+"question": "The value of ∫₀ᵃ [f(x) / (f(x) + f(a-x))] dx is:",
+"options": ["A. a", "B. a/2", "C. 0", "D. 2a"],
+"answer": "B. a/2",
+"explanation": "Standard property: By adding the integral to its f(a-x) version, we get 2I = ∫₀ᵃ 1 dx = a, so I = a/2."
+},
+{
+"question": "Evaluate ∫₁² [√x / (√(3-x) + √x)] dx:",
+"options": ["A. 1", "B. 1/2", "C. 2", "D. 3/2"],
+"answer": "B. 1/2",
+"explanation": "Using property ∫ₐᵇ f(x) dx = ∫ₐᵇ f(a+b-x) dx. Here 2I = ∫₁² 1 dx = 1, so I = 1/2."
+},
+{
+"question": "The value of ∫₀^(π) [x sin x / (1 + cos²x)] dx is:",
+"options": ["A. π²/4", "B. π²/2", "C. π/4", "D. π"],
+"answer": "A. π²/4",
+"explanation": "Using property, 2I = π ∫₀^(π) [sin x / (1 + cos²x)] dx. Let cos x = t, then -sin x dx = dt. Result evaluates to π²/4."
+},
+{
+"question": "∫₋ₚᵢ/₂^(π/2) (sin²x + cos x) dx is:",
+"options": ["A. π/2 + 2", "B. π/2", "C. 2", "D. π"],
+"answer": "A. π/2 + 2",
+"explanation": "Both are even functions: 2 ∫₀^(π/2) (sin²x + cos x) dx = 2 [ (x/2 - sin2x/4) + sin x ]₀^(π/2) = 2 [ π/4 + 1 ] = π/2 + 2."
+},
+{
+"question": "Evaluate ∫₂⁸ |x-5| dx:",
+"options": ["A. 9", "B. 18", "C. 0", "D. 3"],
+"answer": "A. 9",
+"explanation": "Split at 5: ∫₂⁵ (5-x) dx + ∫₅⁸ (x-5) dx = [5x - x²/2]₂⁵ + [x²/2 - 5x]₅⁸ = 4.5 + 4.5 = 9."
+},
+{
+"question": "The value of ∫₀¹ x(1-x)ⁿ dx is:",
+"options": ["A. 1/(n+1) - 1/(n+2)", "B. 1/[(n+1)(n+2)]", "C. Both A and B", "D. 1/(n+1)"],
+"answer": "C. Both A and B",
+"explanation": "Using property ∫₀ᵃ f(x) dx = ∫₀ᵃ f(a-x) dx, integral becomes ∫₀¹ (1-x)xⁿ dx = ∫ (xⁿ - xⁿ⁺¹) dx = 1/(n+1) - 1/(n+2), which simplifies to 1/[(n+1)(n+2)]."
+},
+{
+"question": "Evaluate ∫₀^(π/2) log(sin x) dx:",
+"options": ["A. (π/2) log 2", "B. -(π/2) log 2", "C. π log 2", "D. 0"],
+"answer": "B. -(π/2) log 2",
+"explanation": "This is a standard definite integral result derived using the properties of log and trigonometric symmetry."
+},
+{
+"question": "The value of ∫₀^(2π) cos⁵x dx is:",
+"options": ["A. 2 ∫₀^(π) cos⁵x dx", "B. 0", "C. 4 ∫₀^(π/2) cos⁵x dx", "D. 1"],
+"answer": "B. 0",
+"explanation": "Using property ∫₀²ᵃ f(x) dx: Since cos⁵(2π-x) = cos⁵x, but cos⁵(π-x) = -cos⁵x, the integral from 0 to π and π to 2π cancels out."
+},
+{
+"question": "If f(x) = ∫₀ˣ t sin t dt, then f'(x) is:",
+"options": ["A. x sin x", "B. x cos x", "C. sin x + x cos x", "D. sin x"],
+"answer": "A. x sin x",
+"explanation": "By the Fundamental Theorem of Calculus, d/dx [∫₀ˣ f(t) dt] = f(x)."
+},
+{
+"question": "Evaluate ∫₀¹ dx / (e^x + e⁻ˣ):",
+"options": ["A. tan⁻¹e - π/4", "B. tan⁻¹e + π/4", "C. log(e+1)", "D. tan⁻¹e"],
+"answer": "A. tan⁻¹e - π/4",
+"explanation": "Multiply numerator and denominator by e^x: ∫ e^x dx / (e²ˣ + 1). Let e^x = t, dt = e^x dx. Integral is ∫ dt / (t² + 1) = [tan⁻¹t]₁ᵉ = tan⁻¹e - tan⁻¹1."
+},
+{
+"question": "The area bounded by the curve y = sin x between x = 0 and x = 2π is:",
+"options": ["A. 2", "B. 4", "C. 0", "D. 1"],
+"answer": "B. 4",
+"explanation": "Area is ∫₀^(π) sin x dx + |∫ₚᵢ^(2π) sin x dx| = 2 + |-2| = 4."
+},
+{
+"question": "∫₀^(π) sin²x cos³x dx is:",
+"options": ["A. 0", "B. 2/15", "C. 4/15", "D. 1/15"],
+"answer": "A. 0",
+"explanation": "f(π-x) = sin²(π-x) cos³(π-x) = sin²x (-cos³x) = -f(x). Since f(π-x) = -f(x), the integral is 0."
+},
+{
+"question": "If ∫₀ᵃ 3x² dx = 8, then the value of a is:",
+"options": ["A. 2", "B. 4", "C. 8", "D. ∛8"],
+"answer": "A. 2",
+"explanation": "[x³]₀ᵃ = 8 => a³ = 8 => a = 2."
+},
+{
+"question": "∫₁ᵉ (1/x) dx is equal to:",
+"options": ["A. e", "B. 1", "C. 0", "D. log e - 1"],
+"answer": "B. 1",
+"explanation": "∫ (1/x) dx = [log x]₁ᵉ = log e - log 1 = 1 - 0 = 1."
+},
+{
+"question": "Assertion (A): ∫₋₁¹ x³ dx = 0. Reason (R): f(x) = x³ is an odd function and ∫₋ₐᵃ f(x) dx = 0 if f is odd.",
+"options": ["A. Both A and R are true and R is the correct explanation", "B. Both A and R are true but R is not the explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is the correct explanation",
+"explanation": "x³ is indeed an odd function, and the integral of an odd function over symmetric limits is always zero."
+},
+{
+"question": "The value of ∫₀^(π/4) tan x dx is:",
+"options": ["A. log 2", "B. 1/2 log 2", "C. log √2", "D. Both B and C"],
+"answer": "D. Both B and C",
+"explanation": "∫ tan x dx = [log|sec x|]₀^(π/4) = log(sec π/4) - log(sec 0) = log √2 = (1/2) log 2."
+}
+]

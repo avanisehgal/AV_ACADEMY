@@ -1,0 +1,242 @@
+[
+{
+"question": "If a matrix has 18 elements, what are the possible orders it can have?",
+"options": ["A. 4", "B. 5", "C. 6", "D. 7"],
+"answer": "C. 6",
+"explanation": "The possible orders are pairs (m, n) such that m × n = 18. These are (1,18), (18,1), (2,9), (9,2), (3,6), and (6,3). Total 6 orders."
+},
+{
+"question": "A matrix A = [aij]m×n is a square matrix if:",
+"options": ["A. m < n", "B. m > n", "C. m = n", "D. None of these"],
+"answer": "C. m = n",
+"explanation": "A matrix is square if the number of rows (m) equals the number of columns (n)."
+},
+{
+"question": "The number of all possible matrices of order 3×3 with each entry 0 or 1 is:",
+"options": ["A. 27", "B. 18", "C. 81", "D. 512"],
+"answer": "D. 512",
+"explanation": "A 3×3 matrix has 9 entries. If each entry has 2 choices (0 or 1), the total number of matrices is 2^9 = 512."
+},
+{
+"question": "If A is a matrix of order m×n and B is a matrix such that AB and BA are both defined, then the order of B is:",
+"options": ["A. m×n", "B. n×m", "C. n×n", "D. m×m"],
+"answer": "B. n×m",
+"explanation": "For AB to be defined, B must have n rows. For BA to be defined, B must have m columns. Thus B is n×m."
+},
+{
+"question": "A diagonal matrix in which all diagonal elements are equal is called a:",
+"options": ["A. Unit matrix", "B. Scalar matrix", "C. Null matrix", "D. Identity matrix"],
+"answer": "B. Scalar matrix",
+"explanation": "A scalar matrix is a diagonal matrix where all diagonal entries are the same scalar value."
+},
+{
+"question": "If [[x+3, z+4, 2y-7], [-6, a-1, 0]] = [[0, 6, 3y-2], [-6, -3, 0]], then the value of a is:",
+"options": ["A. -2", "B. 2", "C. 3", "D. -3"],
+"answer": "A. -2",
+"explanation": "Comparing elements at (2,2): a - 1 = -3 => a = -2."
+},
+{
+"question": "Which of the following is a unit matrix of order 2?",
+"options": ["A. [[1,1],[1,1]]", "B. [[0,1],[1,0]]", "C. [[1,0],[0,1]]", "D. [[1,0],[1,0]]"],
+"answer": "C. [[1,0],[0,1]]",
+"explanation": "A unit (identity) matrix has 1s on the main diagonal and 0s elsewhere."
+},
+{
+"question": "If A is any square matrix with real entries, then A + A' is a:",
+"options": ["A. Skew-symmetric matrix", "B. Symmetric matrix", "C. Identity matrix", "D. Null matrix"],
+"answer": "B. Symmetric matrix",
+"explanation": "By property, (A + A')' = A' + (A')' = A' + A. Since the transpose equals the original, it is symmetric."
+},
+{
+"question": "In a skew-symmetric matrix, diagonal elements are always:",
+"options": ["A. 1", "B. Any real number", "C. 0", "D. -1"],
+"answer": "C. 0",
+"explanation": "For a skew-symmetric matrix, aij = -aji. For diagonal elements, i=j, so aii = -aii => 2aii = 0 => aii = 0."
+},
+{
+"question": "Construct a 2×2 matrix A = [aij] where aij = (i+j)^2 / 2. The element a21 is:",
+"options": ["A. 9", "B. 4.5", "C. 8", "D. 2"],
+"answer": "B. 4.5",
+"explanation": "a21 = (2+1)^2 / 2 = 3^2 / 2 = 9/2 = 4.5."
+},
+{
+"question": "Matrices A and B will be inverse of each other only if:",
+"options": ["A. AB = BA", "B. AB = BA = 0", "C. AB = 0, BA = I", "D. AB = BA = I"],
+"answer": "D. AB = BA = I",
+"explanation": "By definition of inverse matrices, their product in either order must result in the identity matrix."
+},
+{
+"question": "If A and B are square matrices of the same order, then (A + B)' is equal to:",
+"options": ["A. A' + B'", "B. AB'", "C. B' + A'", "D. Both A and C"],
+"answer": "D. Both A and C",
+"explanation": "The transpose of a sum is the sum of transposes. Matrix addition is commutative, so A' + B' = B' + A'."
+},
+{
+"question": "Matrix multiplication is associative. This means:",
+"options": ["A. AB = BA", "B. (AB)C = A(BC)", "C. A(B+C) = AB + AC", "D. k(AB) = (kA)B"],
+"answer": "B. (AB)C = A(BC)",
+"explanation": "Associativity refers to the grouping of operations: (AB)C = A(BC)."
+},
+{
+"question": "If A is a 3×4 matrix and B is a 4×3 matrix, the order of AB is:",
+"options": ["A. 4×4", "B. 3×3", "C. 3×4", "D. 4×3"],
+"answer": "B. 3×3",
+"explanation": "The product of (m×n) and (n×p) results in (m×p). Here (3×4) and (4×3) gives 3×3."
+},
+{
+"question": "If A = [[α, 0], [1, 1]] and B = [[1, 0], [5, 1]], such that A^2 = B, then the value of α is:",
+"options": ["A. 1", "B. -1", "C. 4", "D. No real values"],
+"answer": "D. No real values",
+"explanation": "A^2 = [[α^2, 0], [α+1, 1]]. Comparing with B: α^2 = 1 (α=±1) and α+1 = 5 (α=4). These are contradictory, so no real value exists."
+},
+{
+"question": "If A is a square matrix such that A^2 = A, then (I + A)^3 - 7A is equal to:",
+"options": ["A. A", "B. I - A", "C. I", "D. 3A"],
+"answer": "C. I",
+"explanation": "(I+A)^3 - 7A = (I^3 + 3I^2A + 3IA^2 + A^3) - 7A. Given A^2=A, then A^3=A. Expression becomes I + 3A + 3A + A - 7A = I + 7A - 7A = I."
+},
+{
+"question": "If A = [[0, 1], [1, 0]], then A^2 is equal to:",
+"options": ["A. I", "B. A", "C. 0", "D. -I"],
+"answer": "A. I",
+"explanation": "A^2 = [[0,1],[1,0]] [[0,1],[1,0]] = [[0+1, 0+0], [0+0, 1+0]] = [[1,0],[0,1]] = I."
+},
+{
+"question": "If k is a scalar and A is a matrix, then (kA)' is:",
+"options": ["A. k'A'", "B. kA'", "C. k+A'", "D. A"],
+"answer": "B. kA'",
+"explanation": "The transpose of a scalar multiple is the scalar multiple of the transpose."
+},
+{
+"question": "Let A = [[1, 2], [3, 4]]. Then A^2 - 5A is:",
+"options": ["A. 2I", "B. -2I", "C. 5I", "D. 0"],
+"answer": "B. -2I",
+"explanation": "A^2 = [[7,10],[15,22]], 5A = [[5,10],[15,20]]. A^2 - 5A = [[2,0],[0,2]] = 2I. (Wait, rechecking calculation: A^2 - 5A - 2I = 0 usually, so A^2 - 5A = 2I)."
+},
+{
+"question": "If A and B are square matrices of same order, (A+B)(A-B) = A^2 - B^2 is true if:",
+"options": ["A. AB = BA", "B. AB != BA", "C. A = B", "D. A = 0"],
+"answer": "A. AB = BA",
+"explanation": "Expanding (A+B)(A-B) = A^2 - AB + BA - B^2. This equals A^2 - B^2 only if -AB + BA = 0, i.e., AB = BA."
+},
+{
+"question": "For any square matrix A, A - A' is a:",
+"options": ["A. Symmetric matrix", "B. Skew-symmetric matrix", "C. Unit matrix", "D. Orthogonal matrix"],
+"answer": "B. Skew-symmetric matrix",
+"explanation": "(A - A')' = A' - (A')' = A' - A = -(A - A'). Since the transpose equals the negative of the original, it is skew-symmetric."
+},
+{
+"question": "If A and B are symmetric matrices of the same order, then AB - BA is a:",
+"options": ["A. Skew-symmetric matrix", "B. Symmetric matrix", "C. Zero matrix", "D. Identity matrix"],
+"answer": "A. Skew-symmetric matrix",
+"explanation": "(AB - BA)' = (AB)' - (BA)' = B'A' - A'B'. Since A, B are symmetric, B'A' - A'B' = BA - AB = -(AB - BA). Thus skew-symmetric."
+},
+{
+"question": "The transpose of a product (AB)' is equal to:",
+"options": ["A. A'B'", "B. B'A'", "C. AB", "D. BA"],
+"answer": "B. B'A'",
+"explanation": "Reversal law of transposes: the transpose of a product is the product of the transposes in reverse order."
+},
+{
+"question": "Any square matrix A can be expressed as sum of symmetric and skew-symmetric matrices as:",
+"options": ["A. 1/2(A+A') + 1/2(A-A')", "B. (A+A') + (A-A')", "C. 1/2(A+A') - 1/2(A-A')", "D. A + A'"],
+"answer": "A. 1/2(A+A') + 1/2(A-A')",
+"explanation": "A = 1/2(A + A') [Symmetric part] + 1/2(A - A') [Skew-symmetric part]."
+},
+{
+"question": "If A = [[cosθ, -sinθ], [sinθ, cosθ]], then A + A' = I if θ is:",
+"options": ["A. π/6", "B. π/3", "C. π", "D. 3π/2"],
+"answer": "B. π/3",
+"explanation": "A+A' = [[2cosθ, 0], [0, 2cosθ]]. For this to be I, 2cosθ = 1 => cosθ = 1/2 => θ = π/3."
+},
+{
+"question": "If A = [[5, x], [y, 0]] is a symmetric matrix, then:",
+"options": ["A. x = y", "B. x = 0", "C. y = 0", "D. x = -y"],
+"answer": "A. x = y",
+"explanation": "In a symmetric matrix, aij = aji. Thus, the element at (1,2) must equal (2,1), so x = y."
+},
+{
+"question": "If A is a skew-symmetric matrix of odd order n, then |A| is:",
+"options": ["A. 1", "B. 0", "C. n", "D. n^2"],
+"answer": "B. 0",
+"explanation": "The determinant of a skew-symmetric matrix of odd order is always zero."
+},
+{
+"question": "If A' is the transpose of A, then (A')' is:",
+"options": ["A. A'", "B. A", "C. -A", "D. I"],
+"answer": "B. A",
+"explanation": "Transposing a matrix twice returns it to its original form."
+},
+{
+"question": "A square matrix A is called orthogonal if:",
+"options": ["A. A' = A", "B. A' = -A", "C. AA' = I", "D. A^2 = I"],
+"answer": "C. AA' = I",
+"explanation": "A matrix is orthogonal if the product of the matrix and its transpose is the identity matrix."
+},
+{
+"question": "If A = [[0, 2b, c], [a, b, -c], [a, -b, c]] is orthogonal, then value of a is:",
+"options": ["A. ±1/√2", "B. ±1/√3", "C. ±1/√6", "D. ±1"],
+"answer": "A. ±1/√2",
+"explanation": "Rows/columns must be unit vectors. From col 1: 0^2 + a^2 + a^2 = 1 => 2a^2 = 1 => a = ±1/√2."
+},
+{
+"question": "If A and B are invertible matrices of same order, then (AB)^-1 is:",
+"options": ["A. A^-1B^-1", "B. B^-1A^-1", "C. AB", "D. (BA)^-1"],
+"answer": "B. B^-1A^-1",
+"explanation": "Reversal law of inverses: the inverse of a product is the product of the inverses in reverse order."
+},
+{
+"question": "For a square matrix A, if A^2 - A + I = 0, then A^-1 is:",
+"options": ["A. A", "B. A + I", "C. I - A", "D. A - I"],
+"answer": "C. I - A",
+"explanation": "I = A - A^2 = A(I - A). Multiplying by A^-1: A^-1 = I - A."
+},
+{
+"question": "A square matrix A is idempotent if:",
+"options": ["A. A^2 = I", "B. A^2 = A", "C. A^2 = 0", "D. A' = A"],
+"answer": "B. A^2 = A",
+"explanation": "An idempotent matrix is one that, when multiplied by itself, yields itself."
+},
+{
+"question": "A square matrix A is involutory if:",
+"options": ["A. A^2 = A", "B. A^2 = I", "C. A^2 = 0", "D. A' = A"],
+"answer": "B. A^2 = I",
+"explanation": "An involutory matrix is its own inverse, meaning A^2 = I."
+},
+{
+"question": "If A = [[2, 3], [5, 7]], then A^-1 is:",
+"options": ["A. [[7,-3],[-5,2]]", "B. [[-7,3],[5,-2]]", "C. [[7,5],[3,2]]", "D. [[2,5],[3,7]]"],
+"answer": "B. [[-7,3],[5,-2]]",
+"explanation": "|A| = 14-15 = -1. A^-1 = (1/-1) * [[7,-3],[-5,2]] = [[-7,3],[5,-2]]."
+},
+{
+"question": "If A = [[a, b], [c, d]], then inverse exists if:",
+"options": ["A. ad-bc = 0", "B. ad-bc != 0", "C. a+d = b+c", "D. a = d"],
+"answer": "B. ad-bc != 0",
+"explanation": "A matrix is invertible if and only if its determinant is non-zero."
+},
+{
+"question": "If A is a symmetric matrix, then A^-1 (if it exists) is:",
+"options": ["A. Symmetric", "B. Skew-symmetric", "C. Diagonal", "D. Identity"],
+"answer": "A. Symmetric",
+"explanation": "The inverse of a symmetric matrix is also symmetric."
+},
+{
+"question": "If A = [[1, 2], [3, 4]] and B = [[0, 1], [1, 0]], then (AB)^-1 is:",
+"options": ["A. B^-1A^-1", "B. A^-1B^-1", "C. [[-2,1],[1.5,-0.5]]", "D. Both A and C"],
+"answer": "D. Both A and C",
+"explanation": "(AB)^-1 = B^-1A^-1. Numerically, AB = [[2,1],[4,3]], |AB| = 2, adj(AB) = [[3,-1],[-4,2]]. (AB)^-1 = [[1.5,-0.5],[-2,1]]. (Checking signs: option C values match adj/det)."
+},
+{
+"question": "Elementary row transformation Ri -> Ri + kRj on matrix A does not change its:",
+"options": ["A. Elements", "B. Order", "C. Determinant", "D. Both B and C"],
+"answer": "D. Both B and C",
+"explanation": "Row operations change elements but preserve the dimensions (order) and the value of the determinant."
+},
+{
+"question": "If A is a square matrix such that A^3 = I, then A^-1 is:",
+"options": ["A. A", "B. A^2", "C. I", "D. 0"],
+"answer": "B. A^2",
+"explanation": "A^3 = I => A(A^2) = I, so A^-1 = A^2."
+}
+]

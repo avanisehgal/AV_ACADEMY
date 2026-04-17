@@ -31,6 +31,11 @@
       "sourceType": "github",
       "computedHash": "216425756047fb5bb34d32ccafd973576d248f8290182d775eeff33f8c224397"
     },
+    "neon-postgres": {
+      "source": "neondatabase/agent-skills",
+      "sourceType": "github",
+      "computedHash": "574cf4b7c901ebc7d88d34e2c3e3d08fdec127bd0047f888de148ff0af787d4e"
+    },
     "react:components": {
       "source": "google-labs-code/stitch-skills",
       "sourceType": "github",

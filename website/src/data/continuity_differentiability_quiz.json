@@ -1,0 +1,242 @@
+[
+{
+"question": "If $f(x) = \\begin{cases} \\frac{k \\cos x}{\\pi - 2x} & \\text{if } x \\neq \\frac{\\pi}{2} \\\\ 3 & \\text{if } x = \\frac{\\pi}{2} \\end{cases}$ is continuous at $x = \\frac{\\pi}{2}$, then the value of k is:",
+"options": ["A. 3", "B. 6", "C. 12", "D. 0"],
+"answer": "B. 6",
+"explanation": "For continuity, $\\lim_{x \\to \\pi/2} \\frac{k \\cos x}{\\pi - 2x} = 3$. Using L'Hopital's rule, $\\lim_{x \\to \\pi/2} \\frac{-k \\sin x}{-2} = \\frac{k}{2}$. Thus, $k/2 = 3 \\implies k = 6$."
+},
+{
+"question": "A function $f(x)$ is continuous at $x = a$ if:",
+"options": ["A. $\\lim_{x \\to a} f(x)$ exists", "B. $f(a)$ is defined", "C. $\\lim_{x \\to a} f(x) = f(a)$", "D. All of these"],
+"answer": "D. All of these",
+"explanation": "A function is continuous at a point if the limit exists, the function is defined at that point, and the limit equals the function value."
+},
+{
+"question": "The function $f(x) = |x|$ is:",
+"options": ["A. Continuous and differentiable at $x = 0$", "B. Continuous but not differentiable at $x = 0$", "C. Differentiable but not continuous at $x = 0$", "D. Neither continuous nor differentiable at $x = 0$"],
+"answer": "B. Continuous but not differentiable at $x = 0$",
+"explanation": "The graph of $|x|$ has a sharp corner at $x=0$, meaning the left-hand derivative (-1) and right-hand derivative (1) are not equal, though the function is connected."
+},
+{
+"question": "If $f(x) = \\begin{cases} kx + 1 & \\text{if } x \\leq 5 \\\\ 3x - 5 & \\text{if } x > 5 \\end{cases}$ is continuous at $x = 5$, then the value of k is:",
+"options": ["A. 9/5", "B. 2", "C. 5/9", "D. 11/5"],
+"answer": "A. 9/5",
+"explanation": "LHL = RHL $\\implies k(5) + 1 = 3(5) - 5 \\implies 5k + 1 = 10 \\implies 5k = 9 \\implies k = 9/5$."
+},
+{
+"question": "The function $f(x) = [x]$ (greatest integer function) is discontinuous at:",
+"options": ["A. All real numbers", "B. All rational numbers", "C. All integers", "D. None of these"],
+"answer": "C. All integers",
+"explanation": "The greatest integer function 'jumps' at every integer value, making the left-hand limit and right-hand limit different."
+},
+{
+"question": "Find the derivative of $\\sin(x^2)$ with respect to $x$:",
+"options": ["A. $\\cos(x^2)$", "B. $2x \\cos(x^2)$", "C. $2x \\sin(x^2)$", "D. $-2x \\cos(x^2)$"],
+"answer": "B. $2x \\cos(x^2)$",
+"explanation": "Using the chain rule: $\\frac{d}{dx}(\\sin(x^2)) = \\cos(x^2) \\cdot \\frac{d}{dx}(x^2) = \\cos(x^2) \\cdot 2x$."
+},
+{
+"question": "If $y = \\tan(2x + 3)$, then $dy/dx$ is:",
+"options": ["A. $\\sec^2(2x + 3)$", "B. $2 \\sec^2(2x + 3)$", "C. $2 \\tan(2x + 3)$", "D. $3 \\sec^2(2x + 3)$"],
+"answer": "B. $2 \\sec^2(2x + 3)$",
+"explanation": "Using the chain rule: $\\frac{d}{dx}(\\tan(2x+3)) = \\sec^2(2x+3) \\cdot \\frac{d}{dx}(2x+3) = 2\\sec^2(2x+3)$."
+},
+{
+"question": "The derivative of $\\sin^{-1}x + \\cos^{-1}x$ is:",
+"options": ["A. 1", "B. 0", "C. $\\frac{2}{\\sqrt{1-x^2}}$", "D. $\\pi/2$"],
+"answer": "B. 0",
+"explanation": "Since $\\sin^{-1}x + \\cos^{-1}x = \\pi/2$ (a constant), its derivative with respect to $x$ is 0."
+},
+{
+"question": "If $x = a \\cos \\theta$ and $y = b \\sin \\theta$, then $dy/dx$ is:",
+"options": ["A. $(b/a) \\tan \\theta$", "B. $-(b/a) \\cot \\theta$", "C. $-(a/b) \\cot \\theta$", "D. $(b/a) \\cot \\theta$"],
+"answer": "B. $-(b/a) \\cot \\theta$",
+"explanation": "$dy/dx = \\frac{dy/d\\theta}{dx/d\\theta} = \\frac{b \\cos \\theta}{-a \\sin \\theta} = -\\frac{b}{a} \\cot \\theta$."
+},
+{
+"question": "The derivative of $e^{\\sin x}$ is:",
+"options": ["A. $e^{\\sin x}$", "B. $\\cos x \\cdot e^{\\sin x}$", "C. $\\sin x \\cdot e^{\\sin x}$", "D. $\\cos x \\cdot e^{\\cos x}$"],
+"answer": "B. $\\cos x \\cdot e^{\\sin x}$",
+"explanation": "Chain rule: $\\frac{d}{dx}(e^u) = e^u \\frac{du}{dx}$. Here $u = \\sin x$, so $\\frac{du}{dx} = \\cos x$."
+},
+{
+"question": "If $y = \\log(\\sin x)$, then $dy/dx$ is:",
+"options": ["A. $\\frac{1}{\\sin x}$", "B. $\\cot x$", "C. $\\tan x$", "D. $\\frac{1}{\\cos x}$"],
+"answer": "B. $\\cot x$",
+"explanation": "$\\frac{d}{dx}(\\log(\\sin x)) = \\frac{1}{\\sin x} \\cdot \\cos x = \\cot x$."
+},
+{
+"question": "Derivative of $2^x$ is:",
+"options": ["A. $x 2^{x-1}$", "B. $2^x \\log 2$", "C. $2^x$", "D. $\\frac{2^x}{\\log 2}$"],
+"answer": "B. $2^x \\log 2$",
+"explanation": "The general formula for $\\frac{d}{dx}(a^x)$ is $a^x \\log a$."
+},
+{
+"question": "If $y = \\sqrt{\\tan x}$, then $dy/dx$ is:",
+"options": ["A. $\\frac{\\sec^2 x}{2\\sqrt{\\tan x}}$", "B. $\\frac{1}{2\\sqrt{\\tan x}}$", "C. $\\frac{\\sec x}{2\\sqrt{\\tan x}}$", "D. $\\frac{\\tan x}{2\\sqrt{\\sec x}}$"],
+"answer": "A. $\\frac{\\sec^2 x}{2\\sqrt{\\tan x}}$",
+"explanation": "Chain rule: $\\frac{1}{2\\sqrt{\\tan x}} \\cdot \\frac{d}{dx}(\\tan x) = \\frac{\\sec^2 x}{2\\sqrt{\\tan x}}$."
+},
+{
+"question": "The function $f(x) = |x-1| + |x-2|$ is not differentiable at:",
+"options": ["A. $x=1$", "B. $x=2$", "C. Both $x=1$ and $x=2$", "D. $x=0$"],
+"answer": "C. Both $x=1$ and $x=2$",
+"explanation": "Modulus functions have 'sharp turns' where the inner expression is zero. Here $x-1=0$ and $x-2=0$ yield points of non-differentiability."
+},
+{
+"question": "If $y = \\log x$, then $d^2y/dx^2$ is:",
+"options": ["A. $1/x$", "B. $-1/x^2$", "C. $1/x^2$", "D. $-1/x$"],
+"answer": "B. $-1/x^2$",
+"explanation": "$y' = 1/x$. $y'' = \\frac{d}{dx}(x^{-1}) = -1x^{-2} = -1/x^2$."
+},
+{
+"question": "If $y = \\sin^{-1}x$, then $(1-x^2)y_2 - xy_1$ is:",
+"options": ["A. 0", "B. 1", "C. -1", "D. 2"],
+"answer": "A. 0",
+"explanation": "$y_1 = \\frac{1}{\\sqrt{1-x^2}} \\implies \\sqrt{1-x^2}y_1 = 1$. Squaring: $(1-x^2)y_1^2 = 1$. Differentiating: $(1-x^2)2y_1y_2 + y_1^2(-2x) = 0 \\implies (1-x^2)y_2 - xy_1 = 0$."
+},
+{
+"question": "Rolle's Theorem is applicable for $f(x) = x^2 - 4$ in the interval:",
+"options": ["A. [0, 4]", "B. [-2, 2]", "C. [2, 4]", "D. [0, 2]"],
+"answer": "B. [-2, 2]",
+"explanation": "Rolle's theorem requires $f(a) = f(b)$. Here $f(-2) = 4-4=0$ and $f(2) = 4-4=0$. Thus $f(-2)=f(2)$."
+},
+{
+"question": "Mean Value Theorem $f'(c) = \\frac{f(b)-f(a)}{b-a}$ for $f(x) = x^2$ in [2, 4] gives c as:",
+"options": ["A. 3", "B. 2.5", "C. 3.5", "D. 4"],
+"answer": "A. 3",
+"explanation": "$f'(c) = 2c$. $\\frac{f(4)-f(2)}{4-2} = \\frac{16-4}{2} = 6$. So $2c = 6 \\implies c = 3$."
+},
+{
+"question": "Derivative of $\\cos^{-1}(\\sin x)$ is:",
+"options": ["A. 1", "B. -1", "C. 0", "D. $\\cos x$"],
+"answer": "B. -1",
+"explanation": "$\\cos^{-1}(\\sin x) = \\cos^{-1}(\\cos(\\pi/2 - x)) = \\pi/2 - x$. The derivative is $-1$."
+},
+{
+"question": "If $y = x^x$, then $dy/dx$ is:",
+"options": ["A. $x^x(1 + \\log x)$", "B. $x^x \\log x$", "C. $x \\cdot x^{x-1}$", "D. $1 + \\log x$"],
+"answer": "A. $x^x(1 + \\log x)$",
+"explanation": "Use logarithmic differentiation: $\\log y = x \\log x$. Differentiating gives $\\frac{1}{y}y' = 1 + \\log x$, so $y' = y(1+\\log x)$."
+},
+{
+"question": "If $f(x) = |\\cos x|$, then $f'(\\pi/4)$ is:",
+"options": ["A. $1/\\sqrt{2}$", "B. $-1/\\sqrt{2}$", "C. $\\sqrt{2}$", "D. $-\\sqrt{2}$"],
+"answer": "B. $-1/\\sqrt{2}$",
+"explanation": "In the first quadrant, $\\cos x$ is positive, so $f(x) = \\cos x$. Thus $f'(x) = -\\sin x$. At $\\pi/4$, $f'(\\pi/4) = -1/\\sqrt{2}$."
+},
+{
+"question": "The derivative of $\\log_a x$ is:",
+"options": ["A. $1/x$", "B. $\\frac{1}{x \\log a}$", "C. $\\frac{\\log a}{x}$", "D. $x \\log a$"],
+"answer": "B. $\\frac{1}{x \\log a}$",
+"explanation": "Using change of base: $\\log_a x = \\frac{\\log x}{\\log a}$. Differentiating gives $\\frac{1}{\\log a} \\cdot \\frac{1}{x}$."
+},
+{
+"question": "If $y + \\sin y = \\cos x$, then $dy/dx$ is:",
+"options": ["A. $\\frac{-\\sin x}{1 + \\cos y}$", "B. $\\frac{\\sin x}{1 + \\cos y}$", "C. $\\frac{-\\cos x}{1 + \\sin y}$", "D. $\\frac{-\\sin x}{1 - \\cos y}$"],
+"answer": "A. $\\frac{-\\sin x}{1 + \\cos y}$",
+"explanation": "Differentiating implicitly: $\\frac{dy}{dx} + \\cos y \\frac{dy}{dx} = -\\sin x \\implies \\frac{dy}{dx}(1 + \\cos y) = -\\sin x$."
+},
+{
+"question": "If $x = at^2, y = 2at$, then $dy/dx$ is:",
+"options": ["A. $t$", "B. $1/t$", "C. $2/t$", "D. $t^2$"],
+"answer": "B. $1/t$",
+"explanation": "$dy/dx = \\frac{dy/dt}{dx/dt} = \\frac{2a}{2at} = 1/t$."
+},
+{
+"question": "The function $f(x) = e^{|x|}$ is:",
+"options": ["A. Continuous and differentiable at $x = 0$", "B. Continuous but not differentiable at $x = 0$", "C. Differentiable but not continuous at $x = 0$ ", "D. Discontinuous at $x = 0$"],
+"answer": "B. Continuous but not differentiable at $x = 0$",
+"explanation": "At $x=0$, $|x|$ is not differentiable. Therefore $e^{|x|}$ is continuous but fails to be differentiable at that point."
+},
+{
+"question": "If $y = a^x$, then $dy/dx$ is:",
+"options": ["A. $x a^{x-1}$", "B. $a^x \\log a$", "C. $a^x$", "D. $a^x/\\log a$"],
+"answer": "B. $a^x \\log a$",
+"explanation": "This is the standard formula for differentiating an exponential function with base $a$."
+},
+{
+"question": "Derivative of $\\sqrt{x}$ with respect to $x$ is:",
+"options": ["A. $\\frac{1}{2\\sqrt{x}}$", "B. $\\frac{2}{\\sqrt{x}}$", "C. $\\frac{1}{\\sqrt{x}}$", "D. $2\\sqrt{x}$"],
+"answer": "A. $\\frac{1}{2\\sqrt{x}}$",
+"explanation": "$\\frac{d}{dx}(x^{1/2}) = \\frac{1}{2}x^{-1/2} = \\frac{1}{2\\sqrt{x}}$."
+},
+{
+"question": "If $y = 5 \\cos x - 3 \\sin x$, then $d^2y/dx^2$ is:",
+"options": ["A. $y$", "B. $-y$", "C. $0$", "D. $5 \\sin x + 3 \\cos x$"],
+"answer": "B. $-y$",
+"explanation": "$y' = -5 \\sin x - 3 \\cos x$. $y'' = -5 \\cos x + 3 \\sin x = -(5 \\cos x - 3 \\sin x) = -y$."
+},
+{
+"question": "The derivative of $\\tan^{-1}\\left(\\frac{1+x}{1-x}\\right)$ is:",
+"options": ["A. $\\frac{1}{1+x^2}$", "B. $\\frac{2}{1+x^2}$", "C. $\\frac{-1}{1+x^2}$ ", "D. $\\frac{1}{2(1+x^2)}$"],
+"answer": "A. $\\frac{1}{1+x^2}$",
+"explanation": "$\\tan^{-1}\\left(\\frac{1+x}{1-x}\\right) = \\tan^{-1}(1) + \\tan^{-1}x = \\pi/4 + \\tan^{-1}x$. Its derivative is $0 + \\frac{1}{1+x^2}$."
+},
+{
+"question": "If $y = \\cos^{-1}x$, then $y_2$ in terms of $y$ alone is:",
+"options": ["A. $-\\cot y \\csc^2 y$", "B. $-\\cot y \\csc y$", "C. $\\cot y \\csc^2 y$", "D. $-\\csc^2 y$"],
+"answer": "A. $-\\cot y \\csc^2 y$",
+"explanation": "$x = \\cos y \\implies 1 = -\\sin y \\cdot y_1 \\implies y_1 = -\\csc y$. $y_2 = \\csc y \\cot y \\cdot y_1 = \\csc y \\cot y \\cdot (-\\csc y) = -\\cot y \\csc^2 y$."
+},
+{
+"question": "A function $f$ is differentiable at $x = c$ implies:",
+"options": ["A. $f$ is continuous at $x = c$", "B. $f$ is not continuous at $x = c$", "C. $f(c) = 0$", "D. $f'(c) = 0$"],
+"answer": "A. $f$ is continuous at $x = c$",
+"explanation": "Differentiability at a point always implies continuity at that same point."
+},
+{
+"question": "If $f(x) = \\log(\\log x)$, then $f'(e)$ is:",
+"options": ["A. $e$", "B. $1/e$", "C. 1", "D. 0"],
+"answer": "B. $1/e$",
+"explanation": "$f'(x) = \\frac{1}{\\log x} \\cdot \\frac{1}{x}$. For $x=e$, $f'(e) = \\frac{1}{\\log e} \\cdot \\frac{1}{e} = 1 \\cdot \\frac{1}{e} = 1/e$."
+},
+{
+"question": "The derivative of $\\sin^{-1}(2x\\sqrt{1-x^2})$ is:",
+"options": ["A. $\\frac{1}{\\sqrt{1-x^2}}$", "B. $\\frac{2}{\\sqrt{1-x^2}}$", "C. $\\frac{-2}{\\sqrt{1-x^2}}$", "D. $2\\cos^{-1}x$"],
+"answer": "B. $\\frac{2}{\\sqrt{1-x^2}}$",
+"explanation": "Putting $x = \\sin \\theta$, expression becomes $\\sin^{-1}(2 \\sin \\theta \\cos \\theta) = \\sin^{-1}(\\sin 2\\theta) = 2\\theta = 2\\sin^{-1}x$. Derivative is $\\frac{2}{\\sqrt{1-x^2}}$."
+},
+{
+"question": "If $x^y = e^{x-y}$, then $dy/dx$ is:",
+"options": ["A. $\\frac{\\log x}{(1+\\log x)^2}$", "B. $\\frac{1}{(1+\\log x)^2}$", "C. $\\frac{\\log x}{1+\\log x}$", "D. $\\frac{1+\\log x}{\\log x}$"],
+"answer": "A. $\\frac{\\log x}{(1+\\log x)^2}$",
+"explanation": "$y \\log x = x-y \\implies y(1+\\log x) = x \\implies y = \\frac{x}{1+\\log x}$. Differentiating using quotient rule gives the result."
+},
+{
+"question": "Derivative of $x^3$ with respect to $x^2$ is:",
+"options": ["A. $\\frac{3}{2}x$", "B. $3x/2$", "C. $x/2$", "D. $3x^2$"],
+"answer": "A. $\\frac{3}{2}x$",
+"explanation": "$\\frac{d(x^3)}{d(x^2)} = \\frac{d(x^3)/dx}{d(x^2)/dx} = \\frac{3x^2}{2x} = \\frac{3}{2}x$."
+},
+{
+"question": "If $y = A e^{mx} + B e^{nx}$, then $y_2 - (m+n)y_1 + mny$ is:",
+"options": ["A. 0", "B. 1", "C. $y$", "D. $e^x$"],
+"answer": "A. 0",
+"explanation": "This is a second order linear differential equation where $e^{mx}$ and $e^{nx}$ are solutions, making the expression 0."
+},
+{
+"question": "Assertion (A): $f(x) = |x-1|$ is continuous at $x=1$. Reason (R): LHL = RHL = $f(1) = 0$.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "A. Both A and R are true and R is correct explanation",
+"explanation": "The limit as $x$ approaches 1 is 0, which matches $f(1)$, satisfying the definition of continuity."
+},
+{
+"question": "If $y = \\log(\\cos e^x)$, then $dy/dx$ is:",
+"options": ["A. $-\\tan(e^x) e^x$", "B. $\\tan(e^x) e^x$", "C. $e^x \\cos e^x$", "D. $\\frac{1}{\\cos e^x}$"],
+"answer": "A. $-\\tan(e^x) e^x$",
+"explanation": "$\\frac{d}{dx} \\log(\\cos e^x) = \\frac{1}{\\cos e^x} \\cdot (-\\sin e^x) \\cdot e^x = -\\tan(e^x) e^x$."
+},
+{
+"question": "For what value of k is $f(x) = \\begin{cases} kx^2 & x \\leq 2 \\\\ 3 & x > 2 \\end{cases}$ continuous at $x=2$?",
+"options": ["A. 3/4", "B. 4/3", "C. 3", "D. 4"],
+"answer": "A. 3/4",
+"explanation": "LHL = RHL $\\implies k(2^2) = 3 \\implies 4k = 3 \\implies k = 3/4$."
+},
+{
+"question": "If $x = a(\\theta + \\sin \\theta), y = a(1 - \\cos \\theta)$, then $dy/dx$ at $\\theta = \\pi/2$ is:",
+"options": ["A. 1", "B. 0", "C. -1", "D. $\\infty$"],
+"answer": "A. 1",
+"explanation": "$dy/dx = \\frac{a \\sin \\theta}{a(1 + \\cos \\theta)} = \\frac{\\sin(\\pi/2)}{1 + \\cos(\\pi/2)} = \\frac{1}{1+0} = 1$."
+}
+]

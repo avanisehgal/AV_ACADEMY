@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import './ChapterModal.css';
+import QuizController from './QuizController';
 
 const math12Chapters = [
   { 
@@ -157,6 +158,24 @@ const courseMap = {
 export default function ChapterModal({ isOpen, onClose, course }) {
   const [expandedId, setExpandedId] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
+  const [selectedTestId, setSelectedTestId] = useState(null);
+  
+  const testIdMap = {
+    1: 'relations_functions',
+    2: 'inverse_trigonometry',
+    3: 'matrices',
+    4: 'determinants',
+    5: 'continuity_differentiability',
+    6: 'applications_of_derivative',
+    7: 'integrals',
+    8: 'applications_of_integrals',
+    9: 'differential_equations',
+    10: 'vectors',
+    11: '3_dimensional_geometry',
+    12: 'lpp',
+    13: 'probability'
+  };
   
   const handleResourceClick = (url, fallbackMessage) => {
     if (url) {
@@ -171,15 +190,21 @@ export default function ChapterModal({ isOpen, onClose, course }) {
   useEffect(() => {
     let timer;
     if (isOpen) {
+      // Lock body scroll — prevents jitter from the scrollbar gutter appearing/disappearing
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = '';
+      // Restore — use 'clip' not '' so no scrollbar can flash during the fade-out transition
+      document.body.style.overflow = 'clip';
+      document.documentElement.style.overflow = '';
       timer = setTimeout(() => {
+        document.body.style.overflow = '';
         setExpandedId(null);
-      }, 400); // Wait for fade out to complete before resetting states
+      }, 450); // Wait for fade out to complete before fully restoring
     }
     return () => {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       if (timer) clearTimeout(timer);
     };
   }, [isOpen]);
@@ -296,7 +321,18 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                       
                       <button 
                         className="resource-card test"
-                        onClick={() => handleResourceClick(chapter.resources?.test, "Tests will be added soon!")}
+                        onClick={() => {
+                          if (course?.id === '03' && testIdMap[chapter.id]) {
+                            if (chapter.id === 1) {
+                              setSelectedTestId(testIdMap[chapter.id]);
+                              setIsQuizOpen(true);
+                            } else {
+                              handleResourceClick(null, "Tests will be unlocked soon!");
+                            }
+                          } else {
+                            handleResourceClick(chapter.resources?.test, "Tests will be added soon!");
+                          }
+                        }}
                       >
                         <div className="resource-icon-wrap">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
@@ -340,6 +376,10 @@ export default function ChapterModal({ isOpen, onClose, course }) {
         <div className="modal-toast">
           {toastMessage}
         </div>
+      )}
+
+      {isQuizOpen && (
+        <QuizController onClose={() => setIsQuizOpen(false)} testId={selectedTestId} />
       )}
     </div>,
     document.body

@@ -1,0 +1,242 @@
+[
+{
+"question": "In a Linear Programming Problem (LPP), the objective function is always:",
+"options": ["A. Linear", "B. Quadratic", "C. Cubic", "D. Exponential"],
+"answer": "A. Linear",
+"explanation": "A Linear Programming Problem, by definition, requires the objective function and all constraints to be linear equations or inequalities."
+},
+{
+"question": "The feasible region in an LPP is always:",
+"options": ["A. A concave polygon", "B. A convex polygon", "C. A circle", "D. Unbounded only"],
+"answer": "B. A convex polygon",
+"explanation": "The intersection of linear closed half-spaces (represented by linear inequalities) always forms a convex set (polygon/polyhedron)."
+},
+{
+"question": "Optimal value of the objective function in an LPP occurs at:",
+"options": ["A. Center of feasible region", "B. Origin", "C. Corner points (vertices) of feasible region", "D. Everywhere in the feasible region"],
+"answer": "C. Corner points (vertices) of feasible region",
+"explanation": "The Fundamental Theorem of Linear Programming states that if an optimal solution exists, it must occur at one of the corner points of the feasible region."
+},
+{
+"question": "If the feasible region is unbounded, then a maximum or minimum may not exist. However, if it exists, it must occur at:",
+"options": ["A. Origin", "B. Any point on the boundary", "C. Corner points", "D. Infinity"],
+"answer": "C. Corner points",
+"explanation": "Even for unbounded regions, if an optimal value (min or max) exists, the Fundamental Theorem dictates it will be at a corner point."
+},
+{
+"question": "Constraints in LPP represent:",
+"options": ["A. Limitations on resources", "B. Objective to maximize", "C. Number of variables", "D. Optimal solution"],
+"answer": "A. Limitations on resources",
+"explanation": "Constraints mathematically represent real-world restrictions such as budget limits, time caps, material shortages, etc."
+},
+{
+"question": "The non-negativity constraints $x \\geq 0, y \\geq 0$ restrict the feasible region to:",
+"options": ["A. First quadrant", "B. Second quadrant", "C. Third quadrant", "D. Fourth quadrant"],
+"answer": "A. First quadrant",
+"explanation": "Both $x$ and $y$ are positive or zero only in the first quadrant of the Cartesian plane."
+},
+{
+"question": "Any point outside the feasible region is called:",
+"options": ["A. Optimal solution", "B. Infeasible solution", "C. Basic solution", "D. Degenerate solution"],
+"answer": "B. Infeasible solution",
+"explanation": "Points outside the feasible region violate one or more of the given constraints, making them infeasible."
+},
+{
+"question": "If an LPP has an optimal solution at two vertices, it has an optimal solution at:",
+"options": ["A. Only those two points", "B. Midpoint of the line joining them", "C. Every point on the line segment joining the two vertices", "D. The origin"],
+"answer": "C. Every point on the line segment joining the two vertices",
+"explanation": "If the objective function is parallel to a boundary line segment connecting two optimal vertices, every point on that segment is optimal (multiple optimal solutions)."
+},
+{
+"question": "The region satisfying all constraints, including non-negativity, is called:",
+"options": ["A. Optimal region", "B. Maximized region", "C. Feasible region", "D. Domain"],
+"answer": "C. Feasible region",
+"explanation": "The feasible region contains all points that simultaneously satisfy all problem constraints."
+},
+{
+"question": "Consider $Z = 3x + 4y$ subject to $x+y \\leq 4, x \\geq 0, y \\geq 0$. The maximum value of Z is:",
+"options": ["A. 12", "B. 16", "C. 0", "D. 7"],
+"answer": "B. 16",
+"explanation": "Vertices are $(0,0), (4,0), (0,4)$. $Z(0,0)=0$, $Z(4,0)=12$, $Z(0,4)=16$. Maximum is 16."
+},
+{
+"question": "Minimize $Z = -3x + 4y$ subject to $x+2y \\leq 8, 3x+2y \\leq 12, x \\geq 0, y \\geq 0$. Minimum value is:",
+"options": ["A. -12", "B. -16", "C. -8", "D. 0"],
+"answer": "A. -12",
+"explanation": "Vertices: $(0,0), (4,0), (0,4), (2,3)$. $Z(0,0)=0$, $Z(4,0)=-12$, $Z(0,4)=16$, $Z(2,3) = -6+12=6$. Minimum is -12."
+},
+{
+"question": "If feasible region is bounded, the objective function $Z = ax+by$ has both maximum and minimum values on R.",
+"options": ["A. True", "B. False", "C. Sometimes true", "D. True only if a,b > 0"],
+"answer": "A. True",
+"explanation": "The extreme value theorem for linear programming ensures that a continuous linear function over a closed, bounded convex region has both a maximum and minimum."
+},
+{
+"question": "If the half plane $ax+by > c$ does not intersect the feasible region, then the maximum value of $Z = ax+by$ occurs at:",
+"options": ["A. Origin", "B. Unbounded region", "C. Corner point inside region", "D. A boundary point associated with the max value $c$"],
+"answer": "D. A boundary point associated with the max value $c$",
+"explanation": "If the open half plane $ax+by > c$ has no points in common with the feasible region, then the value $c$ is indeed the maximum value of $Z$ on the feasible region."
+},
+{
+"question": "An objective function is given by $Z = px + qy$. If max Z occurs at $A(3,4)$ and $B(4,3)$, then relation between $p$ and $q$ is:",
+"options": ["A. $p = q$", "B. $p = -q$", "C. $3p = 4q$", "D. $4p = 3q$"],
+"answer": "A. $p = q$",
+"explanation": "Since both give max Z, $3p+4q = 4p+3q \\implies q = p$."
+},
+{
+"question": "Which of the following is not a requirement of an LPP?",
+"options": ["A. Linearity of equations", "B. Non-negativity of variables", "C. Certainty of parameters", "D. Variables must be integers"],
+"answer": "D. Variables must be integers",
+"explanation": "In standard linear programming, variables are continuous (can take fractional values). Integer programming is a specific variant."
+},
+{
+"question": "A firm produces two items X and Y using identical machines. X needs 2 hrs and Y needs 3 hrs. Machine is available for 12 hrs. The constraint is:",
+"options": ["A. $2x + 3y \\geq 12$", "B. $2x + 3y \\leq 12$", "C. $3x + 2y \\leq 12$", "D. $2x + 3y = 12$"],
+"answer": "B. $2x + 3y \\leq 12$",
+"explanation": "The time used cannot exceed the available time, so standard restriction is 'less than or equal to'."
+},
+{
+"question": "In graphical method, if the objective function line is parallel to a binding constraint line, the problem has:",
+"options": ["A. Unique solution", "B. Multiple optimal solutions", "C. Unbounded solution", "D. No solution"],
+"answer": "B. Multiple optimal solutions",
+"explanation": "This implies the optimal value occurs along the entire line segment of that constraint."
+},
+{
+"question": "To find minimum of $Z$ when region is unbounded, we check if $ax+by < Z_{min}$ has any point common with the feasible region. If no point in common, then:",
+"options": ["A. Problem is infeasible", "B. Problem has no min value", "C. $Z_{min}$ is the actual minimum", "D. Maximum exists instead"],
+"answer": "C. $Z_{min}$ is the actual minimum",
+"explanation": "If no point yields a strictly smaller value, then the corner point value $Z_{min}$ is the true global minimum."
+},
+{
+"question": "A redundant constraint is one that:",
+"options": ["A. Defines the feasible region", "B. Does not affect the feasible region", "C. Changes the optimal solution", "D. Cannot be graphically represented"],
+"answer": "B. Does not affect the feasible region",
+"explanation": "A redundant constraint is subsumed by other tighter constraints and its removal does not alter the shape of the feasible region."
+},
+{
+"question": "The corner points of a feasible region are $(0,0), (2,0), (4,2), (0,4)$. For $Z = 3x+2y$, the max value is:",
+"options": ["A. 16", "B. 8", "C. 6", "D. 0"],
+"answer": "A. 16",
+"explanation": "Evaluate Z: $Z(0,0)=0, Z(2,0)=6, Z(4,2)=12+4=16, Z(0,4)=8$. Max is 16."
+},
+{
+"question": "Corner points are $(0, 2), (3, 0), (6, 0), (6, 8), (0, 5)$. Maximize $Z = 4x+6y$:",
+"options": ["A. 48", "B. 72", "C. 30", "D. 24"],
+"answer": "B. 72",
+"explanation": "$Z(6,8) = 4(6) + 6(8) = 24 + 48 = 72$. Compare with $Z(0,5)=30$. $72$ is maximum."
+},
+{
+"question": "A mathematical model of an LPP consists of:",
+"options": ["A. Objective function only", "B. Constraints only", "C. Objective function and constraints", "D. Feasible region only"],
+"answer": "C. Objective function and constraints",
+"explanation": "Any standard setup requires a stated goal (objective function) subject to conditions (constraints)."
+},
+{
+"question": "The number of non-negative variables in a standard 2D graphical LPP is:",
+"options": ["A. 1", "B. 2", "C. 3", "D. 4"],
+"answer": "B. 2",
+"explanation": "The graphical method plots on a 2D plane, mapping an $x$-axis and a $y$-axis."
+},
+{
+"question": "For a profit maximization problem, the constraint $x+y \\leq 50$ usually represents:",
+"options": ["A. Minimum production requirement", "B. Maximum capacity or resource", "C. Fixed cost", "D. Revenue"],
+"answer": "B. Maximum capacity or resource",
+"explanation": "A 'less than or equal to' constraint limits the total usage to a max ceiling of 50."
+},
+{
+"question": "If all constraints are of '$\\geq$' type and objective is minimization, the feasible region is typically:",
+"options": ["A. Bounded", "B. Unbounded away from origin", "C. Unbounded towards origin", "D. Empty"],
+"answer": "B. Unbounded away from origin",
+"explanation": "Since all constraints force values to be 'greater than', the region stretches infinitely outward and usually has no upper bound, leaving it unbounded away from the origin."
+},
+{
+"question": "Iso-profit line is:",
+"options": ["A. A line representing feasible region", "B. A line representing constraints", "C. A line representing equal profit for different combinations", "D. A boundary line"],
+"answer": "C. A line representing equal profit for different combinations",
+"explanation": "An iso-profit line connects all points $(x,y)$ that result in the exact same value for the objective function $Z$."
+},
+{
+"question": "Let $Z = x+2y$ be subject to $x+y \\geq 1, x-y \\leq 1, y \\leq 1, x,y \\geq 0$. Min Z occurs at:",
+"options": ["A. (1,0)", "B. (0,1)", "C. (2,1)", "D. (0,0)"],
+"answer": "A. (1,0)",
+"explanation": "Corner points: $y=0 \\implies x \\geq 1, x \\leq 1 \\implies (1,0)$. $y=1 \\implies x \\geq 0, x-1 \\leq 1 \\implies x \\leq 2 \\implies (0,1)$ and $(2,1)$. Evaluate Z: $Z(1,0)=1, Z(0,1)=2, Z(2,1)=4$. Min is 1 at $(1,0)$."
+},
+{
+"question": "In LPP, objective function $Z = cx+dy$ is mathematically a:",
+"options": ["A. Constant", "B. Relation", "C. Linear mapping", "D. Parameter"],
+"answer": "C. Linear mapping",
+"explanation": "It maps a 2D vector $(x,y)$ linearly to a scalar value $Z$."
+},
+{
+"question": "If an LPP has no feasible region, then the problem has:",
+"options": ["A. Unbounded solution", "B. Degenerate solution", "C. Infeasible solution (no solution)", "D. Multiple solutions"],
+"answer": "C. Infeasible solution (no solution)",
+"explanation": "If the constraints contradict each other such that no point satisfies all of them, the problem has no solution."
+},
+{
+"question": "In diet problems, constraints generally use:",
+"options": ["A. $\\leq$ sign", "B. $\\geq$ sign", "C. $=$ sign", "D. $\\neq$ sign"],
+"answer": "B. $\\geq$ sign",
+"explanation": "Diet problems usually ensure that *at least* a minimum daily requirement of nutrients is met, necessitating $\\geq$ constraints."
+},
+{
+"question": "Maximize $Z = 3x+5y$ subject to $x+y \\leq 2, x,y \\geq 0$. Max Z is:",
+"options": ["A. 6", "B. 10", "C. 8", "D. 0"],
+"answer": "B. 10",
+"explanation": "Vertices are $(0,0), (2,0), (0,2)$. Z(0,2) = 10, which is the clear maximum."
+},
+{
+"question": "Which of these points is not in the feasible region of $x \\leq 3, y \\leq 2, x,y \\geq 0$?",
+"options": ["A. (1,1)", "B. (2,2)", "C. (3,1)", "D. (2,3)"],
+"answer": "D. (2,3)",
+"explanation": "At point (2,3), $y=3$, which violates the constraint $y \\leq 2$."
+},
+{
+"question": "The optimal solution of an LPP is found by evaluating the objective function at:",
+"options": ["A. All integer points", "B. All points on the boundary", "C. Vertices of the feasible region", "D. Origin"],
+"answer": "C. Vertices of the feasible region",
+"explanation": "Fundamental theorem states extreme values occur at the vertices."
+},
+{
+"question": "To maximize $Z=x+y$ with $x \\geq 2, y \\geq 0$ and $x \\leq 5, y \\leq 4$:",
+"options": ["A. Max is 5", "B. Max is 4", "C. Max is 9", "D. Max is 6"],
+"answer": "C. Max is 9",
+"explanation": "The maximum bounds physically restrict the vertices. Top right vertex is $(5,4)$. $Z = 5+4 = 9$."
+},
+{
+"question": "If an LPP is formulated, and variable $x$ denotes number of chairs produced, $x$ cannot be:",
+"options": ["A. 0", "B. 12", "C. -4", "D. 50"],
+"answer": "C. -4",
+"explanation": "The non-negativity constraint ($x \\geq 0$) ensures physical quantities like production items are never negative."
+},
+{
+"question": "If $Z_{min} = 10$, and the feasible region is unbounded, we draw $Z < 10$. If it intersects the feasible region:",
+"options": ["A. 10 is the minimum", "B. No minimum exists", "C. 10 is maximum", "D. Unbounded max exists"],
+"answer": "B. No minimum exists",
+"explanation": "If there are points in the feasible region that yield a value strictly less than 10, then the value can decrease infinitely, meaning no lower bound exists."
+},
+{
+"question": "Maximize $Z=3x+2y$ subject to $x \\leq 2, y \\leq 3, x \\geq 0, y \\geq 0$. Then maximum occurs at:",
+"options": ["A. (0,0)", "B. (2,0)", "C. (0,3)", "D. (2,3)"],
+"answer": "D. (2,3)",
+"explanation": "$Z(2,3) = 6 + 6 = 12$, which is strictly greater than $Z(0,3)=6$ and $Z(2,0)=6$."
+},
+{
+"question": "Assertion (A): LPP applies only to problems with 2 variables. Reason (R): Graphical method only works in 2D.",
+"options": ["A. Both A and R are true and R is correct explanation", "B. Both A and R are true but R is not explanation", "C. A is true, R is false", "D. A is false, R is true"],
+"answer": "D. A is false, R is true",
+"explanation": "Linear programming can have any number of variables (solved via Simplex method), though the graphical method specifically is limited to two variables."
+},
+{
+"question": "Let $Z = 4x+3y$ be objective function subject to limits. $Z$ is called:",
+"options": ["A. Limit function", "B. Objective function", "C. Feasible function", "D. Decision function"],
+"answer": "B. Objective function",
+"explanation": "The function describing the overall objective to be maximized or minimized is the objective function."
+},
+{
+"question": "In $Ax \\leq b$, $x \\geq 0$, $b$ represents:",
+"options": ["A. Requirements or capacities", "B. Objective coefficients", "C. Decision variables", "D. Profit per unit"],
+"answer": "A. Requirements or capacities",
+"explanation": "The vector $b$ on the right side of the inequalities represents the total available resources or limits."
+}
+]

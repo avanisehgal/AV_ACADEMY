@@ -1,0 +1,242 @@
+[
+{
+"question": "The principal value branch of $cos^{-1}x$ is:",
+"options": ["A. $[-\\pi/2, \\pi/2]$ ", "B. $(0, \\pi)$", "C. $[0, \\pi]$ ", "D. $(-\\pi/2, \\pi/2)$"],
+"answer": "C. $[0, \\pi]$ ",
+"explanation": "The principal value branch for the inverse cosine function is restricted to the interval $[0, \\pi]$ to ensure the function is one-to-one and onto."
+},
+{
+"question": "The value of $sin^{-1}(sin\\frac{2\\pi}{3})$ is:",
+"options": ["A. $\\frac{2\\pi}{3}$", "B. $\\frac{\\pi}{3}$ ", "C. $-\\frac{\\pi}{3}$", "D. $\\frac{4\\pi}{3}$"],
+"answer": "B. $\\frac{\\pi}{3}$ ",
+"explanation": "Since $2\\pi/3$ is not in the principal branch $[-\\pi/2, \\pi/2]$, we use $sin(\\pi - \\theta) = sin\\theta$. Thus, $sin(2\\pi/3) = sin(\\pi/3)$, and $sin^{-1}(sin(\\pi/3)) = \\pi/3$."
+},
+{
+"question": "The domain of the function $f(x) = sin^{-1}(2x - 1)$ is:",
+"options": ["A. $[0, 1]$ ", "B. $[-1, 1]$ ", "C. $[0, \\pi]$ ", "D. $(-1, 1)$"],
+"answer": "A. $[0, 1]$ ",
+"explanation": "The argument of $sin^{-1}$ must be in $[-1, 1]$. So, $-1 \\le 2x - 1 \\le 1 \\implies 0 \\le 2x \\le 2 \\implies 0 \\le x \\le 1$."
+},
+{
+"question": "The principal value of $tan^{-1}(-1)$ is:",
+"options": ["A. $\\frac{\\pi}{4}$", "B. $-\\frac{\\pi}{4}$ ", "C. $\\frac{3\\pi}{4}$", "D. $-\\frac{3\\pi}{4}$"],
+"answer": "B. $-\\frac{\\pi}{4}$ ",
+"explanation": "For $tan^{-1}x$, the principal branch is $(-\\pi/2, \\pi/2)$. Since $tan(-\\pi/4) = -1$, the value is $-\\pi/4$."
+},
+{
+"question": "The value of $cos^{-1}(cos\\frac{7\\pi}{6})$ is:",
+"options": ["A. $\\frac{7\\pi}{6}$", "B. $\\frac{5\\pi}{6}$ ", "C. $\\frac{\\pi}{6}$", "D. $-\\frac{\\pi}{6}$"],
+"answer": "B. $\\frac{5\\pi}{6}$ ",
+"explanation": "The principal branch is $[0, \\pi]$. $7\\pi/6$ is outside. We use $cos(2\\pi - \\theta) = cos\\theta$. $cos(7\\pi/6) = cos(2\\pi - 7\\pi/6) = cos(5\\pi/6)$, so $cos^{-1}(cos(5\\pi/6)) = 5\\pi/6$."
+},
+{
+"question": "Which of the following is the range of $cosec^{-1}x$?",
+"options": ["A. $[-\\pi/2, \\pi/2]$ ", "B. $[-\\pi/2, \\pi/2] - \\{0\\}$ ", "C. $[0, \\pi] - \\{\\pi/2\\}$ ", "D. $(-\\pi/2, \\pi/2)$"],
+"answer": "B. $[-\\pi/2, \\pi/2] - \\{0\\}$ ",
+"explanation": "The range of $cosec^{-1}x$ is the same as $sin^{-1}x$ except for the value where $sin\\theta = 0$ (which is $0$), as cosecant is undefined there."
+},
+{
+"question": "The value of $sin[\\pi/3 - sin^{-1}(-1/2)]$ is:",
+"options": ["A. $1/2$", "B. $1/3$", "C. $1/4$", "D. $1$ "],
+"answer": "D. $1$ ",
+"explanation": "$sin^{-1}(-1/2) = -\\pi/6$. Thus, $sin(\\pi/3 - (-\\pi/6)) = sin(\\pi/3 + \\pi/6) = sin(\\pi/2) = 1$."
+},
+{
+"question": "If $tan^{-1}x = y$, then:",
+"options": ["A. $-\\pi/2 \\le y \\le \\pi/2$", "B. $-\\pi/2 < y < \\pi/2$ ", "C. $0 \\le y \\le \\pi$", "D. $0 < y < \\pi$"],
+"answer": "B. $-\\pi/2 < y < \\pi/2$ ",
+"explanation": "The principal value range of $tan^{-1}$ is the open interval $(-\\pi/2, \\pi/2)$."
+},
+{
+"question": "The domain of $y = cos^{-1}(x^2 - 4)$ is:",
+"options": ["A. $[3, 5]$ ", "B. $[-\\sqrt{5}, -\\sqrt{3}] \\cup [\\sqrt{3}, \\sqrt{5}]$ ", "C. $[-\\sqrt{5}, \\sqrt{5}]$ ", "D. $[-\\sqrt{3}, \\sqrt{3}]$"],
+"answer": "B. $[-\\sqrt{5}, -\\sqrt{3}] \\cup [\\sqrt{3}, \\sqrt{5}]$ ",
+"explanation": "$-1 \\le x^2 - 4 \\le 1 \\implies 3 \\le x^2 \\le 5 \\implies \\sqrt{3} \\le |x| \\le \\sqrt{5}$."
+},
+{
+"question": "The principal value of $sec^{-1}(-2)$ is:",
+"options": ["A. $\\pi/3$", "B. $2\\pi/3$ ", "C. $4\\pi/3$", "D. $-2\\pi/3$"],
+"answer": "B. $2\\pi/3$ ",
+"explanation": "$sec^{-1}(-2) = cos^{-1}(-1/2)$. Since $cos(2\\pi/3) = -1/2$ and $2\\pi/3 \\in [0, \\pi]$, the principal value is $2\\pi/3$."
+},
+{
+"question": "The value of $sin^{-1}x + cos^{-1}x$ is:",
+"options": ["A. $\\pi$", "B. $\\pi/2$ ", "C. $0$", "D. $2\\pi$"],
+"answer": "B. $\\pi/2$ ",
+"explanation": "This is a standard identity for inverse trigonometric functions where $x \\in [-1, 1]$."
+},
+{
+"question": "The value of $sin^{-1}(1) + cos^{-1}(0)$ is:",
+"options": ["A. $\\pi$", "B. $\\pi/2$", "C. $0$", "D. $2\\pi$"],
+"answer": "A. $\\pi$",
+"explanation": "$sin^{-1}(1) = \\pi/2$ and $cos^{-1}(0) = \\pi/2$. Adding them gives $\\pi/2 + \\pi/2 = \\pi$."
+},
+{
+"question": "If $sin^{-1}(1/3) + cos^{-1}x = \\pi/2$, then $x$ is:",
+"options": ["A. $2/3$", "B. $1/3$ ", "C. $0$", "D. $1$"],
+"answer": "B. $1/3$ ",
+"explanation": "Using the identity $sin^{-1}a + cos^{-1}a = \\pi/2$, we can see that $x$ must be $1/3$."
+},
+{
+"question": "The value of $tan^{-1}\\sqrt{3} - sec^{-1}(-2)$ is:",
+"options": ["A. $\\pi$", "B. $-\\pi/3$ ", "C. $\\pi/3$", "D. $2\\pi/3$"],
+"answer": "B. $-\\pi/3$ ",
+"explanation": "$tan^{-1}\\sqrt{3} = \\pi/3$ and $sec^{-1}(-2) = 2\\pi/3$. Therefore, $\\pi/3 - 2\\pi/3 = -\\pi/3$."
+},
+{
+"question": "If $cos(sin^{-1}(2/5) + cos^{-1}x) = 0$, then $x$ is:",
+"options": ["A. $1/5$", "B. $2/5$ ", "C. $0$", "D. $1/2$"],
+"answer": "B. $2/5$ ",
+"explanation": "$cos(\\theta) = 0 \\implies \\theta = \\pi/2$. So $sin^{-1}(2/5) + cos^{-1}x = \\pi/2$, which implies $x = 2/5$."
+},
+{
+"question": "The value of $cot(tan^{-1}a + cot^{-1}a)$ is:",
+"options": ["A. $1$", "B. $0$ ", "C. $\\infty$", "D. None of these"],
+"answer": "B. $0$ ",
+"explanation": "$tan^{-1}a + cot^{-1}a = \\pi/2$. $cot(\\pi/2) = 0$."
+},
+{
+"question": "The value of $sin^{-1}x + sin^{-1}y + sin^{-1}z = 3\\pi/2$, then $x+y+z$ is:",
+"options": ["A. $1$", "B. $3$ ", "C. $-3$", "D. $0$"],
+"answer": "B. $3$ ",
+"explanation": "The maximum value of $sin^{-1}$ is $\\pi/2$. For the sum to be $3\\pi/2$, each term must be $\\pi/2$, so $x=y=z=1$. Sum $= 3$."
+},
+{
+"question": "The value of $tan^{-1}(1) + cos^{-1}(-1/2) + sin^{-1}(-1/2)$ is:",
+"options": ["A. $\\pi/2$", "B. $3\\pi/4$ ", "C. $2\\pi/3$", "D. $\\pi$"],
+"answer": "B. $3\\pi/4$ ",
+"explanation": "$\\pi/4 + (cos^{-1}(-1/2) + sin^{-1}(-1/2)) = \\pi/4 + \\pi/2 = 3\\pi/4$."
+},
+{
+"question": "The domain of $f(x) = sin^{-1}x + cosx$ is:",
+"options": ["A. $[-1, 1]$ ", "B. $\\mathbb{R}$", "C. $(-\\infty, \\infty)$", "D. $[0, 1]$"],
+"answer": "A. $[-1, 1]$ ",
+"explanation": "The domain of $sin^{-1}x$ is $[-1, 1]$ and $cosx$ is $\\mathbb{R}$. The intersection is $[-1, 1]$."
+},
+{
+"question": "If $3sin^{-1}x = sin^{-1}(3x - 4x^3)$, then $x$ belongs to:",
+"options": ["A. $[-1, 1]$ ", "B. $[-1/2, 1/2]$ ", "C. $[0, 1]$ ", "D. $[1/2, 1]$"],
+"answer": "B. $[-1/2, 1/2]$ ",
+"explanation": "This identity holds only when $3sin^{-1}x$ lies in the principal branch $[-\\pi/2, \\pi/2]$, which means $sin^{-1}x \\in [-\\pi/6, \\pi/6]$, so $x \\in [-1/2, 1/2]$."
+},
+{
+"question": "The value of $tan(cos^{-1}(8/17))$ is:",
+"options": ["A. $15/8$ ", "B. $8/15$", "C. $15/17$", "D. $8/17$"],
+"answer": "A. $15/8$ ",
+"explanation": "If $cos\\theta = 8/17$, then in a right triangle, base $= 8$, hyp $= 17$, perp $= \\sqrt{17^2 - 8^2} = 15$. $tan\\theta = 15/8$."
+},
+{
+"question": "The value of $cos^{-1}(1/2) + 2sin^{-1}(1/2)$ is:",
+"options": ["A. $\\pi/3$", "B. $2\\pi/3$ ", "C. $\\pi/6$", "D. $\\pi$"],
+"answer": "B. $2\\pi/3$ ",
+"explanation": "$\\pi/3 + 2(\\pi/6) = \\pi/3 + \\pi/3 = 2\\pi/3$."
+},
+{
+"question": "If $tan^{-1}x + tan^{-1}y = \\pi/4$, then $x+y+xy$ is:",
+"options": ["A. $0$", "B. $1$ ", "C. $-1$", "D. $2$"],
+"answer": "B. $1$ ",
+"explanation": "$tan(tan^{-1}x + tan^{-1}y) = tan(\\pi/4) \\implies (x+y)/(1-xy) = 1 \\implies x+y = 1-xy \\implies x+y+xy = 1$."
+},
+{
+"question": "The value of $tan^{-1}(tan\\frac{3\\pi}{4})$ is:",
+"options": ["A. $3\\pi/4$", "B. $\\pi/4$", "C. $-\\pi/4$ ", "D. $7\\pi/4$"],
+"answer": "C. $-\\pi/4$ ",
+"explanation": "The principal branch is $(-\\pi/2, \\pi/2)$. $tan(3\\pi/4) = tan(\\pi - \\pi/4) = -tan(\\pi/4) = tan(-\\pi/4)$. So the value is $-\\pi/4$."
+},
+{
+"question": "If $sin^{-1}x = y$, then:",
+"options": ["A. $0 \\le y \\le \\pi$", "B. $-\\pi/2 \\le y \\le \\pi/2$ ", "C. $0 < y < \\pi$", "D. $-\\pi/2 < y < \\pi/2$"],
+"answer": "B. $-\\pi/2 \\le y \\le \\pi/2$ ",
+"explanation": "This is the standard principal value range for the inverse sine function."
+},
+{
+"question": "The value of $sin(tan^{-1}x)$ for $|x| < 1$ is:",
+"options": ["A. $\\frac{x}{\\sqrt{1-x^2}}$", "B. $\\frac{1}{\\sqrt{1-x^2}}$", "C. $\\frac{1}{\\sqrt{1+x^2}}$", "D. $\\frac{x}{\\sqrt{1+x^2}}$ "],
+"answer": "D. $\\frac{x}{\\sqrt{1+x^2}}$ ",
+"explanation": "If $tan\\theta = x/1$, then perp $= x$, base $= 1$, hyp $= \\sqrt{1+x^2}$. $sin\\theta = x/\\sqrt{1+x^2}$."
+},
+{
+"question": "The value of $cos^{-1}(cos\\frac{13\\pi}{6})$ is:",
+"options": ["A. $13\\pi/6$", "B. $7\\pi/6$", "C. $5\\pi/6$", "D. $\\pi/6$ "],
+"answer": "D. $\\pi/6$ ",
+"explanation": "$cos(13\\pi/6) = cos(2\\pi + \\pi/6) = cos(\\pi/6)$. Since $\\pi/6 \\in [0, \\pi]$, the result is $\\pi/6$."
+},
+{
+"question": "The domain of $sin^{-1}\\sqrt{x-1}$ is:",
+"options": ["A. $[1, 2]$ ", "B. $[0, 1]$", "C. $[-1, 1]$", "D. $[1, \\pi]$"],
+"answer": "A. $[1, 2]$ ",
+"explanation": "Requires $0 \\le \\sqrt{x-1} \\le 1 \\implies 0 \\le x-1 \\le 1 \\implies 1 \\le x \\le 2$."
+},
+{
+"question": "The range of $sin^{-1}x + cos^{-1}x$ is:",
+"options": ["A. $[0, \\pi]$ ", "B. $[-\\pi/2, \\pi/2]$ ", "C. $\\{\\pi/2\\}$ ", "D. $\\mathbb{R}$"],
+"answer": "C. $\\{\\pi/2\\}$ ",
+"explanation": "The sum is a constant value $\\pi/2$ for all $x \\in [-1, 1]$, so the range is just the singleton set."
+},
+{
+"question": "The principal value of $sin^{-1}(-1/2)$ is:",
+"options": ["A. $\\pi/6$", "B. $-\\pi/6$ ", "C. $5\\pi/6$", "D. $7\\pi/6$"],
+"answer": "B. $-\\pi/6$ ",
+"explanation": "$sin(-\\pi/6) = -1/2$ and $-\\pi/6$ is in the principal branch $[-\\pi/2, \\pi/2]$."
+},
+{
+"question": "If $tan^{-1}x + tan^{-1}y + tan^{-1}z = \\pi/2$, then $xy+yz+zx$ is:",
+"options": ["A. $0$", "B. $1$ ", "C. $-1$", "D. $xyz$"],
+"answer": "B. $1$ ",
+"explanation": "If sum is $\\pi/2$, then $tan(sum)$ is undefined, meaning the denominator $(1 - (xy+yz+zx))$ of the $tan(A+B+C)$ formula must be 0."
+},
+{
+"question": "The principal value of $cos^{-1}(-1/\\sqrt{2})$ is:",
+"options": ["A. $\\pi/4$", "B. $-\\pi/4$", "C. $3\\pi/4$ ", "D. $5\\pi/4$"],
+"answer": "C. $3\\pi/4$ ",
+"explanation": "$cos(3\\pi/4) = -1/\\sqrt{2}$ and $3\\pi/4 \\in [0, \\pi]$."
+},
+{
+"question": "The domain of $f(x) = cos^{-1}(2x)$ is:",
+"options": ["A. $[-1, 1]$ ", "B. $[-1/2, 1/2]$ ", "C. $[0, 1/2]$ ", "D. $[-2, 2]$"],
+"answer": "B. $[-1/2, 1/2]$ ",
+"explanation": "$-1 \\le 2x \\le 1 \\implies -1/2 \\le x \\le 1/2$."
+},
+{
+"question": "The value of $sin(sin^{-1}(1/2))$ is:",
+"options": ["A. $1/2$ ", "B. $\\pi/6$", "C. $\\pi/3$", "D. $1$"],
+"answer": "A. $1/2$ ",
+"explanation": "$sin(sin^{-1}x) = x$ for all $x \\in [-1, 1]$."
+},
+{
+"question": "The range of $tan^{-1}x$ is:",
+"options": ["A. $[-\\pi/2, \\pi/2]$ ", "B. (-\\pi/2, \\pi/2) ", "C. $[0, \\pi]$ ", "D. $(0, \\pi)$"],
+"answer": "B. $(-\\pi/2, \\pi/2)$ ",
+"explanation": "The function is defined for all real numbers and its output approaches but never reaches $\\pm \\pi/2$."
+},
+{
+"question": "The principal value of $cosec^{-1}(2)$ is:",
+"options": ["A. $\\pi/6$ ", "B. $\\pi/3$", "C. $\\pi/4$", "D. $\\pi/2$"],
+"answer": "A. $\\pi/6$ ",
+"explanation": "$cosec(\\pi/6) = 2$ and $\\pi/6$ is in the principal branch $[-\\pi/2, \\pi/2] - \\{0\\}$."
+},
+{
+"question": "The value of $tan^{-1}1 + tan^{-1}1/3$ is:",
+"options": ["A. $tan^{-1}2$ ", "B. $tan^{-1}3$", "C. $tan^{-1}1/2$", "D. $tan^{-1}4/3$"],
+"answer": "A. $tan^{-1}2$ ",
+"explanation": "$tan^{-1}((1+1/3)/(1-1/3)) = tan^{-1}((4/3)/(2/3)) = tan^{-1}(2)$."
+},
+{
+"question": "The domain of $f(x) = cot^{-1}x$ is:",
+"options": ["A. $[-1, 1]$ ", "B. $\\mathbb{R}$ ", "C. $(0, \\pi)$ ", "D. $[-\\pi/2, \\pi/2]$"],
+"answer": "B. $\\mathbb{R}$ ",
+"explanation": "The inverse cotangent function is defined for all real number inputs."
+},
+{
+"question": "The value of $sin^{-1}(sin5)$ is:",
+"options": ["A. $5$", "B. $5 - 2\\pi$ ", "C. $2\\pi - 5$", "D. $\\pi - 5$"],
+"answer": "B. $5 - 2\\pi$ ",
+"explanation": "$5$ radians is in the 4th quadrant. To bring it to $[-\\pi/2, \\pi/2]$, we use $5 - 2\\pi$."
+},
+{
+"question": "If $sin^{-1}x + sin^{-1}y = 2\\pi/3$, then $cos^{-1}x + cos^{-1}y$ is:",
+"options": ["A. $\\pi/3$ ", "B. $2\\pi/3$", "C. $\\pi/6$", "D. $\\pi$"],
+"answer": "A. $\\pi/3$ ",
+"explanation": "$(\\pi/2 - cos^{-1}x) + (\\pi/2 - cos^{-1}y) = 2\\pi/3 \\implies \\pi - (cos^{-1}x + cos^{-1}y) = 2\\pi/3 \\implies sum = \\pi/3$."
+}
+]
