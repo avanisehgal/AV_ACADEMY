@@ -13,7 +13,7 @@ var HEADERS = [
 
 function getSheet() {
   // 1. Target the Spreadsheet using its ID
-  var ss = SpreadsheetApp.openById("11tJOE1k_C2v7kHOps7d-dmmMrhkiUA864B4Og9KnK_w");
+  var ss = SpreadsheetApp.openById("1H6CPq59samyIl83YR94XSqf1_fsoOI8SiCzaLYrRuXs");
   
   // 2. Target the specific TAB inside that spreadsheet (usually called "Results")
   var sheet = ss.getSheetByName("Results");
@@ -51,7 +51,7 @@ function doPost(e) {
       }
       // If no in-progress row, create one
       sheet.appendRow([
-        new Date().toISOString(), data.email, "", "", "", "", 
+        new Date().toISOString(), data.email, data.firstName || "", data.lastName || "", "", "", 
         0, 0, 0, 0, 0, 0, 1, data.violations, "in-progress", "{}"
       ]);
       return corsResponse({ ok: true, synced: true });
@@ -114,8 +114,8 @@ function doPost(e) {
         }
 
         if (rowIndex > -1) {
-          if (!data.firstName) rowData[2] = allData[rowIndex-1][2];
-          if (!data.lastName) rowData[3] = allData[rowIndex-1][3];
+          if (!data.firstName && allData[rowIndex-1][2]) rowData[2] = allData[rowIndex-1][2];
+          if (!data.lastName && allData[rowIndex-1][3]) rowData[3] = allData[rowIndex-1][3];
           sheet.getRange(rowIndex, 1, 1, HEADERS.length).setValues([rowData]);
         } else {
           sheet.appendRow(rowData);

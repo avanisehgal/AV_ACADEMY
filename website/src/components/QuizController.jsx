@@ -156,14 +156,54 @@ export default function QuizController({ onClose, testId = 'probability' }) {
     
     const processLogin = async (profileObj, skipOnboarding = false) => {
       setScreen('loading-auth');
-      const neonCheck = await checkTestSubmission(email, testId + '_test');
-      setUserProfile(profileObj);
+      
+      const [dbResult, neonCheck] = await Promise.all([
+        fetchUserResult(email),
+        checkTestSubmission(email, testId + '_test')
+      ]);
+
+      let fullProfile = { ...profileObj };
+      let hasData = false;
+
+      // Merge data from GAS if available
+      if (dbResult && dbResult.result) {
+        const gasProfile = dbResult.result;
+        fullProfile = {
+          ...fullProfile,
+          firstName: fullProfile.firstName || gasProfile.firstName || '',
+          lastName: fullProfile.lastName || gasProfile.lastName || '',
+          state: fullProfile.state || gasProfile.state || '',
+          age: fullProfile.age || gasProfile.age || ''
+        };
+        hasData = true;
+      }
       
       if (neonCheck.exists) {
         const sd = neonCheck.score_data;
         const resolved = sd.latest || (sd.attempts && sd.attempts[sd.attempts.length - 1]) || sd;
+        
+        // Merge data from Neon if available and not already set
+        fullProfile = {
+          ...fullProfile,
+          firstName: fullProfile.firstName || resolved.firstName || '',
+          lastName: fullProfile.lastName || resolved.lastName || '',
+          state: fullProfile.state || resolved.state || '',
+          age: fullProfile.age || resolved.age || ''
+        };
+        hasData = true;
+
         localStorage.setItem(`av_last_neon_result_${testId}`, JSON.stringify({ ...resolved, saved: true }));
         setTestResult(resolved);
+      }
+
+      setUserProfile(fullProfile);
+      
+      // Persist recovered data locally so it survives refreshes
+      if (hasData) {
+        localStorage.setItem('av_user_session', JSON.stringify(fullProfile));
+      }
+
+      if (neonCheck.exists) {
         setScreen('welcome');
         return null;
       }
@@ -457,7 +497,12 @@ export default function QuizController({ onClose, testId = 'probability' }) {
 
       {screen === 'test' && (
         <div style={{ pointerEvents: 'all' }}>
-          <QuizProctor onForceSubmit={handleForceSubmit} email={userProfile?.email}>
+          <QuizProctor 
+            onForceSubmit={handleForceSubmit} 
+            email={userProfile?.email}
+            firstName={userProfile?.firstName}
+            lastName={userProfile?.lastName}
+          >
             <Quiz
               onSubmit={handleTestSubmit}
               forceSubmit={forceSubmitQuiz}

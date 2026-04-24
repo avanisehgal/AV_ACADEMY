@@ -323,7 +323,7 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                         className="resource-card test"
                         onClick={() => {
                           if (course?.id === '03' && testIdMap[chapter.id]) {
-                            if (chapter.id === 1) {
+                            if (chapter.id === 2) {
                               setSelectedTestId(testIdMap[chapter.id]);
                               setIsQuizOpen(true);
                             } else {

@@ -54,14 +54,14 @@ export async function submitTestResult(data) {
   }
 }
 
-export async function syncViolation(email, count) {
+export async function syncViolation(email, count, firstName = '', lastName = '') {
   if (!GAS_URL || !email) return;
   try {
     // Send a non-blocking request to update violation count instantly
     fetch(GAS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action: 'updateViolations', email, violations: count }),
+      body: JSON.stringify({ action: 'updateViolations', email, violations: count, firstName, lastName }),
     }).catch(() => {});
   } catch (e) {}
 }
