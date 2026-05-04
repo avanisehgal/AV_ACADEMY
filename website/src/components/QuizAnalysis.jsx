@@ -14,6 +14,9 @@ const PDF_URLS = {
   'inverse_trigonometry': 'https://drive.google.com/file/d/1MTpW5UNr-qiOxSPj_JgYueqMAL0iB_Ow/view?usp=sharing',
   'lpp': 'https://drive.google.com/file/d/12XZyeGUzCa60UmFqPa7s2gHg0CfmbIYM/view?usp=sharing',
   'matrices': 'https://drive.google.com/file/d/1xeM9oZ7wQ1O35C4hikZucNnZsXtm3CHZ/view?usp=sharing',
+  'relations_functions': 'https://drive.google.com/file/d/1lx4CdKz3XP8fEUSjOr2b67mGO28W2hnc/view?usp=sharing',
+  'vectors': 'https://drive.google.com/file/d/1cG9exuOUxgs0LRHPjnJcKuSNUD6qlIuW/view?usp=sharing',
+  '3_dimensional_geometry': 'https://drive.google.com/file/d/1V5ZBgx1BU9i5np9ixImAlAA5lNzkb4g8/view?usp=sharing',
 };
 
 const CHAPTER_VERDICTS = {

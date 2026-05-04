@@ -10,7 +10,7 @@ const math12Chapters = [
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH2xBI_aUP6300mTpkUMEfdY',
       oneshot: 'https://youtu.be/Oh6Uk2hRPmA?si=YZee6VhoQwi-4nY8',
       formula: 'https://drive.google.com/file/d/1PZiLWsaK9cPtUY1W3C94jJkzxkblpZHl/view?usp=drive_link',
-      practice: null, test: null
+      practice: 'https://drive.google.com/file/d/1lx4CdKz3XP8fEUSjOr2b67mGO28W2hnc/view?usp=sharing', test: null
     }
   },
   { 
@@ -89,7 +89,7 @@ const math12Chapters = [
     resources: {
       youtube: null, oneshot: null,
       formula: 'https://drive.google.com/file/d/1TWvSfIdUJnvKOdXk2DxNG430RY1AKaYD/view?usp=sharing',
-      practice: null, test: null
+      practice: 'https://drive.google.com/file/d/1cG9exuOUxgs0LRHPjnJcKuSNUD6qlIuW/view?usp=sharing', test: null
     }
   },
   { 
@@ -97,7 +97,7 @@ const math12Chapters = [
     resources: {
       youtube: null, oneshot: null,
       formula: 'https://drive.google.com/file/d/1F9jIZtidoaxmx-aeiuzlECSbOjbN5w0r/view?usp=sharing',
-      practice: null, test: null
+      practice: 'https://drive.google.com/file/d/1V5ZBgx1BU9i5np9ixImAlAA5lNzkb4g8/view?usp=sharing', test: null
     }
   },
   { 
