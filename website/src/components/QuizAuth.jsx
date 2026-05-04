@@ -11,7 +11,7 @@ const GOOGLE_ICON = (
   </svg>
 );
 
-export default function QuizAuth({ onLogin, onGoogleLogin, onClose }) {
+export default function QuizAuth({ testName = 'Probability', onLogin, onGoogleLogin, onClose }) {
   const emailRef    = useRef(null);
   const passwordRef = useRef(null);
   const [error, setError]               = useState('');
@@ -125,7 +125,7 @@ export default function QuizAuth({ onLogin, onGoogleLogin, onClose }) {
       </div>
 
       <h2>Sign in to continue</h2>
-      <p className="qc-sub">Access your CUET Probability Test</p>
+      <p className="qc-sub">Access your CUET {testName} Test</p>
 
       <form className="qc-form" onSubmit={handleEmailSubmit}>
 

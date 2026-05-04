@@ -403,6 +403,7 @@ export default function QuizController({ onClose, testId = 'probability' }) {
       {screen === 'auth' && (
         <div className="qc-overlay" style={{ pointerEvents: 'all' }}>
           <QuizAuth
+            testName={capitalize(testId.replace(/_/g, ' '))}
             onLogin={handleLogin}
             onGoogleLogin={handleGoogleLogin}
             onClose={onClose}
@@ -464,7 +465,7 @@ export default function QuizController({ onClose, testId = 'probability' }) {
                 <span style={{ fontSize: '1rem', lineHeight: 1 }}>→</span>
               </button>
               
-              {testResult && testResult.status !== 'terminated' && (
+              {(testResult && testResult.status !== 'terminated') || userProfile?.email === (import.meta.env.VITE_ADMIN_EMAIL || 'avanisehgal22@gmail.com') ? (
                 <button
                   className="qc-btn"
                   style={{
@@ -475,11 +476,23 @@ export default function QuizController({ onClose, testId = 'probability' }) {
                     fontWeight: '600', cursor: 'pointer',
                     transition: 'all 0.2s', whiteSpace: 'nowrap'
                   }}
-                  onClick={() => setScreen('analysis')}
+                  onClick={() => {
+                    if (!testResult && userProfile?.email === (import.meta.env.VITE_ADMIN_EMAIL || 'avanisehgal22@gmail.com')) {
+                      setTestResult({
+                        answers: {},
+                        timeTaken: 1800,
+                        attemptNumber: 1,
+                        violations: 0,
+                        status: 'submitted',
+                        score: 0
+                      });
+                    }
+                    setScreen('analysis');
+                  }}
                 >
                   <span style={{ fontSize: '1rem', lineHeight: 1 }}>📊</span> View Analysis
                 </button>
-              )}
+              ) : null}
             </div>
 
             <button className="qc-btn qc-btn-ghost" style={{ marginTop: '8px' }} onClick={handleSwitchAccount}>

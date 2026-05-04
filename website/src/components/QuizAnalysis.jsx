@@ -68,8 +68,9 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
   if (!testResult) return null;
 
   const { answers = {}, timeTaken = 0, attemptNumber = 1, violations = 0, status = 'submitted' } = testResult;
-  const isTerminated = status === 'terminated';
-  const isUnfair = !isTerminated && (status === 'unfair' || timeTaken < 1500); // 25 min = 1500s
+  const isAdmin = userProfile && userProfile.email === (import.meta.env.VITE_ADMIN_EMAIL || 'avanisehgal22@gmail.com');
+  const isTerminated = status === 'terminated' && !isAdmin;
+  const isUnfair = !isTerminated && (status === 'unfair' || timeTaken < 1500) && !isAdmin;
 
   // Score calculation
   let correctCount = 0, wrongCount = 0, unattemptedCount = 0;
@@ -281,7 +282,15 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
                 {/* Analyse Answers — always available */}
                 <button
                   className="action-btn video"
-                  onClick={() => showToast('Video Analysis will be uploaded soon!')}
+                  onClick={() => {
+                    if (testId === 'relations_functions') {
+                      window.open('https://youtu.be/b7KGQY2VNLk?si=XuZ7xNCkQ9p94HMm', '_blank');
+                    } else if (testId === 'inverse_trigonometry') {
+                      window.open('https://youtu.be/wvG1c3cqTQ8?si=_sS31EcReFKXjN8K', '_blank');
+                    } else {
+                      showToast('Video Analysis will be uploaded soon!');
+                    }
+                  }}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polygon points="23 7 16 12 23 17 23 7" />
@@ -343,7 +352,7 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
                               <td>{u.state || '-'}</td>
                               <td style={{fontWeight:800}}>{u.score}</td>
                               <td>{Math.floor(u.timeTaken/60)}m {u.timeTaken%60}s</td>
-                              <td style={{color: u.violations > 0 ? '#ef4444' : 'inherit'}}>
+                              <td style={u.violations > 0 ? {color: '#ef4444'} : {}}>
                                 {u.violations}
                               </td>
                             </tr>
