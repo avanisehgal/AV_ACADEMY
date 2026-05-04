@@ -3,7 +3,18 @@ import { fetchLeaderboard } from '../utils/gasService';
 import './Quiz.css';
 import './QuizController.css';
 
-const PDF_URL = 'https://drive.google.com/file/d/1JqAKPYUDERy9N_5Y7gK1D6dQelYt36VB/view?usp=sharing';
+const PDF_URLS = {
+  'probability': 'https://drive.google.com/file/d/1JqAKPYUDERy9N_5Y7gK1D6dQelYt36VB/view?usp=sharing',
+  'applications_of_derivative': 'https://drive.google.com/file/d/1Ojod0uDsyJmPJF35HEzEL55e0-PPij_U/view?usp=sharing',
+  'applications_of_integrals': 'https://drive.google.com/file/d/1tDaiHBjG7PBFn5WCZ5Tgq9Z0oojv0ZRy/view?usp=sharing',
+  'continuity_differentiability': 'https://drive.google.com/file/d/1qlt2a2Pf4HPPgWh5QCXDlqC1CJlyvLH2/view?usp=sharing',
+  'determinants': 'https://drive.google.com/file/d/1FpUp3jzqjmby_-9ruIt7SdSCJuPu4VZa/view?usp=sharing',
+  'differential_equations': 'https://drive.google.com/file/d/1qU6g00SWHjZi565Vcd5VkeU1buEbX9RZ/view?usp=sharing',
+  'integrals': 'https://drive.google.com/file/d/17gNSEvgpxzXb89aD9aeypNITYJFb7wIY/view?usp=sharing',
+  'inverse_trigonometry': 'https://drive.google.com/file/d/1MTpW5UNr-qiOxSPj_JgYueqMAL0iB_Ow/view?usp=sharing',
+  'lpp': 'https://drive.google.com/file/d/12XZyeGUzCa60UmFqPa7s2gHg0CfmbIYM/view?usp=sharing',
+  'matrices': 'https://drive.google.com/file/d/1xeM9oZ7wQ1O35C4hikZucNnZsXtm3CHZ/view?usp=sharing',
+};
 
 const CHAPTER_VERDICTS = {
   relations_functions: {
@@ -56,14 +67,16 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
   const [loadingLb, setLoadingLb] = useState(true);
   const [showLbModal, setShowLbModal] = useState(false);
 
+  const currentPdfUrl = PDF_URLS[testId] || null;
+
   useEffect(() => {
     if (testResult && showLbModal && leaderboard.length === 0) {
-       fetchLeaderboard().then(res => {
+       fetchLeaderboard(testId).then(res => {
          if (res && res.ok) setLeaderboard(res.data || []);
          setLoadingLb(false);
        });
     }
-  }, [testResult, showLbModal, leaderboard.length]);
+  }, [testResult, showLbModal, leaderboard.length, testId]);
 
   if (!testResult) return null;
 
@@ -104,6 +117,14 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
     verdictDesc = 'Poor performance this time — better luck next time! Try harder and you\'ll get there. Revisit Independent vs. Exclusive events and notation before re-attempting.';
     verdictClass = 'needs-rev'; miniVerdict = 'Needs Revision 📚';
   }
+
+  const handleResourceClick = (url, fallbackMsg) => {
+    if (url) {
+      window.open(url, '_blank');
+    } else {
+      showToast(fallbackMsg);
+    }
+  };
 
   return (
     <>
@@ -267,7 +288,7 @@ export default function QuizAnalysis({ testResult, userProfile, onClose, onRevie
                 {/* Download PDF — locked when unfair/terminated */}
                 <button
                   className={`action-btn pdf${canAccess ? '' : ' btn-locked'}`}
-                  onClick={canAccess ? () => window.open(PDF_URL, '_blank') : undefined}
+                  onClick={canAccess ? () => handleResourceClick(currentPdfUrl, "PDF will be available soon!") : undefined}
                   disabled={!canAccess}
                   title={canAccess ? '' : 'Locked: suspicious submission detected'}
                 >

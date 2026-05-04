@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Quiz.css';
 
-export default function QuizResult({ answers, quizData, timeTaken, attemptNumber, onClose, onReview }) {
+export default function QuizResult({ answers, quizData, timeTaken, attemptNumber, onClose, onReview, testId }) {
   const [toastMessage, setToastMessage] = useState(null);
 
   let correctCount = 0;
@@ -56,6 +56,20 @@ export default function QuizResult({ answers, quizData, timeTaken, attemptNumber
       setTimeout(() => setToastMessage(null), 3000);
     }
   };
+
+  const pdfLinks = {
+    'probability': 'https://drive.google.com/file/d/1JqAKPYUDERy9N_5Y7gK1D6dQelYt36VB/view?usp=sharing',
+    'applications_of_derivative': 'https://drive.google.com/file/d/1Ojod0uDsyJmPJF35HEzEL55e0-PPij_U/view?usp=sharing',
+    'applications_of_integrals': 'https://drive.google.com/file/d/1tDaiHBjG7PBFn5WCZ5Tgq9Z0oojv0ZRy/view?usp=sharing',
+    'continuity_differentiability': 'https://drive.google.com/file/d/1qlt2a2Pf4HPPgWh5QCXDlqC1CJlyvLH2/view?usp=sharing',
+    'determinants': 'https://drive.google.com/file/d/1FpUp3jzqjmby_-9ruIt7SdSCJuPu4VZa/view?usp=sharing',
+    'differential_equations': 'https://drive.google.com/file/d/1qU6g00SWHjZi565Vcd5VkeU1buEbX9RZ/view?usp=sharing',
+    'integrals': 'https://drive.google.com/file/d/17gNSEvgpxzXb89aD9aeypNITYJFb7wIY/view?usp=sharing',
+    'inverse_trigonometry': 'https://drive.google.com/file/d/1MTpW5UNr-qiOxSPj_JgYueqMAL0iB_Ow/view?usp=sharing',
+    'lpp': 'https://drive.google.com/file/d/12XZyeGUzCa60UmFqPa7s2gHg0CfmbIYM/view?usp=sharing',
+    'matrices': 'https://drive.google.com/file/d/1xeM9oZ7wQ1O35C4hikZucNnZsXtm3CHZ/view?usp=sharing',
+  };
+  const currentPdfUrl = pdfLinks[testId] || null;
 
   return (
     <>
@@ -164,7 +178,7 @@ export default function QuizResult({ answers, quizData, timeTaken, attemptNumber
             </button>
             <button 
               className="action-btn pdf" 
-              onClick={() => handleResourceClick('https://drive.google.com/file/d/1JqAKPYUDERy9N_5Y7gK1D6dQelYt36VB/view?usp=sharing', null)}
+              onClick={() => handleResourceClick(currentPdfUrl, "PDF will be uploaded soon!")}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               Download PDF

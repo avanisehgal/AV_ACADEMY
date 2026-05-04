@@ -8,7 +8,7 @@ var HEADERS = [
   "Timestamp", "Email", "First Name", "Last Name",
   "State", "Age", "Score", "Total Marks", "Correct",
   "Wrong", "Unattempted", "Time Taken (s)", "Attempt #",
-  "Violations", "Status", "Answers (JSON)"
+  "Violations", "Status", "Answers (JSON)", "Test ID"
 ];
 
 function getSheet() {
@@ -40,8 +40,10 @@ function doPost(e) {
 
     // ── Update Violations (Live Sync) ──
     if (action === "updateViolations") {
+      var targetTestId = data.testId || "probability";
       for (var i = allData.length - 1; i >= 1; i--) {
-        if (allData[i][1] === data.email && allData[i][14] === "in-progress") {
+        var rowTestId = allData[i][16] || "probability";
+        if (allData[i][1] === data.email && allData[i][14] === "in-progress" && rowTestId === targetTestId) {
           sheet.getRange(i + 1, 14).setValue(data.violations); // Column N (14)
           if (data.violations >= 3) {
             sheet.getRange(i + 1, 15).setValue("terminated"); // Column O (15)
@@ -52,17 +54,18 @@ function doPost(e) {
       // If no in-progress row, create one
       sheet.appendRow([
         new Date().toISOString(), data.email, data.firstName || "", data.lastName || "", "", "", 
-        0, 0, 0, 0, 0, 0, 1, data.violations, "in-progress", "{}"
+        0, 0, 0, 0, 0, 0, 1, data.violations, "in-progress", "{}", targetTestId
       ]);
       return corsResponse({ ok: true, synced: true });
     }
 
     // ── Start Quiz ──
     if (action === "startQuiz") {
+      var targetTestId = data.testId || "probability";
       sheet.appendRow([
         new Date().toISOString(), data.email, data.firstName || "", data.lastName || "",
         data.state || "", data.age || "", 0, 0, 0, 0, 0, 0, 
-        data.attemptNumber || 1, 0, "in-progress", "{}"
+        data.attemptNumber || 1, 0, "in-progress", "{}", targetTestId
       ]);
       return corsResponse({ ok: true });
     }
@@ -94,20 +97,22 @@ function doPost(e) {
         isAdmin = true;
       }
 
+      var targetTestId = data.testId || "probability";
       var rowData = [
         data.timestamp || new Date().toISOString(),
         data.email, data.firstName || "", data.lastName || "",
         data.state || "", data.age || "", score, totalMarks,
         correct, wrong, unattempted, data.timeTaken || 0,
         data.attemptNumber || 1, data.violations || 0, finalStatus,
-        JSON.stringify(answers)
+        JSON.stringify(answers), targetTestId
       ];
 
       // Only record to spreadsheet if NOT an admin
       if (!isAdmin) {
         var rowIndex = -1;
         for (var i = allData.length - 1; i >= 1; i--) {
-          if (allData[i][1] === data.email && allData[i][14] === "in-progress") {
+          var rowTestId = allData[i][16] || "probability";
+          if (allData[i][1] === data.email && allData[i][14] === "in-progress" && rowTestId === targetTestId) {
             rowIndex = i + 1;
             break;
           }
@@ -130,7 +135,8 @@ function doPost(e) {
         // Step 1: Build a map of best result per email (latest submitted row wins, same as leaderboard)
         var bestByEmail = {};
         for (var k = 1; k < freshData.length; k++) {
-          if (freshData[k][14] === "submitted") {
+          var rowTestId = freshData[k][16] || "probability";
+          if (freshData[k][14] === "submitted" && rowTestId === targetTestId) {
             var rowEmail = freshData[k][1];
             var rowScore = Number(freshData[k][6]);
             var rowTime  = Number(freshData[k][11]);
@@ -183,9 +189,11 @@ function doGet(e) {
 
     if (action === "getUser") {
       var email = e.parameter.email;
+      var testIdParam = e.parameter.testId || "probability";
       var result = null;
       for (var i = data.length - 1; i >= 1; i--) {
-        if (data[i][1] === email) {
+        var rowTestId = data[i][16] || "probability";
+        if (data[i][1] === email && rowTestId === testIdParam) {
           result = {
             timestamp: data[i][0], email: data[i][1], firstName: data[i][2], lastName: data[i][3],
             state: data[i][4], age: data[i][5], score: data[i][6], totalMarks: data[i][7],
@@ -199,10 +207,12 @@ function doGet(e) {
     }
 
     if (action === "getLeaderboard") {
+      var testIdParam = e.parameter.testId || "probability";
       // Deduplicate by email — last submitted row per user wins (latest attempt)
       var latestByEmail = {};
       for (var i = 1; i < data.length; i++) {
-        if (data[i][14] === "submitted") {
+        var rowTestId = data[i][16] || "probability";
+        if (data[i][14] === "submitted" && rowTestId === testIdParam) {
           var rowEmail = data[i][1];
           // Skip admins
           var checkEmail = (rowEmail || "").toLowerCase();

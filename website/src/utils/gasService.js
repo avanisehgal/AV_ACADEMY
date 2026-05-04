@@ -54,22 +54,24 @@ export async function submitTestResult(data) {
   }
 }
 
-export async function syncViolation(email, count, firstName = '', lastName = '') {
+export async function syncViolation(email, count, firstName = '', lastName = '', testId = '') {
   if (!GAS_URL || !email) return;
   try {
     // Send a non-blocking request to update violation count instantly
     fetch(GAS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action: 'updateViolations', email, violations: count, firstName, lastName }),
+      body: JSON.stringify({ action: 'updateViolations', email, violations: count, firstName, lastName, testId }),
     }).catch(() => {});
   } catch (e) {}
 }
 
-export async function fetchUserResult(email) {
+export async function fetchUserResult(email, testId) {
   if (!GAS_URL) return null;
   try {
-    const res = await fetch(`${GAS_URL}?action=getUser&email=${encodeURIComponent(email)}`);
+    let url = `${GAS_URL}?action=getUser&email=${encodeURIComponent(email)}`;
+    if (testId) url += `&testId=${encodeURIComponent(testId)}`;
+    const res = await fetch(url);
     return await res.json();
   } catch (e) {
     console.error('[GAS] GET User failed', e);
@@ -77,10 +79,12 @@ export async function fetchUserResult(email) {
   }
 }
 
-export async function fetchLeaderboard() {
+export async function fetchLeaderboard(testId) {
   if (!GAS_URL) return { ok: false, data: [] };
   try {
-    const res = await fetch(`${GAS_URL}?action=getLeaderboard`);
+    let url = `${GAS_URL}?action=getLeaderboard`;
+    if (testId) url += `&testId=${encodeURIComponent(testId)}`;
+    const res = await fetch(url);
     return await res.json();
   } catch (e) {
     console.error('[GAS] GET Leaderboard failed', e);

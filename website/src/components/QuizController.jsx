@@ -231,7 +231,7 @@ export default function QuizController({ onClose, testId = 'probability' }) {
     setScreen('loading-auth');
     
     const [dbResult, neonCheck] = await Promise.all([
-      fetchUserResult(email),
+      fetchUserResult(email, testId),
       checkTestSubmission(email, testId + '_test')
     ]);
     
@@ -523,11 +523,12 @@ export default function QuizController({ onClose, testId = 'probability' }) {
 
       {screen === 'test' && (
         <div style={{ pointerEvents: 'all' }}>
-          <QuizProctor 
-            onForceSubmit={handleForceSubmit} 
+          <QuizProctor
             email={userProfile?.email}
             firstName={userProfile?.firstName}
             lastName={userProfile?.lastName}
+            testId={testId}
+            onForceSubmit={handleForceSubmit}
           >
             <Quiz
               onSubmit={handleTestSubmit}
@@ -539,6 +540,20 @@ export default function QuizController({ onClose, testId = 'probability' }) {
               quizData={quizData}
             />
           </QuizProctor>
+        </div>
+      )}
+
+      {screen === 'result' && testResult && (
+        <div style={{ pointerEvents: 'all' }}>
+          <QuizResult
+            answers={testResult.answers}
+            quizData={quizData}
+            timeTaken={testResult.timeTaken}
+            attemptNumber={testResult.attemptNumber}
+            onClose={() => setScreen('auth')}
+            onReview={() => setScreen('analysis')}
+            testId={testId}
+          />
         </div>
       )}
 

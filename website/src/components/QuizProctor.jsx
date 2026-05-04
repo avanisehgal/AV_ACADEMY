@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { syncViolation } from '../utils/gasService';
 import './QuizController.css';
 
-export default function QuizProctor({ onForceSubmit, email, firstName, lastName, children }) {
+export default function QuizProctor({ onForceSubmit, email, firstName, lastName, testId, children }) {
   const [violations, setViolations] = useState(() =>
     parseInt(localStorage.getItem('av_violations') || '0', 10)
   );
@@ -22,7 +22,7 @@ export default function QuizProctor({ onForceSubmit, email, firstName, lastName,
       localStorage.setItem('av_violations', next.toString());
       
       // Live sync to GAS
-      if (email) syncViolation(email, next, firstName, lastName);
+      if (email) syncViolation(email, next, firstName, lastName, testId);
 
       if (next >= 3) {
         setIsTerminated(true);
