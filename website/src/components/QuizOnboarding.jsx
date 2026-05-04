@@ -10,7 +10,7 @@ const INDIAN_STATES = [
   'Ladakh','Chandigarh','Puducherry','Other'
 ];
 
-export default function QuizOnboarding({ email, firstName, lastName, googleAuth, onComplete, onBack }) {
+export default function QuizOnboarding({ email, firstName, lastName, googleAuth, onComplete, onBack, onGoToAnalysis }) {
   const formRef = useRef(null);
   const [consent, setConsent] = useState(false);
   const [error, setError] = useState('');
@@ -140,6 +140,23 @@ export default function QuizOnboarding({ email, firstName, lastName, googleAuth,
         <button className="qc-btn qc-btn-primary" type="submit">
           Start Test →
         </button>
+        {email === (import.meta.env.VITE_ADMIN_EMAIL || 'avanisehgal22@gmail.com') && (
+          <button 
+            className="qc-btn" 
+            type="button" 
+            onClick={onGoToAnalysis}
+            style={{ 
+              marginTop: '8px',
+              background: 'rgba(255,255,255,0.08)', 
+              color: '#e5e5e5', 
+              border: '1px solid rgba(255,255,255,0.18)', 
+              padding: '14px 16px',
+              fontWeight: '600'
+            }}
+          >
+            📊 Access Analysis (Admin)
+          </button>
+        )}
         <button className="qc-btn qc-btn-ghost" type="button" onClick={onBack}>
           ← Back to Login
         </button>

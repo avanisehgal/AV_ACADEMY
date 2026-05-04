@@ -420,6 +420,19 @@ export default function QuizController({ onClose, testId = 'probability' }) {
             googleAuth={userProfile?.googleAuth || false}
             onComplete={handleOnboardingComplete}
             onBack={() => setScreen('auth')}
+            onGoToAnalysis={() => {
+              if (!testResult && userProfile?.email === (import.meta.env.VITE_ADMIN_EMAIL || 'avanisehgal22@gmail.com')) {
+                setTestResult({
+                  answers: {},
+                  timeTaken: 1800,
+                  attemptNumber: 1,
+                  violations: 0,
+                  status: 'submitted',
+                  score: 0
+                });
+              }
+              setScreen('analysis');
+            }}
           />
         </div>
       )}
