@@ -4,7 +4,7 @@ import './ChapterModal.css';
 import QuizController from './QuizController';
 
 const math12Chapters = [
-  { 
+  {
     id: 1, title: 'Relations & Functions', marks: '6 marks (7.5%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH2xBI_aUP6300mTpkUMEfdY',
@@ -13,7 +13,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1lx4CdKz3XP8fEUSjOr2b67mGO28W2hnc/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 2, title: 'Inverse Trigonometric Functions', marks: '4 marks (5%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH213qnjjfuyp-OoLBJ6BpDe',
@@ -22,7 +22,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1MTpW5UNr-qiOxSPj_JgYueqMAL0iB_Ow/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 3, title: 'Matrices', marks: '6 marks (7.5%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH3kY_cTfgG8VZboJssAPnbs',
@@ -31,7 +31,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/drive/folders/1xy3T9zpDjW_lfXfra3LrJh4zyP2P7ZHl?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 4, title: 'Determinants', marks: '8 marks (10%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH373xt_j1GiUohkBiij8pb2',
@@ -40,7 +40,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1FpUp3jzqjmby_-9ruIt7SdSCJuPu4VZa/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 5, title: 'Continuity & Differentiability', marks: '8 marks (10%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH0CYd6xrdsqT7bHX4HUKKsO',
@@ -49,7 +49,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1qlt2a2Pf4HPPgWh5QCXDlqC1CJlyvLH2/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 6, title: 'Applications of Derivatives', marks: '8 marks (10%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH2MvsKBPW87VyNWi9KY204u',
@@ -58,7 +58,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1Ojod0uDsyJmPJF35HEzEL55e0-PPij_U/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 7, title: 'Integrals', marks: '8 marks (10%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH2EGHyQMUZjsBBv7BF1dG7P',
@@ -67,7 +67,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/17gNSEvgpxzXb89aD9aeypNITYJFb7wIY/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 8, title: 'Applications of Integrals', marks: '8 marks (10%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH2EGHyQMUZjsBBv7BF1dG7P',
@@ -76,7 +76,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1tDaiHBjG7PBFn5WCZ5Tgq9Z0oojv0ZRy/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 9, title: 'Differential Equations', marks: '3 marks (3.75%)',
     resources: {
       youtube: null, oneshot: null,
@@ -84,7 +84,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1qU6g00SWHjZi565Vcd5VkeU1buEbX9RZ/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 10, title: 'Vector Algebra', marks: '6 marks (7.5%)',
     resources: {
       youtube: null, oneshot: null,
@@ -92,7 +92,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1cG9exuOUxgs0LRHPjnJcKuSNUD6qlIuW/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 11, title: 'Three Dimensional Geometry', marks: '8 marks (10%)',
     resources: {
       youtube: null, oneshot: null,
@@ -100,7 +100,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/1V5ZBgx1BU9i5np9ixImAlAA5lNzkb4g8/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 12, title: 'Linear Programming', marks: '5 marks (6.25%)',
     resources: {
       youtube: null, oneshot: null,
@@ -108,7 +108,7 @@ const math12Chapters = [
       practice: 'https://drive.google.com/file/d/12XZyeGUzCa60UmFqPa7s2gHg0CfmbIYM/view?usp=sharing', test: null
     }
   },
-  { 
+  {
     id: 13, title: 'Probability', marks: '10 marks (12.5%)',
     resources: {
       youtube: 'https://www.youtube.com/playlist?list=PLutsOszbYQH0Md1zSWkkLzYhLNIJeZSwH',
@@ -160,7 +160,7 @@ export default function ChapterModal({ isOpen, onClose, course }) {
   const [toastMessage, setToastMessage] = useState(null);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [selectedTestId, setSelectedTestId] = useState(null);
-  
+
   const testIdMap = {
     1: 'relations_functions',
     2: 'inverse_trigonometry',
@@ -176,7 +176,7 @@ export default function ChapterModal({ isOpen, onClose, course }) {
     12: 'lpp',
     13: 'probability'
   };
-  
+
   const handleResourceClick = (url, fallbackMessage) => {
     if (url) {
       window.open(url, '_blank');
@@ -226,8 +226,8 @@ export default function ChapterModal({ isOpen, onClose, course }) {
 
   return createPortal(
     <div className={`modal-overlay ${isOpen ? 'show' : ''}`} onClick={onClose}>
-      <div 
-        className="modal-container" 
+      <div
+        className="modal-container"
         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside
       >
         <div className="modal-header">
@@ -244,16 +244,16 @@ export default function ChapterModal({ isOpen, onClose, course }) {
 
         <div className="modal-content">
           <div className="modal-flow-banner">
-             <span className="flow-text">Clarity → Practice → Mastery</span>
+            <span className="flow-text">Clarity → Practice → Mastery</span>
           </div>
           <div className="chapters-list">
             {activeChapters.map((chapter) => (
-              <div 
-                key={chapter.id} 
+              <div
+                key={chapter.id}
                 className={`chapter-item ${expandedId === chapter.id ? 'expanded' : ''}`}
               >
-                <div 
-                  className="chapter-header" 
+                <div
+                  className="chapter-header"
                   onClick={() => handleToggle(chapter.id)}
                 >
                   <div className="chapter-title-group">
@@ -262,24 +262,24 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                   </div>
                   <div className="chapter-meta">
                     {chapter.marks && <span className="chapter-marks">{chapter.marks}</span>}
-                    <svg 
-                      className="chapter-chevron" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="chapter-chevron"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
                       strokeWidth="2"
                     >
                       <path d="M6 9l6 6 6-6" />
                     </svg>
                   </div>
                 </div>
-                
+
                 <div className="chapter-body">
                   <div className="chapter-body-inner">
                     <p className="chapter-flow-guide">Start with lectures, then revise, then test yourself</p>
-                    
+
                     <div className="resources-grid">
-                      <button 
+                      <button
                         className="resource-card video"
                         onClick={() => handleResourceClick(chapter.resources?.youtube, "Playlist is being curated")}
                       >
@@ -288,8 +288,8 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                         </div>
                         <span>Watch Playlist</span>
                       </button>
-                      
-                      <button 
+
+                      <button
                         className="resource-card oneshot"
                         onClick={() => handleResourceClick(chapter.resources?.oneshot, "One-Shot coming soon")}
                       >
@@ -298,8 +298,8 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                         </div>
                         <span>One-Shot Revision</span>
                       </button>
-                      
-                      <button 
+
+                      <button
                         className="resource-card file"
                         onClick={() => handleResourceClick(chapter.resources?.formula, "Formula sheet uploading...")}
                       >
@@ -308,8 +308,8 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                         </div>
                         <span>View Formula Sheet</span>
                       </button>
-                      
-                      <button 
+
+                      <button
                         className="resource-card file"
                         onClick={() => handleResourceClick(chapter.resources?.practice, "Worksheets arriving shortly!")}
                       >
@@ -318,12 +318,12 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                         </div>
                         <span>Practice Worksheets</span>
                       </button>
-                      
-                      <button 
+
+                      <button
                         className="resource-card test"
                         onClick={() => {
                           if (course?.id === '03' && testIdMap[chapter.id]) {
-                            if (chapter.id === 1 || chapter.id === 2 || chapter.id === 3 || chapter.id === 4) {
+                            if (chapter.id === 1 || chapter.id === 2 || chapter.id === 3 || chapter.id === 4 || chapter.id === 5) {
                               setSelectedTestId(testIdMap[chapter.id]);
                               setIsQuizOpen(true);
                             } else {
@@ -341,7 +341,7 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                       </button>
 
                       {(!course || course.id === '01') && (
-                        <button 
+                        <button
                           className="resource-card file"
                           onClick={() => handleResourceClick(chapter.resources?.notes, "Notes coming soon")}
                         >
@@ -353,12 +353,12 @@ export default function ChapterModal({ isOpen, onClose, course }) {
                       )}
 
                       {course?.id === '03' && (
-                        <button 
+                        <button
                           className="resource-card test"
                           onClick={() => handleResourceClick(chapter.resources?.testAnswers, "Solutions will be available soon.")}
                         >
                           <div className="resource-icon-wrap">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><path d="M10 13l2 2 4-4"/></svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><path d="M10 13l2 2 4-4" /></svg>
                           </div>
                           <span>Test Answers</span>
                         </button>
@@ -371,7 +371,7 @@ export default function ChapterModal({ isOpen, onClose, course }) {
           </div>
         </div>
       </div>
-      
+
       {toastMessage && (
         <div className="modal-toast">
           {toastMessage}
